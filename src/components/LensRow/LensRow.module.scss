@@ -1,0 +1,87 @@
+@import '../../scss/variables.module.scss';
+
+// Pentax-specific Styling
+.takumar .cell { background-color: #b1daff; }
+.auto .cell { background-color: #65b5ff; }
+.super .cell { background-color: #0084ff; }
+.smc .cell { background-color: #FFB74A; }
+
+// Minolta-specific Styling
+.ar .cell, .sr .cell { background-color: #e6e6e6; }
+
+.arii .cell { background-color: #bdbdbd; }
+
+.arc .cell, .src .cell { background-color: #848484; }
+
+.mci .cell { background-color: #FFD595; }
+
+.mcii .cell { background-color: #FFB74A; }
+
+.mcx .cell { background-color: #FF9115; }
+
+.mdi .cell { background-color: #b1daff; }
+
+.mdii .cell { background-color: #65b5ff; }
+
+.mdiii .cell { background-color: #0084ff; }
+
+.mdiiia .cell {
+  background-color: #0055a5;
+  color: #FFF;
+}
+
+.lei .cell { background-color: #BF0000; color: $white; }
+
+.mcce .cell, .mdce .cell {
+  background-image: linear-gradient(-45deg, #D6F871 25%, transparent 25%, transparent 50%, #D6F871 50%, #D6F871 75%, transparent 75%, transparent);
+  background-size: 4px 4px;
+}
+
+// General Styling
+.row {
+  .cell {
+    font-size: 0.8rem;
+    line-height: 0.9rem;
+    font-weight: 500;
+
+    &:not(:last-child) {
+      border-right: 1px solid #333;
+    }
+
+    &:first-child {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    &:last-child {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      &.small {
+        padding-right: 6px;
+      }
+    }
+  }
+
+  .lensName, .focalLength, .notes, .style {
+    white-space: nowrap;
+  }
+
+  .lensName {
+    padding-left: 10px;
+  }
+
+  .focalLength {
+    font-size: 0.7rem;
+    line-height: 0.7rem;
+  }
+
+  .focalLength, .maxAperture {
+    font-weight: 700;
+    background-color: #FFF;
+  }
+
+  .small {
+    padding: 6px 3px;
+  }
+}

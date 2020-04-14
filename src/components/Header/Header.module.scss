@@ -1,0 +1,62 @@
+@import '../../scss/variables.module.scss';
+
+.root {
+  background-color: #FFF;
+  color: #000;
+
+  .toolbar {
+    .title {
+      margin: 0 1rem;
+      color: #000;
+    }
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    .anchor {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
+
+
+.drawer {
+  min-width: 50vw;
+
+  .title {
+    color: #000;
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: initial;
+}
+
+@media screen and (max-width: $mdBreakpoint) {
+
+  .root {
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  .mobile {
+    display: initial;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+}

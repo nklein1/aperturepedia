@@ -1,24 +1,32 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "aperturepedia",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Static site for presenting data on various vintage first-party SLR lenses",
+  "version": "0.5.0",
+  "author": "Nick Klein <nklein1@gmail.com>",
   "dependencies": {
+    "@material-ui/core": "^4.9.9",
+    "classnames": "^2.2.6",
     "gatsby": "^2.20.12",
     "gatsby-image": "^2.3.1",
+    "gatsby-plugin-google-analytics": "^2.2.2",
     "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-react-helmet": "^3.2.1",
+    "gatsby-plugin-sass": "^2.2.1",
     "gatsby-plugin-sharp": "^2.5.3",
     "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-json": "^2.3.1",
     "gatsby-transformer-sharp": "^2.4.3",
+    "material-table": "^1.57.2",
+    "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.8",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -32,13 +40,10 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"TODO: Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/nklein1/aperturepedia"
   }
 }

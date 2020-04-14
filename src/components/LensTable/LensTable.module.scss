@@ -1,0 +1,21 @@
+@import '../../scss/variables.module.scss';
+
+.container {
+  max-height: 75vh;
+
+  .row {
+    .cell {
+      font-size: 0.8rem;
+      line-height: 1em;
+      font-weight: 700;
+    }
+
+    .lensName, .focalLength {
+      white-space: nowrap;
+    }
+
+    .small {
+      padding: 6px 10px;
+    }
+  }
+}

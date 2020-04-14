@@ -1,0 +1,64 @@
+
+// Master Color Palette
+$black: #222;
+$offBlack: #262525;
+$semiTransparentBlack: #000000B5;
+
+$white: #FFF;
+$lighterWhite: #F6F4F4;
+$offWhite: #F1F1F1;
+
+$lighterGrey: #EFEFEF;
+$lightGrey: #CED4DA;
+$mdGrey: #666;
+
+$faintRed: #F77763;
+$lightRed: #CB5745;
+$red: #D64541;
+$medRed: #AD302D;
+
+$lightOrange: #e0a800;
+$orange: #d39E00;
+
+// $lightGreen: #B6DEBF;
+$lightGreen: #DAFDE2;
+$green: #28A745;
+
+$brightYellow: #F9EA06;
+$faintYellow: #FCF9DE;
+$seaticsYellow: #F3EB1C;
+
+$blue: #007bff;
+
+// Theme Colors
+$lightGreyBorder: $lightGrey;
+$lightGreyBg: $lighterGrey;
+$callToAction: $red;
+
+// Dimensions
+$smBreakpoint: 400px;
+$mdBreakpoint: 700px;
+$lgBreakpoint: 1124px;
+
+$smWidth: 85%;
+$mdWidth: 730px;
+$lgWidth: 980px;
+$xlWidth: 1180px;
+
+$defaultLineHeight: 1em;
+
+html {
+  font-size: 14px;
+  font-family: Roboto, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #4686AA;
+  cursor: pointer;
+}
+
+body {
+  margin: 0px;
+  background-color: $lighterGrey;
+}

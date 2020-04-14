@@ -1,0 +1,15 @@
+@import '../../scss/variables.module.scss';
+
+.container {
+  padding: 1rem;
+  background-color: #EEE;
+
+  .title {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+}
