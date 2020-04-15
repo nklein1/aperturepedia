@@ -2,7 +2,7 @@
 
 .container {
   padding: 1rem;
-  background-color: #EEE;
+  background-color: $lighterGrey;
 
   .title {
     margin-bottom: 0.75rem;
@@ -11,5 +11,14 @@
 
 .footer {
   position: fixed;
-  bottom: 0px;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+@media screen and (max-width: $mdBreakpoint) {
+	.footer {
+	  position: relative;
+	  padding: 1rem 0 0 1rem;
+	  bottom: 0px;
+	}
 }

@@ -33,11 +33,10 @@ const Layout = ({ children, title }) => {
           {title}
         </Typography>
         <main>{children}</main>
-        <div className={styles.footer}>
-          <footer className={styles.footer}>
-            © {new Date().getFullYear()} Nick Klein. Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
-        </div>
+        <footer className={styles.footer}>
+          © {new Date().getFullYear()} Nick Klein. Built with&nbsp;
+          <a href="https://www.gatsbyjs.org" rel="noopener noreferrer nofollow" target="_blank">Gatsby</a>
+        </footer>
       </div>
     </>
   )

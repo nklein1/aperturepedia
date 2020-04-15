@@ -33,6 +33,8 @@ export const pageQuery = graphql`
           focalLength
           name
           lensType
+          lensCatShort
+          lensCatLong
           maxAperture
           minAperture
           elements

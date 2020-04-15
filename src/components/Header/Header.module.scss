@@ -1,13 +1,13 @@
 @import '../../scss/variables.module.scss';
 
-.root {
-  background-color: #FFF;
-  color: #000;
+.appbar {
+  background-color: $white;
+  color: $black;
 
   .toolbar {
     .title {
       margin: 0 1rem;
-      color: #000;
+      color: $black;
     }
 
     display: flex;
@@ -20,15 +20,23 @@
       text-decoration: none;
       color: inherit;
     }
+
+    .tabs {
+      min-height: 64px;
+    }
+
+    .tabIndicator {
+      background-color: $black;
+      height: 4px;
+    }
   }
 }
-
 
 .drawer {
   min-width: 50vw;
 
   .title {
-    color: #000;
+    color: $black;
   }
 }
 
@@ -42,7 +50,7 @@
 
 @media screen and (max-width: $mdBreakpoint) {
 
-  .root {
+  .appbar {
     .toolbar {
       display: flex;
       justify-content: space-between;
@@ -58,5 +66,4 @@
   .desktop {
     display: none;
   }
-
 }

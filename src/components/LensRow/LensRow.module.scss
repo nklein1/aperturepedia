@@ -1,36 +1,36 @@
 @import '../../scss/variables.module.scss';
 
 // Pentax-specific Styling
-.takumar .cell { background-color: #b1daff; }
-.auto .cell { background-color: #65b5ff; }
-.super .cell { background-color: #0084ff; }
-.smc .cell { background-color: #FFB74A; }
+.takumar .cell { background: #b1daff; }
+.auto .cell { background: #65b5ff; }
+.super .cell { background: #0084ff; }
+.smc .cell { background: #FFB74A; }
 
 // Minolta-specific Styling
-.ar .cell, .sr .cell { background-color: #e6e6e6; }
+.ar .cell, .sr .cell { background: #e6e6e6; }
 
-.arii .cell { background-color: #bdbdbd; }
+.arii .cell { background: #bdbdbd; }
 
-.arc .cell, .src .cell { background-color: #848484; }
+.arc .cell, .src .cell { background: #848484; }
 
-.mci .cell { background-color: #FFD595; }
+.mci .cell { background: #FFD595; }
 
-.mcii .cell { background-color: #FFB74A; }
+.mcii .cell { background: #FFB74A; }
 
-.mcx .cell { background-color: #FF9115; }
+.mcx .cell { background: #FF9115; }
 
-.mdi .cell { background-color: #b1daff; }
+.mdi .cell { background: #b1daff; }
 
-.mdii .cell { background-color: #65b5ff; }
+.mdii .cell { background: #65b5ff; }
 
-.mdiii .cell { background-color: #0084ff; }
+.mdiii .cell { background: #0084ff; }
 
 .mdiiia .cell {
-  background-color: #0055a5;
-  color: #FFF;
+  background: #0055a5;
+  color: $white;
 }
 
-.lei .cell { background-color: #BF0000; color: $white; }
+.lei .cell { background: #BF0000; color: $white; }
 
 .mcce .cell, .mdce .cell {
   background-image: linear-gradient(-45deg, #D6F871 25%, transparent 25%, transparent 50%, #D6F871 50%, #D6F871 75%, transparent 75%, transparent);
@@ -43,9 +43,10 @@
     font-size: 0.8rem;
     line-height: 0.9rem;
     font-weight: 500;
+    border-bottom: 1px solid $mdGrey;
 
     &:not(:last-child) {
-      border-right: 1px solid #333;
+      border-right: 1px solid $mdGrey;
     }
 
     &:first-child {
@@ -63,7 +64,7 @@
     }
   }
 
-  .lensName, .focalLength, .notes, .style {
+  .name, .focalLength, .style {
     white-space: nowrap;
   }
 
@@ -71,14 +72,22 @@
     padding-left: 10px;
   }
 
-  .focalLength {
-    font-size: 0.7rem;
-    line-height: 0.7rem;
+  .notes {
+    // max-width: 200px;
+    min-width: 150px;
+    text-align: left;
+  }
+
+  .focalLength, .maxAperture {
+    font-size: 1rem;
+    line-height: 1.1rem;
+    color: $black;
+    background: $white;
   }
 
   .focalLength, .maxAperture {
     font-weight: 700;
-    background-color: #FFF;
+    background: $white;
   }
 
   .small {
