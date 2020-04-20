@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `AperturePedia`,
+    title: `Aperturepedia`,
     description: `A guide to vintage first-party SLR lenses.`,
     author: `Nick Klein`,
   },

@@ -65,9 +65,7 @@ const Header = ({ siteTitle, location }, props) => {
               to={node.link}
               className={styles.anchor}
               key={'mobileNavList-' + node.link}>
-
-              <ListItemText primary={node.name} />
-
+            <ListItemText primary={node.name} />
           </ListItem>
         ))}
       </List>
@@ -90,15 +88,17 @@ const Header = ({ siteTitle, location }, props) => {
   // TODO: Refactor this to reduce code rigidity
   const parsePath = (value) => {
     let tab = false;
+    if (value) {
     value = value.replace(/\//g, '');
-    if (value && value === 'minolta-sr') {
-      tab = 0;
-    } else if (value && value === 'canon-fd') {
-      tab = 1;
-    } else if (value && value === 'pentax-m42') {
-      tab = 2;
-    } else if (value && value === 'pentax-k') {
-      tab = 3;
+      if (value && value === 'minolta-sr') {
+        tab = 0;
+      } else if (value && value === 'canon-fd') {
+        tab = 1;
+      } else if (value && value === 'pentax-m42') {
+        tab = 2;
+      } else if (value && value === 'pentax-k') {
+        tab = 3;
+      }
     }
     return tab;
   };
