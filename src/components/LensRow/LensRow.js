@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 import TableRow from '@material-ui/core/TableRow';
@@ -52,7 +53,26 @@ class LensRow extends React.Component {
           align={i === 0 ? 'left' : 'center'}
           rowSpan={(lColumn.slug === 'focalLength' || lColumn.slug === 'maxAperture') && lRowSpan > 1 ? lRowSpan : 1}
           key={'TableCell-' + lData.lensCatLong + lData.style + getRandomString()}>
+          <span className={styles.lensType}>
+            {lColumn.slug === 'focalLength' && lData.lensType !== 'false' ? lData.lensType : ''}
+          </span>
         {lData[lColumn.slug]}
+      </TableCell>
+    );
+  }
+
+  renderSourceCell(lData, lColumn, i, lRowSpan) {
+    return (
+      <TableCell
+          className={classNames(
+            styles.cell,
+            styles[lColumn.slug],
+            lColumn.slug !== 'focalLength' ? styles.small : '',
+          )}
+          align={'left'}
+          rowSpan={1}
+          key={'TableCell-' + lData.lensCatLong + lData.style + getRandomString()}>
+        <a href={lData.url} title={lData.url} target={'_blank'}>Source</a>
       </TableCell>
     );
   }
@@ -60,7 +80,7 @@ class LensRow extends React.Component {
   renderLensColumns(lensData, lensColumns) {
     let toRender = [];
     for (let i = 0; i < lensColumns.length; i++) {
-      if (lensColumns[i].slug !== 'focalLength' && lensColumns[i].slug !== 'maxAperture') {
+      if (lensColumns[i].slug !== 'focalLength' && lensColumns[i].slug !== 'maxAperture' && lensColumns[i].slug !== 'source') {
         // Render Table cell normally
         toRender.push( this.renderCell(lensData, lensColumns[i], i, 1) );
       } else if (lensColumns[i].slug === 'focalLength' && this.props.showFocalLength === true) {
@@ -69,18 +89,21 @@ class LensRow extends React.Component {
       } else if (lensColumns[i].slug === 'maxAperture' && this.props.showMaxAperture === true) {
         // Render 'Max Aperture' cell with custom 'rowSpan' value
         toRender.push( this.renderCell(lensData, lensColumns[i], i, this.props.maxApSpan) );
+      } else if (lensColumns[i].slug === 'source') {
+        // Render 'Max Aperture' cell with custom 'rowSpan' value
+        toRender.push( this.renderSourceCell(lensData, lensColumns[i], i, this.props.maxApSpan) );
       }
     }
     return toRender;
   }
 
   render() {
-    let { lensData, lensStyle, lensColumns } = this.props;
+    let { lensData, lensStyle, lensColumns, mount } = this.props;
     return (
       <TableRow
           className={classNames(
             styles.row,
-            lensStyle ? styles[lensStyle] : ''
+            lensStyle ? styles[mount + lensStyle] : ''
           )}
           key={'TableRow-' + lensData.lensCatLong + lensData.style + getRandomString()}>
         { this.renderLensColumns(lensData, lensColumns) }

@@ -6,16 +6,15 @@ import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
 import SourceList from '../components/SourceList/SourceList';
 
-class MinoltaSR extends React.Component {
+class PentaxK extends React.Component {
   render() {
     const sources = [
-      'http://minolta.eazypix.de/lenses/index.html',
-      'https://lensqaworks.com',
-      'http://allphotolenses.com/lenses/c_652543.html'
+      'http://kmp.pentaxians.eu/lenses/',
+      'https://www.pentaxforums.com/lensreviews/Pentax-K-Mount-Lenses-i1.html'
     ];
     return (
-      <Layout title={'Minolta SR Lenses'}>
-        <SEO title={'Minolta SR Lenses'} />
+      <Layout title={'Pentax K Lenses'}>
+        <SEO title={'Pentax K Lenses'} />
         <LensTable data={this.props.data} />
         <SourceList sources={sources} />
       </Layout>
@@ -23,32 +22,31 @@ class MinoltaSR extends React.Component {
   }
 }
 
-export default MinoltaSR;
+export default PentaxK;
 
 export const pageQuery = graphql`
   query {
-    allMinoltaMdJson {
+    allPentaxKJson {
       edges {
         node {
           focalLength
           name
-          lensType
-          lensCatShort
-          lensCatLong
           maxAperture
           minAperture
           elements
           groups
-
+          blades
           filterThread
-          lensShade
           closeFocus
           diameter
           length
           weight
           yearIntroduced
           style
-          notes
+          lensType
+          lensCatShort
+          lensCatLong
+          url
         }
       }
     }

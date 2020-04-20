@@ -7,7 +7,7 @@ import SEO from '../components/seo';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title={'Home | Aperturepedia'} />
+    <SEO title={'Home'} />
     <Typography variant={'h4'}>
       Welcome to Aperturepedia
     </Typography>
@@ -20,14 +20,18 @@ const IndexPage = () => (
         <Link to="/minolta-sr/">Minolta MD</Link>
       </li>
       <li>
+        <Link to="/canon-fd/">Canon FD</Link>
+      </li>
+      <li>
         <Link to="/pentax-m42/">Pentax M42</Link>
+      </li>
+      <li>
+        <Link to="/pentax-k/">Pentax K</Link>
       </li>
     </ul>
     <Typography variant={'h5'}>Future Supported Lens Mounts:</Typography>
     <em>These will be supported in a future version of Aperturepedia</em>
     <ul>
-      <li>Pentax K</li>
-      <li>Canon FD</li>
       <li>Nikon F</li>
       <li>Olympus OM</li>
     </ul>

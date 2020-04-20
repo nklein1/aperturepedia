@@ -23,6 +23,14 @@
 
     .tabs {
       min-height: 64px;
+      color: $black;
+      margin-left: 1rem;
+      text-decoration: none;
+      color: inherit;
+
+      &.active {
+        border-bottom: 4px solid $black;
+      }
     }
 
     .tabIndicator {
@@ -49,7 +57,6 @@
 }
 
 @media screen and (max-width: $mdBreakpoint) {
-
   .appbar {
     .toolbar {
       display: flex;

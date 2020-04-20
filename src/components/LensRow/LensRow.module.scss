@@ -1,41 +1,42 @@
 @import '../../scss/variables.module.scss';
 
-// Pentax-specific Styling
-.takumar .cell { background: #b1daff; }
-.auto .cell { background: #65b5ff; }
-.super .cell { background: #0084ff; }
-.smc .cell { background: #FFB74A; }
+// Canon FD -specific Styling
+.fdfl .cell { background: #FDC002; }
+.fdfd .cell { background: #65B5FF; }
+.fdnewfd .cell { background: #73EA80; }
+.fdfdl .cell, .fdnewfdl .cell { background: #BF1920; color: $white; }
+
+// Pentax K-specific Styling
+.ksmc .cell { background: #FFB74A; }
+.ksmcm .cell { background: #b1daff; }
+.ksmca .cell { background: #65b5ff; }
+
+// Pentax M42-specific Styling
+.m42takumar .cell { background: #FFB74A; }
+.m42tele .cell { background: #FFB74A; }
+.m42auto .cell { background: #FF9115; }
+.m42super .cell { background: #b1daff; }
+.m42smc .cell { background: #65b5ff; }
 
 // Minolta-specific Styling
-.ar .cell, .sr .cell { background: #e6e6e6; }
-
-.arii .cell { background: #bdbdbd; }
-
-.arc .cell, .src .cell { background: #848484; }
-
-.mci .cell { background: #FFD595; }
-
-.mcii .cell { background: #FFB74A; }
-
-.mcx .cell { background: #FF9115; }
-
-.mdi .cell { background: #b1daff; }
-
-.mdii .cell { background: #65b5ff; }
-
-.mdiii .cell { background: #0084ff; }
-
-.mdiiia .cell {
+.srar .cell, .srsr .cell { background: #e6e6e6; }
+.srarii .cell { background: #bdbdbd; }
+.srarc .cell, .srsrc .cell { background: #848484; }
+.srmci .cell { background: #FFD595; }
+.srmcii .cell { background: #FFB74A; }
+.srmcx .cell { background: #FF9115; }
+.srmdi .cell { background: #b1daff; }
+.srmdii .cell { background: #65b5ff; }
+.srmdiii .cell { background: #0084ff; }
+.srmdiiia .cell {
   background: #0055a5;
   color: $white;
 }
-
-.lei .cell { background: #BF0000; color: $white; }
-
-.mcce .cell, .mdce .cell {
+.srmcce .cell, .srmdce .cell {
   background-image: linear-gradient(-45deg, #D6F871 25%, transparent 25%, transparent 50%, #D6F871 50%, #D6F871 75%, transparent 75%, transparent);
   background-size: 4px 4px;
 }
+.srlei .cell { background: #BF0000; color: $white; }
 
 // General Styling
 .row {
@@ -72,17 +73,24 @@
     padding-left: 10px;
   }
 
-  .notes {
+  .notes, .descr {
     // max-width: 200px;
     min-width: 150px;
     text-align: left;
   }
 
   .focalLength, .maxAperture {
-    font-size: 1rem;
-    line-height: 1.1rem;
+    font-size: 1.2rem;
+    line-height: 1rem;
     color: $black;
     background: $white;
+
+    .lensType {
+      display: block;
+      font-size: 0.8rem;
+      line-height: 1rem;
+      margin-bottom: 0.2rem;
+    }
   }
 
   .focalLength, .maxAperture {

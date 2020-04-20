@@ -8,10 +8,10 @@ import { globalHistory } from '@reach/router'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
@@ -30,7 +30,9 @@ const Header = ({ siteTitle, location }, props) => {
 
   const navList = [
     {name: 'Minolta SR', link: '/minolta-sr'},
-    {name: 'Pentax M42', link: '/pentax-m42'}
+    {name: 'Canon FD', link: '/canon-fd'},
+    {name: 'Pentax M42', link: '/pentax-m42'},
+    {name: 'Pentax K', link: '/pentax-k'}
   ];
 
   const toggleDrawer = (isOpen) => (event) => {
@@ -74,8 +76,10 @@ const Header = ({ siteTitle, location }, props) => {
 
   function tabProps(index) {
     return {
+      'value': index,
+      'key': `desktopNavList-${index}`,
+      'aria-controls': `desktopNavList-${index}`,
       'id': `nav-tab-${index}`,
-      'aria-controls': `nav-tabpanel-${index}`,
       'classes': {root: styles.tabs},
       'className': styles.anchor,
       'disableFocusRipple': true,
@@ -83,13 +87,18 @@ const Header = ({ siteTitle, location }, props) => {
     };
   }
 
+  // TODO: Refactor this to reduce code rigidity
   const parsePath = (value) => {
-    let tab = '';
+    let tab = false;
     value = value.replace(/\//g, '');
     if (value && value === 'minolta-sr') {
       tab = 0;
-    } else if (value && value === 'pentax-m42') {
+    } else if (value && value === 'canon-fd') {
       tab = 1;
+    } else if (value && value === 'pentax-m42') {
+      tab = 2;
+    } else if (value && value === 'pentax-k') {
+      tab = 3;
     }
     return tab;
   };
@@ -103,15 +112,13 @@ const Header = ({ siteTitle, location }, props) => {
         <div className={styles.desktop}>
           <Tabs
               aria-label={'Navigation Bar'}
-              value={parsePath(state.path || 'false')}
+              value={parsePath(state.path || false)}
               TabIndicatorProps={{classes: {root: styles.tabIndicator}}}>
             {navList.map((node, index) => (
               <Tab
                 component={Link}
                 to={node.link}
                 label={node.name}
-                value={index}
-                key={'desktopNavList-' + index}
                 {...tabProps(index)} />
             ))}
           </Tabs>

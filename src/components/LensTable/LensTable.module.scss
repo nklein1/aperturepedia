@@ -5,8 +5,8 @@
 
   .row {
     .cell {
-      font-size: 0.8rem;
-      line-height: 1em;
+      font-size: 0.9rem;
+      line-height: 1rem;
       font-weight: 700;
     }
 
@@ -16,6 +16,19 @@
 
     .small {
       padding: 6px 10px;
+    }
+  }
+}
+
+@media screen and (max-width: $mdBreakpoint) {
+  .container {
+    max-height: 75vh;
+
+    .row {
+      .cell {
+        font-size: 0.8rem;
+        line-height: 1rem;
+      }
     }
   }
 }

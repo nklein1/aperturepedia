@@ -6,16 +6,15 @@ import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
 import SourceList from '../components/SourceList/SourceList';
 
-class MinoltaSR extends React.Component {
+class CanonFD extends React.Component {
   render() {
     const sources = [
-      'http://minolta.eazypix.de/lenses/index.html',
-      'https://lensqaworks.com',
-      'http://allphotolenses.com/lenses/c_652543.html'
+      'https://global.canon/en/c-museum/lens-series.html',
+      'http://web.mit.edu/dennis/www/canon/fd-lens-info.html'
     ];
     return (
-      <Layout title={'Minolta SR Lenses'}>
-        <SEO title={'Minolta SR Lenses'} />
+      <Layout title={'Canon FD Lenses'}>
+        <SEO title={'Canon FD Lenses'} />
         <LensTable data={this.props.data} />
         <SourceList sources={sources} />
       </Layout>
@@ -23,32 +22,34 @@ class MinoltaSR extends React.Component {
   }
 }
 
-export default MinoltaSR;
+export default CanonFD;
 
 export const pageQuery = graphql`
   query {
-    allMinoltaMdJson {
+    allCanonFdJson {
       edges {
         node {
-          focalLength
           name
-          lensType
-          lensCatShort
-          lensCatLong
+          focalLength
           maxAperture
           minAperture
           elements
           groups
-
-          filterThread
-          lensShade
+          blades
           closeFocus
+          filterThread
           diameter
           length
           weight
           yearIntroduced
+          originalPrice
+          descr
           style
-          notes
+          img
+          url
+          lensType
+          lensCatShort
+          lensCatLong
         }
       }
     }

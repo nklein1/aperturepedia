@@ -54,7 +54,7 @@ class LensTable extends React.Component {
     return toRender;
   }
 
-  renderTableBody(allLensData, lensColumns) {
+  renderTableBody(allLensData, lensColumns, mount) {
     let lastFocalLength = '';
     let lastLensCat = '';
     let showFocalLength = true;
@@ -88,6 +88,7 @@ class LensTable extends React.Component {
             lensStyle={parseClassFromStyle(node.style)}
             className={styles.small}
             lensColumns={lensColumns}
+            mount={mount}
             focalSpan={lCount[node.lensCatShort] ? lCount[node.lensCatShort].count : 1}
             maxApSpan={lCount[node.lensCatLong] ? lCount[node.lensCatLong].count : 1}
             showFocalLength={showFocalLength}
@@ -100,12 +101,23 @@ class LensTable extends React.Component {
   render() {
     let allLensData = [];
     let columnsToRender = [];
+    let mount = '';
     if (this.props.data.allMinoltaMdJson) {
       allLensData = this.props.data.allMinoltaMdJson;
-      columnsToRender = parseLensColumns('minolta');
+      columnsToRender = parseLensColumns('minolta_sr');
+      mount = 'sr';
     } else if (this.props.data.allPentaxM42Json) {
       allLensData = this.props.data.allPentaxM42Json;
-      columnsToRender = parseLensColumns('pentax');
+      columnsToRender = parseLensColumns('pentax_m42');
+      mount = 'm42';
+    } else if (this.props.data.allPentaxKJson) {
+      allLensData = this.props.data.allPentaxKJson;
+      columnsToRender = parseLensColumns('pentax_k');
+      mount = 'k';
+    } else if (this.props.data.allCanonFdJson) {
+      allLensData = this.props.data.allCanonFdJson;
+      columnsToRender = parseLensColumns('canon_fd');
+      mount = 'fd';
     }
     return (
       <TableContainer component={Paper} className={styles.container}>
@@ -116,7 +128,7 @@ class LensTable extends React.Component {
             </TableRow>
           </TableHead>
           <TableBody>
-            {this.renderTableBody(allLensData, columnsToRender)}
+            {this.renderTableBody(allLensData, columnsToRender, mount)}
           </TableBody>
         </Table>
       </TableContainer>
