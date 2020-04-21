@@ -11,7 +11,7 @@ const SourceList = ({ sources }) => {
       <ul className={styles.sources}>
         {sources.map(node => (
           <li className={styles.source} key={'source-' + getRandomString()}>
-            <a href={node} target={'_blank'}>{node}</a>
+            <a href={node} target={'_blank'} rel={'noopener'}>{node}</a>
           </li>
         ))}
       </ul>

@@ -57,7 +57,8 @@ export function parseLensColumns(type) {
       {'name': 'Length (mm)', 'slug': 'length'},
       {'name': 'Weight (g)', 'slug': 'weight'},
       {'name': 'Year Introduced', 'slug': 'yearIntroduced'},
-      {'name': 'Source', 'slug': 'source'}
+      {'name': 'Source', 'slug': 'source'},
+      {'name': 'Notes', 'slug': 'notes'}
     ];
   } else if (type === 'canon_fd') {
     columnsToRender = [

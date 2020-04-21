@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 import TableRow from '@material-ui/core/TableRow';
@@ -69,7 +68,7 @@ class LensRow extends React.Component {
             styles[lColumn.slug],
             lColumn.slug !== 'focalLength' ? styles.small : '',
           )}
-          align={'left'}
+          align={'center'}
           rowSpan={1}
           key={'TableCell-' + lData.lensCatLong + lData.style + getRandomString()}>
         <a href={lData.url} title={lData.url} target={'_blank'}>Source</a>

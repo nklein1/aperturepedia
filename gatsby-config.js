@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Aperturepedia`,
-    description: `A guide to vintage first-party SLR lenses.`,
+    description: `Aperturepedia: a guide to vintage first-party SLR lenses.`,
     author: `Nick Klein`,
+    siteUrl: `http://www.aperturepedia.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -10,6 +11,7 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -38,7 +40,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
         trackingId: `UA-38789595-2`,
       },
     },

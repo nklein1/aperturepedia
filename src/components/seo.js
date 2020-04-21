@@ -8,9 +8,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby'
+import { globalHistory } from '@reach/router'
+import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, breadcrumbs }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -26,6 +27,31 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+
+  const baseSchema = [
+    {
+      '@context': 'http://schema.org',
+      '@type': 'WebSite',
+      'url': globalHistory.location.origin,
+      name: title,
+    },
+  ];
+
+  const schemaJSONLD = breadcrumbs ? [
+    ...baseSchema,
+    {
+      '@context': 'http://schema.org',
+      '@type': 'BreadcrumbList',
+      'itemListElement': breadcrumbs.map((breadcrumb, index) => (
+        {
+          '@type': 'ListItem',
+          'position': index,
+          'name': breadcrumb.title,
+          'item': globalHistory.location.origin + breadcrumb.url
+        }
+      ))
+    }
+  ] : baseSchema;
 
   return (
     <Helmet
@@ -68,7 +94,11 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <script type={'application/ld+json'}>
+        {JSON.stringify(schemaJSONLD)}
+      </script>
+    </Helmet>
   )
 }
 
@@ -82,6 +112,7 @@ SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
+  breadcrumbs: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 }
 

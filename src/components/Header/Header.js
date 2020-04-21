@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
 import { globalHistory } from '@reach/router'
 
 import AppBar from '@material-ui/core/AppBar';
@@ -14,11 +13,9 @@ import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
-import { getRandomString } from '../../utils/utils';
 import styles from './Header.module.scss';
 
 const Header = ({ siteTitle, location }, props) => {

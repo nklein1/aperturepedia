@@ -35,7 +35,7 @@ const Layout = ({ children, title }) => {
         <main>{children}</main>
         <footer className={styles.footer}>
           © {new Date().getFullYear()} Nick Klein. Built with&nbsp;
-          <a href="https://www.gatsbyjs.org" rel="noopener noreferrer nofollow" target="_blank">Gatsby</a>
+          <a href="https://www.gatsbyjs.org" rel={'noopener noreferrer nofollow'} target={'_blank'}>Gatsby</a>
         </footer>
       </div>
     </>
