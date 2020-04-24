@@ -22,7 +22,11 @@ class MinoltaSR extends React.Component {
 
     return (
       <Layout title={'Minolta SR Lenses'}>
-        <SEO title={'Minolta SR Lenses'} breadcrumbs={breadcrumbs} description={description} />
+        <SEO
+            title={'Minolta SR Lenses'}
+            breadcrumbs={breadcrumbs}
+            description={description}
+            pathname={this.props.path} />
         <LensTable data={this.props.data} />
         <SourceList sources={sources} />
       </Layout>

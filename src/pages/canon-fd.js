@@ -13,13 +13,17 @@ class CanonFD extends React.Component {
       'http://web.mit.edu/dennis/www/canon/fd-lens-info.html'
     ];
     const description = 'Aperturepedia\'s list of Canon FL, FD, and New FD lenses used in Canon 35mm interchangeable lens SLR cameras between 1971 and 1992';
-    const seoBreadcrumbs = [
+    const breadcrumbs = [
       { url: '/', title:'Aperturepedia' },
       { url: '/canon-fd', title:'Canon FD' }
     ];
     return (
       <Layout title={'Canon FD Lenses'}>
-        <SEO title={'Canon FD Lenses'} breadcrumbs={seoBreadcrumbs} description={description} />
+        <SEO
+            title={'Canon FD Lenses'}
+            breadcrumbs={breadcrumbs}
+            description={description}
+            pathname={this.props.path} />
         <LensTable data={this.props.data} />
         <SourceList sources={sources} />
       </Layout>

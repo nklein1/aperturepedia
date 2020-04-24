@@ -11,7 +11,7 @@ import Helmet from 'react-helmet';
 import { globalHistory } from '@reach/router'
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title, breadcrumbs }) {
+function SEO({ description, lang, meta, title, breadcrumbs, pathname }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -20,13 +20,15 @@ function SEO({ description, lang, meta, title, breadcrumbs }) {
             title
             description
             author
+            siteUrl
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
+  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
 
   const baseSchema = [
     {
@@ -60,6 +62,9 @@ function SEO({ description, lang, meta, title, breadcrumbs }) {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={
+        canonical ? [{ rel: `canonical`, href: canonical }] : []
+      }
       meta={[
         {
           name: `description`,
@@ -114,6 +119,7 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   breadcrumbs: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  pathname: PropTypes.string,
 }
 
 export default SEO

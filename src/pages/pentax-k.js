@@ -13,13 +13,17 @@ class PentaxK extends React.Component {
       'https://www.pentaxforums.com/lensreviews/Pentax-K-Mount-Lenses-i1.html'
     ];
     const description = 'Aperturepedia\'s list of Pentax K bayonet mount lenses used in Pentax 35mm interchangeable lens SLR cameras';
-    const seoBreadcrumbs = [
+    const breadcrumbs = [
       { url: '/', title:'Aperturepedia' },
       { url: '/pentax-k', title:'Pentax K' }
     ];
     return (
       <Layout title={'Pentax K Lenses'}>
-        <SEO title={'Pentax K Lenses'} breadcrumbs={seoBreadcrumbs} description={description} />
+        <SEO
+            title={'Pentax K Lenses'}
+            breadcrumbs={breadcrumbs}
+            description={description}
+            pathname={this.props.path} />
         <LensTable data={this.props.data} />
         <SourceList sources={sources} />
       </Layout>

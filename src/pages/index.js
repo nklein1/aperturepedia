@@ -5,13 +5,16 @@ import Typography from '@material-ui/core/Typography';
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/seo';
 
-const seoBreadcrumbs = [
+const breadcrumbs = [
   { url: '/', title:'Aperturepedia' }
 ];
 
-const IndexPage = () => (
+const IndexPage = (props) => (
   <Layout>
-    <SEO title={'Home'} breadcrumbs={seoBreadcrumbs} />
+    <SEO
+        title={'Home'}
+        breadcrumbs={breadcrumbs}
+        pathname={props.path} />
     <Typography variant={'h4'}>
       Welcome to Aperturepedia
     </Typography>
