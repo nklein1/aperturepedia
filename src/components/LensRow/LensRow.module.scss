@@ -1,45 +1,59 @@
 @import '../../scss/variables.module.scss';
 
-// Canon FD -specific Styling
-.fdfl .cell { background: #FDC002; }
-.fdfd .cell { background: #65B5FF; }
-.fdnewfd .cell { background: #73EA80; }
-.fdfdl .cell, .fdnewfdl .cell { background: #BF1920; color: $white; }
+@mixin renderRow($background, $color:$black) {
+  .cell {
+    background: $background;
+    color: $color;
+  }
+
+  &:hover {
+    .cell {
+      // color: lighten($color, 10%);
+      // font-weight: 700;
+      background: darken($background, 15%);
+    }
+  }
+}
+
+// Canon FD-specific Styling
+.fdfl.row { @include renderRow($orange2); }
+.fdfd.row { @include renderRow($blue1); }
+.fdnewfd.row { @include renderRow($blue2); }
+.fdfdl.row, .fdnewfdl.row { @include renderRow($darkRed, $white); }
 
 // Pentax K-specific Styling
-.ksmc .cell { background: #FFB74A; }
-.ksmcm .cell { background: #b1daff; }
-.ksmca .cell { background: #65b5ff; }
+.ksmc.row { @include renderRow($orange2); }
+.ksmcm.row { @include renderRow($blue1); }
+.ksmca.row { @include renderRow($blue2); }
 
 // Pentax M42-specific Styling
-.m42takumar .cell { background: #FFB74A; }
-.m42tele .cell { background: #FFB74A; }
-.m42auto .cell { background: #FF9115; }
-.m42super .cell { background: #b1daff; }
-.m42smc .cell { background: #65b5ff; }
+.m42takumar.row, .m42tele.row { @include renderRow($orange2); }
+.m42auto.row { @include renderRow($orange3); }
+.m42super.row { @include renderRow($blue1); }
+.m42smc.row { @include renderRow($blue2); }
 
 // Minolta-specific Styling
-.srar .cell, .srsr .cell { background: #e6e6e6; }
-.srarii .cell { background: #bdbdbd; }
-.srarc .cell, .srsrc .cell { background: #848484; }
-.srmci .cell { background: #FFD595; }
-.srmcii .cell { background: #FFB74A; }
-.srmcx .cell { background: #FF9115; }
-.srmdi .cell { background: #b1daff; }
-.srmdii .cell { background: #65b5ff; }
-.srmdiii .cell { background: #0084ff; }
-.srmdiiia .cell {
-  background: #0055a5;
-  color: $white;
-}
-.srmcce .cell, .srmdce .cell {
-  background-image: linear-gradient(-45deg, #D6F871 25%, transparent 25%, transparent 50%, #D6F871 50%, #D6F871 75%, transparent 75%, transparent);
-  background-size: 4px 4px;
-}
-.srlei .cell { background: #BF0000; color: $white; }
+.srar.row, .srsr.row { @include renderRow($grey1); }
+.srarii.row { @include renderRow($grey2); }
+.srarc.row, .srsrc.row { @include renderRow($grey3, $white); }
+.srmci.row { @include renderRow($orange1); }
+.srmcii.row { @include renderRow($orange2); }
+.srmcx.row { @include renderRow($orange3); }
+.srmdi.row { @include renderRow($blue1); }
+.srmdii.row { @include renderRow($blue2); }
+.srmdiii.row { @include renderRow($blue3); }
+.srmdiiia.row { @include renderRow($blue4, $white); }
+.srlei.row { @include renderRow($darkRed, $white); }
+.srmcce.row, .srmdce.row { @include renderRow($lightGreen); }
+// .srmcce .cell, .srmdce .cell {
+//   // background-image: linear-gradient(-45deg, $orange2 25%, transparent 25%, transparent 50%, $orange2 50%, $orange2 75%, transparent 75%, transparent);
+//   // background-size: 4px 4px;
+// }
 
 // General Styling
 .row {
+  cursor: pointer;
+
   .cell {
     font-size: 0.8rem;
     line-height: 0.9rem;
@@ -69,21 +83,11 @@
     white-space: nowrap;
   }
 
-  .lensName {
-    padding-left: 10px;
-  }
-
-  .notes, .descr {
-    // max-width: 200px;
-    min-width: 150px;
-    text-align: left;
-  }
-
   .focalLength, .maxAperture {
     font-size: 1.2rem;
     line-height: 1rem;
-    color: $black;
-    background: $white;
+    color: $black !important;
+    background: $white !important;
 
     .lensType {
       display: block;
@@ -100,5 +104,32 @@
 
   .small {
     padding: 6px 3px;
+  }
+}
+
+.detailContainer {
+  display: block !important; // Fixes MUI padding bugs when hidden
+  visibility: collapse;
+
+  .detailPanel {
+    display: none;
+    visibility: collapse;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    border-bottom: 1px solid $mdGrey;
+
+    .hidden {
+      display: none;
+    }
+  }
+
+  &.isExpanded {
+    display: table-row !important; // Fixes MUI padding bugs when hidden
+    visibility: visible;
+
+    .detailPanel {
+      display: table-cell;
+      visibility: visible;
+    }
   }
 }

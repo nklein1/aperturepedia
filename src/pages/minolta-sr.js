@@ -13,7 +13,6 @@ class MinoltaSR extends React.Component {
       'https://lensqaworks.com',
       'http://allphotolenses.com/lenses/c_652543.html'
     ];
-
     const description = 'Aperturepedia\'s list of Minolta SR-mount lenses used in all Minolta 35mm interchangeable lens SLR cameras';
     const breadcrumbs = [
       { url: '/', title:'Aperturepedia' },

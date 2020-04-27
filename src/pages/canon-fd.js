@@ -52,7 +52,7 @@ export const pageQuery = graphql`
           weight
           yearIntroduced
           originalPrice
-          descr
+          notes
           style
           img
           url

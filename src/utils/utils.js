@@ -7,9 +7,9 @@ export function parseLensColumns(type) {
   let columnsToRender = [];
   if (type === 'minolta_sr') {
     columnsToRender = [
-      {'name': 'Lens Name', 'slug': 'name'},
       {'name': 'Focal Length', 'slug': 'focalLength'},
       {'name': 'Maximum Aperture', 'slug': 'maxAperture'},
+      {'name': 'Lens Name', 'slug': 'name'},
       {'name': 'Minimum Aperture', 'slug': 'minAperture'},
       {'name': 'Elements', 'slug': 'elements'},
       {'name': 'Groups', 'slug': 'groups'},
@@ -22,13 +22,13 @@ export function parseLensColumns(type) {
       {'name': 'Weight (g)', 'slug': 'weight'},
       {'name': 'Year Introduced', 'slug': 'yearIntroduced'},
       {'name': 'Style', 'slug': 'style'},
-      {'name': 'Notes', 'slug': 'notes'}
+      {'name': 'Notes?', 'slug': 'notes'}
     ];
   } else if (type === 'pentax_m42') {
     columnsToRender = [
-      {'name': 'Lens Name', 'slug': 'name'},
       {'name': 'Focal Length', 'slug': 'focalLength'},
       {'name': 'Maximum Aperture', 'slug': 'maxAperture'},
+      {'name': 'Lens Name', 'slug': 'name'},
       {'name': 'Minimum Aperture', 'slug': 'minAperture'},
       {'name': 'Elements', 'slug': 'elements'},
       {'name': 'Groups', 'slug': 'groups'},
@@ -40,13 +40,13 @@ export function parseLensColumns(type) {
       {'name': 'Length (mm)', 'slug': 'length'},
       {'name': 'Weight (g)', 'slug': 'weight'},
       {'name': 'Year Introduced', 'slug': 'yearIntroduced'},
-      {'name': 'Notes', 'slug': 'notes'}
+      {'name': 'Notes?', 'slug': 'notes'}
     ];
   } else if (type === 'pentax_k') {
     columnsToRender = [
-      {'name': 'Lens Name', 'slug': 'name'},
       {'name': 'Focal Length', 'slug': 'focalLength'},
       {'name': 'Maximum Aperture', 'slug': 'maxAperture'},
+      {'name': 'Lens Name', 'slug': 'name'},
       {'name': 'Minimum Aperture', 'slug': 'minAperture'},
       {'name': 'Elements', 'slug': 'elements'},
       {'name': 'Groups', 'slug': 'groups'},
@@ -57,14 +57,14 @@ export function parseLensColumns(type) {
       {'name': 'Length (mm)', 'slug': 'length'},
       {'name': 'Weight (g)', 'slug': 'weight'},
       {'name': 'Year Introduced', 'slug': 'yearIntroduced'},
-      {'name': 'Source', 'slug': 'source'},
-      {'name': 'Notes', 'slug': 'notes'}
+      // {'name': 'Source', 'slug': 'source'},
+      {'name': 'Notes?', 'slug': 'notes'}
     ];
   } else if (type === 'canon_fd') {
     columnsToRender = [
-      {'name': 'Lens Name', 'slug': 'name'},
       {'name': 'Focal Length', 'slug': 'focalLength'},
       {'name': 'Maximum Aperture', 'slug': 'maxAperture'},
+      {'name': 'Lens Name', 'slug': 'name'},
       {'name': 'Minimum Aperture', 'slug': 'minAperture'},
       {'name': 'Elements', 'slug': 'elements'},
       {'name': 'Groups', 'slug': 'groups'},
@@ -75,8 +75,8 @@ export function parseLensColumns(type) {
       {'name': 'Length (mm)', 'slug': 'length'},
       {'name': 'Weight (g)', 'slug': 'weight'},
       {'name': 'Date Introduced', 'slug': 'yearIntroduced'},
-      {'name': 'Source', 'slug': 'source'},
-      {'name': 'Notes', 'slug': 'descr'}
+      // {'name': 'Source', 'slug': 'source'},
+      {'name': 'Notes?', 'slug': 'notes'}
     ];
   }
   return columnsToRender;

@@ -19,7 +19,7 @@ const IndexPage = (props) => (
       Welcome to Aperturepedia
     </Typography>
     <p>
-      This is a personal project built by <a href={'http://nklein.info/'} target={'_blank'} rel={'noopener'}>Nick Klein</a> to collect data on various vintage first-party SLR lenses in one place.<br /><br/>
+      Built by <a href={'http://nklein.info/'} target={'_blank'} rel={'noopener'}>Nick Klein</a>, Aperturepedia collects data on various vintage first-party SLR lenses in one easy-to-reference site.<br /><br/>
       <strong>It's very much a work in progress</strong>, and any feedback on features or enhancements are welcome.<br/>
       The contact email address is <strong>this website's name</strong> at <strong>gmail dot com</strong>. <em>(This hint is an effort to minimize spam)</em>
     </p>

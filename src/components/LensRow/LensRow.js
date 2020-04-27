@@ -39,6 +39,13 @@ class LensRow extends React.Component {
     showMaxAperture:  PropTypes.bool
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      isExpanded: false
+    };
+  }
+
   renderCell(lData, lColumn, i, lRowSpan) {
     return (
       <TableCell
@@ -49,7 +56,7 @@ class LensRow extends React.Component {
             lColumn.slug !== 'maxAperture' ? styles.small : '',
             lColumn.slug === 'name' ? styles.lensName : '',
           )}
-          align={i === 0 ? 'left' : 'center'}
+          align={'center'}
           rowSpan={(lColumn.slug === 'focalLength' || lColumn.slug === 'maxAperture') && lRowSpan > 1 ? lRowSpan : 1}
           key={'TableCell-' + lData.lensCatLong + lData.style + getRandomString()}>
           <span className={styles.lensType}>
@@ -70,8 +77,24 @@ class LensRow extends React.Component {
           )}
           align={'center'}
           rowSpan={1}
-          key={'TableCell-' + lData.lensCatLong + lData.style + getRandomString()}>
+          key={'TableCell-' + lData.lensCatLong + lData.style + lColumn.slug}>
         <a href={lData.url} title={lData.url} target={'_blank'}>Source</a>
+      </TableCell>
+    );
+  }
+
+  renderBoolCell(lData, lColumn, i, lRowSpan) {
+    return (
+      <TableCell
+          className={classNames(
+            styles.cell,
+            styles.small,
+            styles[lColumn.slug]
+          )}
+          align={'center'}
+          rowSpan={1}
+          key={'TableCell-' + lData.lensCatLong + lData.style + lColumn.slug}>
+        <strong>{lData[lColumn.slug] ? 'Yes' : ''}</strong>
       </TableCell>
     );
   }
@@ -79,7 +102,7 @@ class LensRow extends React.Component {
   renderLensColumns(lensData, lensColumns) {
     let toRender = [];
     for (let i = 0; i < lensColumns.length; i++) {
-      if (lensColumns[i].slug !== 'focalLength' && lensColumns[i].slug !== 'maxAperture' && lensColumns[i].slug !== 'source') {
+      if (lensColumns[i].slug !== 'focalLength' && lensColumns[i].slug !== 'maxAperture' && lensColumns[i].slug !== 'source' && lensColumns[i].slug !== 'notes') {
         // Render Table cell normally
         toRender.push( this.renderCell(lensData, lensColumns[i], i, 1) );
       } else if (lensColumns[i].slug === 'focalLength' && this.props.showFocalLength === true) {
@@ -88,25 +111,61 @@ class LensRow extends React.Component {
       } else if (lensColumns[i].slug === 'maxAperture' && this.props.showMaxAperture === true) {
         // Render 'Max Aperture' cell with custom 'rowSpan' value
         toRender.push( this.renderCell(lensData, lensColumns[i], i, this.props.maxApSpan) );
-      } else if (lensColumns[i].slug === 'source') {
-        // Render 'Max Aperture' cell with custom 'rowSpan' value
-        toRender.push( this.renderSourceCell(lensData, lensColumns[i], i, this.props.maxApSpan) );
+      } else if (lensColumns[i].slug === 'notes') {
+        // Render 'Notes' cell with custom boolean value
+        toRender.push( this.renderBoolCell(lensData, lensColumns[i], i, 1) );
+      // } else if (lensColumns[i].slug === 'source') {
+      //   // Render 'Source' cell with anchor tag
+      //   toRender.push( this.renderSourceCell(lensData, lensColumns[i], i, 1) );
       }
     }
+    return toRender;
+  }
+
+  renderDetailPanel(lData, lColumns) {
+    let toRender = [];
+    toRender.push(
+      <TableCell classes={{root: styles.detailPanel}} colSpan={lColumns.length-2} key={'TableDetailCell-' + lData.lensCatLong + lData.style + getRandomString()}>
+        <h2>{lData.name}</h2>
+        <p className={!lData.notes ? styles.hidden : ''}>
+          <strong>Notes: </strong>
+          {lData.notes}
+        </p>
+        <p className={!lData.url ? styles.hidden : ''}>
+          <strong>Source(s): </strong>
+          <a href={lData.url} title={lData.url} target={'_blank'}>{lData.url}</a>
+        </p>
+      </TableCell>
+    );
     return toRender;
   }
 
   render() {
     let { lensData, lensStyle, lensColumns, mount } = this.props;
     return (
-      <TableRow
-          className={classNames(
-            styles.row,
-            lensStyle ? styles[mount + lensStyle] : ''
-          )}
-          key={'TableRow-' + lensData.lensCatLong + lensData.style + getRandomString()}>
-        { this.renderLensColumns(lensData, lensColumns) }
-      </TableRow>
+      <>
+        <TableRow
+            className={classNames(
+              styles.row,
+              lensStyle ? styles[mount + lensStyle] : ''
+            )}
+            title={this.state.isExpanded ? 'Click to collapse lens details' : 'Click to expand lens details'}
+
+            onClick={() => this.setState({ isExpanded: !this.state.isExpanded })}
+            key={'TableRow-' + lensData.lensCatLong + lensData.style + getRandomString()}>
+          { this.renderLensColumns(lensData, lensColumns) }
+        </TableRow>
+
+        <TableRow
+            className={classNames(
+              // styles.detailContainer,
+              this.state.isExpanded ? styles.isExpanded : ''
+            )}
+            classes={{ root: styles.detailContainer }}
+            key={'TableDetailRow-' + lensData.lensCatLong + lensData.style + getRandomString()}>
+          { this.renderDetailPanel(lensData, lensColumns) }
+        </TableRow>
+      </>
     )
   }
 }

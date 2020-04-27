@@ -8,7 +8,6 @@ import SourceList from '../components/SourceList/SourceList';
 
 class PentaxM42 extends React.Component {
   render() {
-    console.log('this.props', this.props);
     const sources = [
       'http://www.aohc.it/catalogo.php?catalogo=obiettivi',
       // 'https://web.archive.org/web/20120225054115/http://www.aohc.it/lense.htm',

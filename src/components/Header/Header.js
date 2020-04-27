@@ -104,7 +104,7 @@ const Header = ({ siteTitle, location }, props) => {
     <AppBar position={'static'} color={'inherit'} classes={{root: styles.appbar}}>
       <Toolbar className={styles.toolbar} disableGutters>
         <Typography component={Link} to={'/'} variant={'h6'} className={styles.title}>
-          {siteTitle}
+          <strong>Aperture</strong>pedia
         </Typography>
         <div className={styles.desktop}>
           <Tabs
@@ -113,6 +113,7 @@ const Header = ({ siteTitle, location }, props) => {
               TabIndicatorProps={{classes: {root: styles.tabIndicator}}}>
             {navList.map((node, index) => (
               <Tab
+                title={`${node.name} lenses`}
                 component={Link}
                 to={node.link}
                 label={node.name}

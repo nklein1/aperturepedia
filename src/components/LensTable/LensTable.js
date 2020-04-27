@@ -20,18 +20,19 @@ class LensTable extends React.Component {
 
   countByFocalLength(lensList) {
     let lensCount = lensList.reduce((c, node) => {
+      // "2" values are handling for hidden, expandable "detail panel" rows
       if (node && node.lensCatShort) {
         // Parse for 'Focal Length' Column
         if (c[node.lensCatShort]) {
-          c[node.lensCatShort].count++;
+          c[node.lensCatShort].count = c[node.lensCatShort].count + 2;
         } else {
-          c[node.lensCatShort] = { key: node.lensCatShort, count: 1 };
+          c[node.lensCatShort] = { key: node.lensCatShort, count: 2 };
         }
         // Parse for 'Max Aperture' Column
         if (c[node.lensCatLong]) {
-          c[node.lensCatLong].count++;
+          c[node.lensCatLong].count = c[node.lensCatLong].count + 2;
         } else {
-          c[node.lensCatLong] = { key: node.lensCatLong, count: 1 };
+          c[node.lensCatLong] = { key: node.lensCatLong, count: 2 };
         }
       }
       return c;
@@ -102,26 +103,38 @@ class LensTable extends React.Component {
     let allLensData = [];
     let columnsToRender = [];
     let mount = '';
+    let captionTitle = '';
     if (this.props.data.allMinoltaMdJson) {
       allLensData = this.props.data.allMinoltaMdJson;
       columnsToRender = parseLensColumns('minolta_sr');
       mount = 'sr';
+      captionTitle = 'Minolta SR-Mount Lens List';
     } else if (this.props.data.allPentaxM42Json) {
       allLensData = this.props.data.allPentaxM42Json;
       columnsToRender = parseLensColumns('pentax_m42');
       mount = 'm42';
+      captionTitle = 'Pentax M42-Mount Lens List';
     } else if (this.props.data.allPentaxKJson) {
       allLensData = this.props.data.allPentaxKJson;
       columnsToRender = parseLensColumns('pentax_k');
       mount = 'k';
+      captionTitle = 'Pentax K-Mount Lens List';
     } else if (this.props.data.allCanonFdJson) {
       allLensData = this.props.data.allCanonFdJson;
       columnsToRender = parseLensColumns('canon_fd');
       mount = 'fd';
+      captionTitle = 'Canon FD-Mount Lens List';
     }
     return (
       <TableContainer component={Paper} className={styles.container}>
-        <Table size="small" stickyHeader aria-label="Minolta Lens Table">
+        <Table size={'small'} stickyHeader aria-label={'caption table'}>
+          <caption>{captionTitle} <br />
+            <span>
+              Column one and two feature the focal length and maximum aperture of each lens.
+              Other columns show additional data for that lens, including the lens name,
+              optical formula, dimensions, weight, and year introduced, among others.
+              </span>
+          </caption>
           <TableHead>
             <TableRow className={styles.row}>
               {this.renderHeaderColumns(columnsToRender)}
