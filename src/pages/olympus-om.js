@@ -6,23 +6,23 @@ import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
 import SourceList from '../components/SourceList/SourceList';
 
-class PentaxM42 extends React.Component {
+class OlympusOM extends React.Component {
   render() {
     const sources = [
-      'http://www.aohc.it/catalogo.php?catalogo=obiettivi',
-      // 'https://web.archive.org/web/20120225054115/http://www.aohc.it/lense.htm',
-      'https://www.pentaxforums.com/lensreviews/Pentax-Takumar-M42-Screwmount-Lenses-i3.html',
-      'http://www.willker.de/wie/texte/takumar.html'
+      'https://www.mir.com.my/rb/photography/hardwares/classics/olympusom1n2/shared/zuiko/htmls/',
+      'https://esif.world-traveller.org/om-sif/lensgroup.htm',
+      'http://www.alanwood.net/olympus/#lenses'
     ];
-    const description = 'Aperturepedia\'s list of Pentax M42 screwmount lenses used in Pentax 35mm interchangeable lens SLR cameras';
+    const description = 'Aperturepedia\'s list of Olympus OM-mount lenses used in all Olympus OM-system interchangeable lens SLR cameras';
     const breadcrumbs = [
       { url: '/', title:'Aperturepedia' },
-      { url: '/pentax-m42', title:'Pentax M42' }
+      { url: '/olympus-om', title:'Olympus OM' }
     ];
+
     return (
-      <Layout title={'Pentax M42 Lenses'} pathname={this.props.path}>
+      <Layout title={'Olympus OM Lenses'} pathname={this.props.path}>
         <SEO
-            title={'Pentax M42 Lenses'}
+            title={'Olympus OM Lenses'}
             breadcrumbs={breadcrumbs}
             description={description}
             pathname={this.props.path} />
@@ -33,34 +33,32 @@ class PentaxM42 extends React.Component {
   }
 }
 
-export default PentaxM42;
+export default OlympusOM;
 
 export const pageQuery = graphql`
   query {
-    allPentaxM42Json {
+    allOlympusOmJson {
       edges {
         node {
           focalLength
           name
-          engravedName
-          lensType
           maxAperture
           minAperture
           elements
           groups
           blades
-          closeFocus
           filterThread
+          lensHood
+          closeFocus
           diameter
           length
-          diaphramType
           weight
           yearIntroduced
-          style
-          notes
-          url
+          lensType
           lensCatShort
           lensCatLong
+          notes
+          sources
         }
       }
     }

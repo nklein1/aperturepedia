@@ -102,18 +102,18 @@ class LensRow extends React.Component {
   renderLensColumns(lensData, lensColumns) {
     let toRender = [];
     for (let i = 0; i < lensColumns.length; i++) {
-      if (lensColumns[i].slug !== 'focalLength' && lensColumns[i].slug !== 'maxAperture' && lensColumns[i].slug !== 'source' && lensColumns[i].slug !== 'notes') {
-        // Render Table cell normally
-        toRender.push( this.renderCell(lensData, lensColumns[i], i, 1) );
-      } else if (lensColumns[i].slug === 'focalLength' && this.props.showFocalLength === true) {
+      if (lensColumns[i].slug === 'focalLength' && this.props.showFocalLength === true) {
         // Render 'Focal Length' cell with custom 'rowSpan' value
         toRender.push( this.renderCell(lensData, lensColumns[i], i, this.props.focalSpan) );
       } else if (lensColumns[i].slug === 'maxAperture' && this.props.showMaxAperture === true) {
         // Render 'Max Aperture' cell with custom 'rowSpan' value
         toRender.push( this.renderCell(lensData, lensColumns[i], i, this.props.maxApSpan) );
-      } else if (lensColumns[i].slug === 'notes') {
+      } else if (lensColumns[i].slug === 'notes' || lensColumns[i].slug === 'officialNotes') {
         // Render 'Notes' cell with custom boolean value
         toRender.push( this.renderBoolCell(lensData, lensColumns[i], i, 1) );
+      } else if (lensColumns[i].slug !== 'focalLength' && lensColumns[i].slug !== 'maxAperture' && lensColumns[i].slug !== 'source' && lensColumns[i].slug !== 'notes' && lensColumns[i].slug !== 'officialNotes') {
+        // Render Table cell normally
+        toRender.push( this.renderCell(lensData, lensColumns[i], i, 1) );
       // } else if (lensColumns[i].slug === 'source') {
       //   // Render 'Source' cell with anchor tag
       //   toRender.push( this.renderSourceCell(lensData, lensColumns[i], i, 1) );
@@ -122,11 +122,26 @@ class LensRow extends React.Component {
     return toRender;
   }
 
+  // renderAnchors(sources) {
+  //   let toRender = [];
+  //   toRender.push(<ul>);
+  //   for (let i = 0; i < sources.length; i++) {
+
+  //     toRender.push(<li><a href={sources[i]} title={sources[i]} target={'_blank'}>{sources[i]}</a></li>);
+  //   }
+  //   toRender.push(</ul>);
+  //   return toRender;
+  // }
+
   renderDetailPanel(lData, lColumns) {
     let toRender = [];
     toRender.push(
       <TableCell classes={{root: styles.detailPanel}} colSpan={lColumns.length-2} key={'TableDetailCell-' + lData.lensCatLong + lData.style + getRandomString()}>
         <h2>{lData.name}</h2>
+        <p className={!lData.officialNotes ? styles.hidden : ''}>
+          <strong>Manufacturer Notes: </strong>
+          {lData.officialNotes}
+        </p>
         <p className={!lData.notes ? styles.hidden : ''}>
           <strong>Notes: </strong>
           {lData.notes}
@@ -134,6 +149,17 @@ class LensRow extends React.Component {
         <p className={!lData.url ? styles.hidden : ''}>
           <strong>Source(s): </strong>
           <a href={lData.url} title={lData.url} target={'_blank'}>{lData.url}</a>
+        </p>
+        <p className={!lData.sources ? styles.hidden : ''}>
+          <strong>Source(s): </strong>
+
+          <ul className={styles.ul}>
+            {lData.sources.map(source => (
+              <li className={styles.source} key={'source-' + getRandomString()}>
+                <a href={source} target={'_blank'} rel={'noopener'}>{source}</a>
+              </li>
+            ))}
+          </ul>
         </p>
       </TableCell>
     );

@@ -18,7 +18,7 @@ import Tab from '@material-ui/core/Tab';
 
 import styles from './Header.module.scss';
 
-const Header = ({ siteTitle, location }, props) => {
+const Header = ({ siteTitle, pathname }, props) => {
 
   const [state, setState] = React.useState({
     path: globalHistory.location.pathname,
@@ -28,8 +28,10 @@ const Header = ({ siteTitle, location }, props) => {
   const navList = [
     {name: 'Minolta SR', link: '/minolta-sr'},
     {name: 'Canon FD', link: '/canon-fd'},
+    {name: 'Olympus OM', link: '/olympus-om'},
+    {name: 'Pentax K', link: '/pentax-k'},
     {name: 'Pentax M42', link: '/pentax-m42'},
-    {name: 'Pentax K', link: '/pentax-k'}
+    {name: 'Pentax M37', link: '/pentax-m37'},
   ];
 
   const toggleDrawer = (isOpen) => (event) => {
@@ -91,10 +93,14 @@ const Header = ({ siteTitle, location }, props) => {
         tab = 0;
       } else if (value && value === 'canon-fd') {
         tab = 1;
-      } else if (value && value === 'pentax-m42') {
+      } else if (value && value === 'olympus-om') {
         tab = 2;
       } else if (value && value === 'pentax-k') {
         tab = 3;
+      } else if (value && value === 'pentax-m42') {
+        tab = 4;
+      } else if (value && value === 'pentax-m37') {
+        tab = 5;
       }
     }
     return tab;
@@ -109,7 +115,7 @@ const Header = ({ siteTitle, location }, props) => {
         <div className={styles.desktop}>
           <Tabs
               aria-label={'Navigation Bar'}
-              value={parsePath(state.path || false)}
+              value={parsePath(pathname || false)}
               TabIndicatorProps={{classes: {root: styles.tabIndicator}}}>
             {navList.map((node, index) => (
               <Tab

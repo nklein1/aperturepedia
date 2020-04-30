@@ -15,7 +15,7 @@ export function parseLensColumns(type) {
       {'name': 'Groups', 'slug': 'groups'},
       // {'name': 'Lens Blades', 'slug': 'blades'},
       {'name': 'Filter Thread (mm)', 'slug': 'filterThread'},
-      {'name': 'Lens Shade', 'slug': 'lensShade'},
+      {'name': 'Lens Hood', 'slug': 'lensHood'},
       {'name': 'Close Focus (m)', 'slug': 'closeFocus'},
       {'name': 'Diameter (mm)', 'slug': 'diameter'},
       {'name': 'Length (mm)', 'slug': 'length'},
@@ -23,6 +23,41 @@ export function parseLensColumns(type) {
       {'name': 'Year Introduced', 'slug': 'yearIntroduced'},
       {'name': 'Style', 'slug': 'style'},
       {'name': 'Notes?', 'slug': 'notes'}
+    ];
+  } else if (type === 'olympus_om') {
+    columnsToRender = [
+      {'name': 'Focal Length', 'slug': 'focalLength'},
+      {'name': 'Maximum Aperture', 'slug': 'maxAperture'},
+      {'name': 'Lens Name', 'slug': 'name'},
+      {'name': 'Minimum Aperture', 'slug': 'minAperture'},
+      {'name': 'Elements', 'slug': 'elements'},
+      {'name': 'Groups', 'slug': 'groups'},
+      {'name': 'Lens Blades', 'slug': 'blades'},
+      {'name': 'Filter Thread (mm)', 'slug': 'filterThread'},
+      {'name': 'Close Focus (m)', 'slug': 'closeFocus'},
+      {'name': 'Diameter (mm)', 'slug': 'diameter'},
+      {'name': 'Length (mm)', 'slug': 'length'},
+      {'name': 'Weight (g)', 'slug': 'weight'},
+      {'name': 'Year Introduced', 'slug': 'yearIntroduced'},
+      {'name': 'Notes?', 'slug': 'notes'}
+    ];
+  } else if (type === 'pentax_m37') {
+    columnsToRender = [
+      {'name': 'Focal Length', 'slug': 'focalLength'},
+      {'name': 'Maximum Aperture', 'slug': 'maxAperture'},
+      {'name': 'Lens Name', 'slug': 'name'},
+      {'name': 'Minimum Aperture', 'slug': 'minAperture'},
+      {'name': 'Elements', 'slug': 'elements'},
+      {'name': 'Groups', 'slug': 'groups'},
+      {'name': 'Lens Blades', 'slug': 'blades'},
+      {'name': 'Filter Thread (mm)', 'slug': 'filterThread'},
+      {'name': 'Diaphram Type', 'slug': 'diaphramType'},
+      {'name': 'Close Focus (m)', 'slug': 'closeFocus'},
+      {'name': 'Diameter (mm)', 'slug': 'diameter'},
+      {'name': 'Length (mm)', 'slug': 'length'},
+      {'name': 'Weight (g)', 'slug': 'weight'},
+      {'name': 'Year Introduced', 'slug': 'yearIntroduced'},
+      {'name': 'Notes?', 'slug': 'officialNotes'}
     ];
   } else if (type === 'pentax_m42') {
     columnsToRender = [
@@ -76,7 +111,7 @@ export function parseLensColumns(type) {
       {'name': 'Weight (g)', 'slug': 'weight'},
       {'name': 'Date Introduced', 'slug': 'yearIntroduced'},
       // {'name': 'Source', 'slug': 'source'},
-      {'name': 'Notes?', 'slug': 'notes'}
+      {'name': 'Notes?', 'slug': 'officialNotes'}
     ];
   }
   return columnsToRender;

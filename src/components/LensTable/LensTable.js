@@ -104,11 +104,22 @@ class LensTable extends React.Component {
     let columnsToRender = [];
     let mount = '';
     let captionTitle = '';
+    console.log('this.props', this.props);
     if (this.props.data.allMinoltaMdJson) {
       allLensData = this.props.data.allMinoltaMdJson;
       columnsToRender = parseLensColumns('minolta_sr');
       mount = 'sr';
       captionTitle = 'Minolta SR-Mount Lens List';
+    } else if (this.props.data.allOlympusOmJson) {
+      allLensData = this.props.data.allOlympusOmJson;
+      columnsToRender = parseLensColumns('olympus_om');
+      mount = 'om';
+      captionTitle = 'Pentax M37-Mount Lens List';
+    } else if (this.props.data.allPentaxM37Json) {
+      allLensData = this.props.data.allPentaxM37Json;
+      columnsToRender = parseLensColumns('pentax_m37');
+      mount = 'm37';
+      captionTitle = 'Pentax M37-Mount Lens List';
     } else if (this.props.data.allPentaxM42Json) {
       allLensData = this.props.data.allPentaxM42Json;
       columnsToRender = parseLensColumns('pentax_m42');

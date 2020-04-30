@@ -18,7 +18,7 @@ class CanonFD extends React.Component {
       { url: '/canon-fd', title:'Canon FD' }
     ];
     return (
-      <Layout title={'Canon FD Lenses'}>
+      <Layout title={'Canon FD Lenses'} pathname={this.props.path}>
         <SEO
             title={'Canon FD Lenses'}
             breadcrumbs={breadcrumbs}
@@ -52,10 +52,10 @@ export const pageQuery = graphql`
           weight
           yearIntroduced
           originalPrice
-          notes
+          officialNotes
           style
           img
-          url
+          sources
           lensType
           lensCatShort
           lensCatLong

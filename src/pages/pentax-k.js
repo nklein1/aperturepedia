@@ -18,7 +18,7 @@ class PentaxK extends React.Component {
       { url: '/pentax-k', title:'Pentax K' }
     ];
     return (
-      <Layout title={'Pentax K Lenses'}>
+      <Layout title={'Pentax K Lenses'} pathname={this.props.path}>
         <SEO
             title={'Pentax K Lenses'}
             breadcrumbs={breadcrumbs}

@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import Header from '../Header/Header';
 import styles from  './layout.module.scss';
 
-const Layout = ({ children, title }) => {
+const Layout = ({ children, title, pathname }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,7 +26,7 @@ const Layout = ({ children, title }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title} pathname={pathname} />
       <div className={styles.container}>
 
         <Typography variant={'h5'} className={styles.title}>

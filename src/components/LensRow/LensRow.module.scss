@@ -118,6 +118,14 @@
     padding-top: 0px;
     border-bottom: 1px solid $mdGrey;
 
+    .ul {
+      font-size: 0.9rem;
+      line-height: 1.1rem;
+      padding: 0 1.2rem;
+      margin: 0;
+      word-wrap: break-word;
+    }
+
     .hidden {
       display: none;
     }

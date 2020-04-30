@@ -20,7 +20,7 @@ class MinoltaSR extends React.Component {
     ];
 
     return (
-      <Layout title={'Minolta SR Lenses'}>
+      <Layout title={'Minolta SR Lenses'} pathname={this.props.path}>
         <SEO
             title={'Minolta SR Lenses'}
             breadcrumbs={breadcrumbs}
@@ -42,16 +42,12 @@ export const pageQuery = graphql`
         node {
           focalLength
           name
-          lensType
-          lensCatShort
-          lensCatLong
           maxAperture
           minAperture
           elements
           groups
-
           filterThread
-          lensShade
+          lensHood
           closeFocus
           diameter
           length
@@ -59,6 +55,10 @@ export const pageQuery = graphql`
           yearIntroduced
           style
           notes
+          sources
+          lensType
+          lensCatShort
+          lensCatLong
         }
       }
     }
