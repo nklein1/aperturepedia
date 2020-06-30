@@ -67,18 +67,31 @@ class LensRow extends React.Component {
     );
   }
 
-  renderSourceCell(lData, lColumn, i, lRowSpan) {
+  renderLinksCell(lData, lColumn, i, lRowSpan) {
+    let linkCount = 0;
+    if (lData.sources && lData.sources.length > 0) {
+      linkCount = linkCount + lData.sources.length;
+    }
+    if (lData.reviews && lData.reviews.length > 0) {
+      linkCount = linkCount + lData.reviews.length;
+    }
+    if (lData.sampleImg && lData.sampleImg.length > 0) {
+      linkCount = linkCount + lData.sampleImg.length;
+    }
+    if (lData.repair && lData.repair.length > 0) {
+      linkCount = linkCount + lData.repair.length;
+    }
     return (
       <TableCell
           className={classNames(
             styles.cell,
             styles[lColumn.slug],
-            lColumn.slug !== 'focalLength' ? styles.small : '',
+            styles.small,
           )}
           align={'center'}
           rowSpan={1}
           key={'TableCell-' + lData.lensCatLong + lData.style + lColumn.slug}>
-        <a href={lData.url} title={lData.url} target={'_blank'}>Source</a>
+        { linkCount }
       </TableCell>
     );
   }
@@ -111,56 +124,61 @@ class LensRow extends React.Component {
       } else if (lensColumns[i].slug === 'notes' || lensColumns[i].slug === 'officialNotes') {
         // Render 'Notes' cell with custom boolean value
         toRender.push( this.renderBoolCell(lensData, lensColumns[i], i, 1) );
+      } else if (lensColumns[i].slug === 'sources') {
+        // Render 'Links' cell with links count
+        toRender.push( this.renderLinksCell(lensData, lensColumns[i], i, 1) );
       } else if (lensColumns[i].slug !== 'focalLength' && lensColumns[i].slug !== 'maxAperture' && lensColumns[i].slug !== 'source' && lensColumns[i].slug !== 'notes' && lensColumns[i].slug !== 'officialNotes') {
         // Render Table cell normally
         toRender.push( this.renderCell(lensData, lensColumns[i], i, 1) );
-      // } else if (lensColumns[i].slug === 'source') {
-      //   // Render 'Source' cell with anchor tag
-      //   toRender.push( this.renderSourceCell(lensData, lensColumns[i], i, 1) );
       }
     }
     return toRender;
   }
 
-  // renderAnchors(sources) {
-  //   let toRender = [];
-  //   toRender.push(<ul>);
-  //   for (let i = 0; i < sources.length; i++) {
-
-  //     toRender.push(<li><a href={sources[i]} title={sources[i]} target={'_blank'}>{sources[i]}</a></li>);
-  //   }
-  //   toRender.push(</ul>);
-  //   return toRender;
-  // }
+  renderDetailLinks(links, title) {
+    let toRender = [];
+    if (links && links.length > 0) {
+      toRender.push(
+        <div className={styles.padded} key={'linkdiv-' + getRandomString()}>
+          <strong>{title}: </strong>
+          <ul className={styles.ul}>
+            {links.map(link => (
+              <li className={styles.source} key={'link-' + getRandomString()}>
+                <a href={link} target={'_blank'} rel={'noopener'}>{link}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
+    return toRender;
+  }
 
   renderDetailPanel(lData, lColumns) {
     let toRender = [];
     toRender.push(
       <TableCell classes={{root: styles.detailPanel}} colSpan={lColumns.length-2} key={'TableDetailCell-' + lData.lensCatLong + lData.style + getRandomString()}>
+        <div className={styles.detailPanelInner}>
         <h2>{lData.name}</h2>
-        <p className={!lData.officialNotes ? styles.hidden : ''}>
-          <strong>Manufacturer Notes: </strong>
-          {lData.officialNotes}
-        </p>
-        <p className={!lData.notes ? styles.hidden : ''}>
-          <strong>Notes: </strong>
-          {lData.notes}
-        </p>
-        <p className={!lData.url ? styles.hidden : ''}>
-          <strong>Source(s): </strong>
-          <a href={lData.url} title={lData.url} target={'_blank'}>{lData.url}</a>
-        </p>
-        <p className={!lData.sources ? styles.hidden : ''}>
-          <strong>Source(s): </strong>
+          <p className={!lData.officialNotes ? styles.hidden : styles.text}>
+            <strong>Manufacturer Notes: </strong>
+            {lData.officialNotes}
+          </p>
+          <p className={!lData.notes ? styles.hidden : ''}>
+            <strong>Notes: </strong>
+            {lData.notes}
+          </p>
+          <p className={!lData.url ? styles.hidden : ''}>
+            <strong>Source(s): </strong>
+            <a href={lData.url} title={lData.url} target={'_blank'}>{lData.url}</a>
+          </p>
 
-          <ul className={styles.ul}>
-            {lData.sources.map(source => (
-              <li className={styles.source} key={'source-' + getRandomString()}>
-                <a href={source} target={'_blank'} rel={'noopener'}>{source}</a>
-              </li>
-            ))}
-          </ul>
-        </p>
+          { this.renderDetailLinks(lData.sources, 'Sources') }
+          { this.renderDetailLinks(lData.reviews, 'Reviews') }
+          { this.renderDetailLinks(lData.sampleImg, 'Sample Photos') }
+          { this.renderDetailLinks(lData.repair, 'Repair Guides') }
+
+        </div>
       </TableCell>
     );
     return toRender;

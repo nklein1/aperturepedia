@@ -56,7 +56,7 @@ export const pageQuery = graphql`
           lensType
           lensCatShort
           lensCatLong
-          url
+          sources
         }
       }
     }

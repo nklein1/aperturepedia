@@ -11,7 +11,7 @@ class PentaxM37 extends React.Component {
     const sources = [
       'http://www.aohc.it/catalogo.php?catalogo=obiettivi',
       // 'https://web.archive.org/web/20120225054115/http://www.aohc.it/lense.htm',
-      'https://www.pentaxforums.com/lensreviews/Pentax-Takumar-M42-Screwmount-Lenses-i3.html',
+      'https://www.pentaxforums.com/lensreviews/Pentax-Takumar-M37-Screwmount-Lenses-i62.html',
       'http://www.willker.de/wie/texte/takumar.html'
     ];
     const description = 'Aperturepedia\'s list of Asahi Pentax M37 screwmount lenses used in Pentax\'s early Asahiflex SLR cameras';
@@ -58,7 +58,7 @@ export const pageQuery = graphql`
 
           notes
           officialNotes
-          urls
+          sources
           lensCatShort
           lensCatLong
         }

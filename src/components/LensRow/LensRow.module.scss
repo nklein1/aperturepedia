@@ -15,6 +15,20 @@
   }
 }
 
+
+// Konica AR-specific Styling
+.ara.row { @include renderRow(#FFFF99); }
+.arb.row { @include renderRow(#CCFF66); }
+.arc.row { @include renderRow(#66FF66); }
+.ard.row { @include renderRow(#00CC66); }
+.are.row { @include renderRow(#33CCCC); }
+.aruc.row { @include renderRow(#0000FF); }
+.arpreset.row { @include renderRow(#9966FF); }
+.arhybrid.row { @include renderRow(#CC00FF); }
+.arplastic.row { @include renderRow(#FF6699); }
+.arreflex.row { @include renderRow(#FFCC00); }
+.arhx.row { @include renderRow(#CC9900); }
+
 // Canon FD-specific Styling
 .fdfl.row { @include renderRow($orange2); }
 .fdfd.row { @include renderRow($blue1); }
@@ -117,6 +131,14 @@
     padding-bottom: 0px;
     padding-top: 0px;
     border-bottom: 1px solid $mdGrey;
+
+    .detailPanelInner {}
+
+    .text {}
+
+    .padded {
+      margin: 1rem 0;
+    }
 
     .ul {
       font-size: 0.9rem;

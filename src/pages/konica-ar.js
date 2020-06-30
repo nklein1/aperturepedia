@@ -6,23 +6,23 @@ import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
 import SourceList from '../components/SourceList/SourceList';
 
-class PentaxM42 extends React.Component {
+class KonicaAR extends React.Component {
   render() {
     const sources = [
-      'http://www.aohc.it/catalogo.php?catalogo=obiettivi',
-      // 'https://web.archive.org/web/20120225054115/http://www.aohc.it/lense.htm',
-      'https://www.pentaxforums.com/lensreviews/Pentax-Takumar-M42-Screwmount-Lenses-i3.html',
-      'http://www.willker.de/wie/texte/takumar.html'
+      'http://konicafiles.com/3-hexanon-ar-lenses/-comparative-table',
+      'http://www.buhla.de/Foto/Konica/eHexanonUebersicht.html',
+      'http://artaphot.ch/konica-ar/objektive'
     ];
-    const description = 'Aperturepedia\'s list of Pentax M42 screwmount lenses used in Pentax 35mm interchangeable lens SLR cameras';
+    const description = 'Aperturepedia\'s list of Konica AR-mount lenses used in Konica\'s 35mm interchangeable lens SLR cameras';
     const breadcrumbs = [
       { url: '/', title:'Aperturepedia' },
-      { url: '/pentax-m42', title:'Pentax M42' }
+      { url: '/konica-ar', title:'Konica AR' }
     ];
+
     return (
-      <Layout title={'Pentax M42 Lenses'} pathname={this.props.path}>
+      <Layout title={'Konica AR Lenses'} pathname={this.props.path}>
         <SEO
-            title={'Pentax M42 Lenses'}
+            title={'Konica AR Lenses'}
             breadcrumbs={breadcrumbs}
             description={description}
             pathname={this.props.path} />
@@ -33,32 +33,32 @@ class PentaxM42 extends React.Component {
   }
 }
 
-export default PentaxM42;
+export default KonicaAR;
 
 export const pageQuery = graphql`
   query {
-    allPentaxM42Json {
+    allKonicaArJson {
       edges {
         node {
           focalLength
           name
-          engravedName
-          lensType
           maxAperture
           minAperture
           elements
           groups
-          blades
-          closeFocus
           filterThread
+          lensHood
+          closeFocus
+          viewAngle
           diameter
           length
-          diaphramType
           weight
           yearIntroduced
+          yearDiscontinued
           style
           notes
           sources
+          lensType
           lensCatShort
           lensCatLong
         }

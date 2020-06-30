@@ -9,7 +9,7 @@ import SourceList from '../components/SourceList/SourceList';
 class MinoltaSR extends React.Component {
   render() {
     const sources = [
-      'http://minolta.eazypix.de/lenses/index.html',
+      'http://minolta.eazypix.de/lenses',
       'https://lensqaworks.com',
       'http://allphotolenses.com/lenses/c_652543.html'
     ];
@@ -37,7 +37,7 @@ export default MinoltaSR;
 
 export const pageQuery = graphql`
   query {
-    allMinoltaMdJson {
+    allMinoltaSrJson {
       edges {
         node {
           focalLength
@@ -56,6 +56,9 @@ export const pageQuery = graphql`
           style
           notes
           sources
+          reviews
+          sampleImg
+          repair
           lensType
           lensCatShort
           lensCatLong

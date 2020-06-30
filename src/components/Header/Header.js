@@ -28,10 +28,11 @@ const Header = ({ siteTitle, pathname }, props) => {
   const navList = [
     {name: 'Minolta SR', link: '/minolta-sr'},
     {name: 'Canon FD', link: '/canon-fd'},
-    {name: 'Olympus OM', link: '/olympus-om'},
     {name: 'Pentax K', link: '/pentax-k'},
     {name: 'Pentax M42', link: '/pentax-m42'},
     {name: 'Pentax M37', link: '/pentax-m37'},
+    {name: 'Olympus OM', link: '/olympus-om'},
+    {name: 'Konica AR', link: '/konica-ar'},
   ];
 
   const toggleDrawer = (isOpen) => (event) => {
@@ -93,14 +94,16 @@ const Header = ({ siteTitle, pathname }, props) => {
         tab = 0;
       } else if (value && value === 'canon-fd') {
         tab = 1;
-      } else if (value && value === 'olympus-om') {
-        tab = 2;
       } else if (value && value === 'pentax-k') {
-        tab = 3;
+        tab = 2;
       } else if (value && value === 'pentax-m42') {
-        tab = 4;
+        tab = 3;
       } else if (value && value === 'pentax-m37') {
+        tab = 4;
+      } else if (value && value === 'olympus-om') {
         tab = 5;
+      } else if (value && value === 'konica-ar') {
+        tab = 6;
       }
     }
     return tab;
