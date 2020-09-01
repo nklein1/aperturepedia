@@ -54,8 +54,9 @@ export const pageQuery = graphql`
           originalPrice
           officialNotes
           style
-          img
           sources
+          reviews
+          lensImg
           lensType
           lensCatShort
           lensCatLong

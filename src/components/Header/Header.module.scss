@@ -26,21 +26,12 @@
       color: inherit;
     }
 
-    .tabs {
-      min-height: 64px;
-      color: $black;
-      margin-left: 1rem;
-      text-decoration: none;
-      color: inherit;
-
-      &.active {
-        border-bottom: 4px solid $black;
-      }
+    .mobile {
+      display: none;
     }
 
-    .tabIndicator {
-      background-color: $black;
-      height: 4px;
+    .desktop {
+      display: inherit;
     }
   }
 }
@@ -53,13 +44,6 @@
   }
 }
 
-.mobile {
-  display: none;
-}
-
-.desktop {
-  display: initial;
-}
 
 @media screen and (max-width: $mdBreakpoint) {
   .appbar {
@@ -68,6 +52,13 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
+      .mobile {
+        display: inherit;
+      }
+
+      .desktop {
+        display: none;
+      }
     }
   }
 

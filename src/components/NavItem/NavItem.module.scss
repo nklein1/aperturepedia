@@ -1,0 +1,98 @@
+@import '../../scss/variables.module.scss';
+
+.root {
+  min-height: 64px;
+  border-bottom: 4px solid $white;
+  border-top: 4px solid $white;
+  position: relative;
+
+  &:hover {
+    background-color: $offWhite;
+  }
+
+  .anchor {
+    min-height: 64px;
+    min-width: 64px;
+    border-radius: 0px;
+    padding: 0rem 2rem;
+    color: $black;
+    font-size: 0.875rem;
+    box-sizing: border-box;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    cursor: default;
+    text-align: center;
+  }
+
+  &.active {
+    border-bottom: 4px solid $black;
+  }
+}
+
+// Override Material-ui left-alignment of menu items
+.menuItem {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.menuRoot {
+  min-height: 64px;
+  border-bottom: 2px solid $white;
+  border-top: 2px solid $white;
+  position: absolute;
+  width: 100%;
+  border-radius: 0px;
+  display: none;
+
+  // &:hover {
+  //   border-bottom: 2px solid $black;
+  // }
+
+  .anchor {
+    min-height: 64px;
+    border-radius: 0px;
+    padding: 0rem 2rem;
+    text-align: center;
+  }
+
+  &.isOpen {
+    display: block;
+  }
+}
+  // .anchor {
+  //   padding: 0 1rem;
+  //   margin: 1rem;
+  // }
+
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: inherit;
+}
+
+@media screen and (max-width: $mdBreakpoint) {
+  .appbar {
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  .mobile {
+    display: inherit;
+  }
+
+  .desktop {
+    display: none;
+  }
+}

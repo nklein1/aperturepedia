@@ -137,6 +137,25 @@ export function parseLensColumns(type) {
       {'name': 'Links', 'slug': 'sources'},
       {'name': 'Notes?', 'slug': 'officialNotes'}
     ];
+  } else if (type === 'nikon_f') {
+    columnsToRender = [
+      {'name': 'Focal Length', 'slug': 'focalLength'},
+      {'name': 'Maximum Aperture', 'slug': 'maxAperture'},
+      {'name': 'Lens Name', 'slug': 'name'},
+      {'name': 'Minimum Aperture', 'slug': 'minAperture'},
+      {'name': 'Elements', 'slug': 'elements'},
+      {'name': 'Groups', 'slug': 'groups'},
+      {'name': 'Aperture Blades', 'slug': 'blades'},
+      {'name': 'Close Focus (m)', 'slug': 'closeFocus'},
+      {'name': 'Filter Thread (mm)', 'slug': 'filterThread'},
+      {'name': 'Diameter (mm)', 'slug': 'diameter'},
+      {'name': 'Length (mm)', 'slug': 'length'},
+      {'name': 'Weight (g)', 'slug': 'weight'},
+      {'name': 'Date Introduced', 'slug': 'yearIntroduced'},
+      {'name': 'Style', 'slug': 'style'},
+      {'name': 'Links', 'slug': 'sources'},
+      {'name': 'Notes?', 'slug': 'notes'}
+    ];
   }
   return columnsToRender;
 }

@@ -13,8 +13,12 @@ import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import SvgIcon from '@material-ui/core/SvgIcon';
+
+import Menu from '@material-ui/icons/Menu';
+
+import MobileNavItem from '../MobileNavItem/MobileNavItem';
+import NavItem from '../NavItem/NavItem';
 
 import styles from './Header.module.scss';
 
@@ -26,14 +30,74 @@ const Header = ({ siteTitle, pathname }, props) => {
   });
 
   const navList = [
-    {name: 'Minolta SR', link: '/minolta-sr'},
-    {name: 'Canon FD', link: '/canon-fd'},
-    {name: 'Pentax K', link: '/pentax-k'},
-    {name: 'Pentax M42', link: '/pentax-m42'},
-    {name: 'Pentax M37', link: '/pentax-m37'},
-    {name: 'Olympus OM', link: '/olympus-om'},
-    {name: 'Konica AR', link: '/konica-ar'},
+    { name: 'Minolta SR',
+      isActive: pathname.includes('minolta-sr'),
+      links: [
+        { name: 'SR Lens Table', link: '/minolta-sr' },
+        { name: 'Other SR Links', link: '/minolta-sr-links' },
+      ]
+    },
+    { name: 'Nikon F',
+      isActive: pathname.includes('canon-fd'),
+      links: [
+        { name: 'F Lens Table', link: '/nikon-f' },
+        { name: 'Other F Links', link: '/nikon-f-links' },
+      ]
+    },
+    { name: 'Canon FD',
+      isActive: pathname.includes('canon-fd'),
+      links: [
+        { name: 'FD Lens Table', link: '/canon-fd' },
+        { name: 'Other FD Links', link: '/canon-fd-links' },
+      ]
+    },
+    { name: 'Pentax K',
+      isActive: pathname.includes('pentax-k'),
+      links: [
+        { name: 'K Lens Table', link: '/pentax-k' },
+        { name: 'Other K Links', link: '/pentax-k-links' },
+      ]
+    },
+    { name: 'Pentax M42',
+      isActive: pathname.includes('pentax-m42'),
+      links: [
+        { name: 'M42 Lens Table', link: '/pentax-m42' },
+        { name: 'Other M42 Links', link: '/pentax-m42-links' },
+      ]
+    },
+    { name: 'Pentax M37',
+      isActive: pathname.includes('pentax-m37'),
+      links: [
+        { name: 'M37 Lens Table', link: '/pentax-m37' },
+        { name: 'Other M37 Links', link: '/pentax-m37-links' },
+      ]
+    },
+    { name: 'Olympus OM',
+      isActive: pathname.includes('olympus-om'),
+      links: [
+        { name: 'OM Lens Table', link: '/olympus-om' },
+        { name: 'Other OM Links', link: '/olympus-om-links' },
+      ]
+    },
+    { name: 'Konica AR',
+      isActive: pathname.includes('konica-ar'),
+      links: [
+        { name: 'AR Lens Table', link: '/konica-ar' },
+        { name: 'Other AR Links', link: '/konica-ar-links' },
+      ]
+    }
   ];
+
+  // const checkIfActive = (links) => {
+  //   if (pathname && links && links.length > 0) {
+  //     for (let i = 0; i < links.length; i++ ) {
+  //       if (pathname.includes(links[i].link)) {
+  //         return true;
+  //       }
+  //     }
+  //   }
+  //   return false;
+  // }
 
   const toggleDrawer = (isOpen) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -47,8 +111,6 @@ const Header = ({ siteTitle, pathname }, props) => {
     <div
       className={classNames(styles.list)}
       role={'presentation'}
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
     >
       <List>
         <ListItem
@@ -60,78 +122,36 @@ const Header = ({ siteTitle, pathname }, props) => {
         </ListItem>
         <Divider />
         {navList.map((node, index) => (
-          <ListItem
-              component={Link}
-              to={node.link}
-              className={styles.anchor}
-              key={'mobileNavList-' + node.link}>
-            <ListItemText primary={node.name} />
-          </ListItem>
+          <MobileNavItem item={node} key={'MobileNavItem-' + node.name} />
         ))}
       </List>
     </div>
   );
 
-  function tabProps(index) {
-    return {
-      'value': index,
-      'key': `desktopNavList-${index}`,
-      'aria-controls': `desktopNavList-${index}`,
-      'id': `nav-tab-${index}`,
-      'classes': {root: styles.tabs},
-      'className': styles.anchor,
-      'disableFocusRipple': true,
-      'disableRipple': true
-    };
-  }
-
-  // TODO: Refactor this to reduce code rigidity
-  const parsePath = (value) => {
-    let tab = false;
-    if (value) {
-    value = value.replace(/\//g, '');
-      if (value && value === 'minolta-sr') {
-        tab = 0;
-      } else if (value && value === 'canon-fd') {
-        tab = 1;
-      } else if (value && value === 'pentax-k') {
-        tab = 2;
-      } else if (value && value === 'pentax-m42') {
-        tab = 3;
-      } else if (value && value === 'pentax-m37') {
-        tab = 4;
-      } else if (value && value === 'olympus-om') {
-        tab = 5;
-      } else if (value && value === 'konica-ar') {
-        tab = 6;
-      }
-    }
-    return tab;
-  };
-
   return (
-    <AppBar position={'static'} color={'inherit'} classes={{root: styles.appbar}}>
+    <AppBar position={'relative'} color={'inherit'} classes={{root: styles.appbar}}>
       <Toolbar className={styles.toolbar} disableGutters>
         <Typography component={Link} to={'/'} variant={'h6'} className={styles.title}>
           <strong>Aperture</strong>pedia
         </Typography>
-        <div className={styles.desktop}>
-          <Tabs
-              aria-label={'Navigation Bar'}
-              value={parsePath(pathname || false)}
-              TabIndicatorProps={{classes: {root: styles.tabIndicator}}}>
-            {navList.map((node, index) => (
-              <Tab
-                title={`${node.name} lenses`}
-                component={Link}
-                to={node.link}
-                label={node.name}
-                {...tabProps(index)} />
-            ))}
-          </Tabs>
+        <div className={classNames(styles.toolbar, styles.desktop)}>
+          {navList.map((node, index) => (
+            <NavItem
+              title={`${node.name} lenses`}
+              component={NavItem}
+              to={node.link}
+              className={styles.tabs}
+              isActive={node.isActive}
+              items={node.links}
+              label={node.name} 
+              key={'desktopNavItem-' + node.name}
+            />
+          ))}
         </div>
         <div className={styles.mobile}>
-          <Button onClick={toggleDrawer(true)}>Menu</Button>
+          <Button onClick={toggleDrawer(true)}>
+            <SvgIcon component={Menu} />
+          </Button>
           <Drawer
               anchor={'right'}
               open={state['right']}
@@ -147,10 +167,12 @@ const Header = ({ siteTitle, pathname }, props) => {
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  pathname: PropTypes.string
 }
 
 Header.defaultProps = {
   siteTitle: 'Aperturepedia',
+  pathname: '/'
 }
 
 export default Header;

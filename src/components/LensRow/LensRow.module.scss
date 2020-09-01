@@ -35,6 +35,14 @@
 .fdnewfd.row { @include renderRow($blue2); }
 .fdfdl.row, .fdnewfdl.row { @include renderRow($darkRed, $white); }
 
+// Nikon F-specific Styling
+.ff.row { @include renderRow(#1b9ff1); }
+.fc.row { @include renderRow(#1385CC); }
+.fk.row { @include renderRow(#f9ce25); }
+.fai.row { @include renderRow(#f37356); }
+.fais.row { @include renderRow(#e45838); }
+.fe.row { @include renderRow($lightGreen); }
+
 // Pentax K-specific Styling
 .ksmc.row { @include renderRow($orange2); }
 .ksmcm.row { @include renderRow($blue1); }
@@ -93,7 +101,7 @@
     }
   }
 
-  .name, .focalLength, .style {
+  .focalLength, .style {
     white-space: nowrap;
   }
 

@@ -6,22 +6,23 @@ import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
 import SourceList from '../components/SourceList/SourceList';
 
-class PentaxM42 extends React.Component {
+class NikonF extends React.Component {
   render() {
     const sources = [
-      'http://www.aohc.it/catalogo.php?catalogo=obiettivi',
-      'https://www.pentaxforums.com/lensreviews/Pentax-Takumar-M42-Screwmount-Lenses-i3.html',
-      'http://www.willker.de/wie/texte/takumar.html'
+      'http://minolta.eazypix.de/lenses',
+      'https://lensqaworks.com',
+      'http://allphotolenses.com/lenses/c_652543.html'
     ];
-    const description = 'Aperturepedia\'s list of Pentax M42 screwmount lenses used in Pentax 35mm interchangeable lens SLR cameras';
+    const description = 'Aperturepedia\'s list of Nikon F-mount lenses used in Nikon 35mm interchangeable lens SLR cameras';
     const breadcrumbs = [
       { url: '/', title:'Aperturepedia' },
-      { url: '/pentax-m42', title:'Pentax M42' }
+      { url: '/minolta-sr', title:'Nikon F' }
     ];
+
     return (
-      <Layout title={'Pentax M42 Lenses'} pathname={this.props.path}>
+      <Layout title={'Nikon F Lenses'} pathname={this.props.path}>
         <SEO
-            title={'Pentax M42 Lenses'}
+            title={'Nikon F Lenses'}
             breadcrumbs={breadcrumbs}
             description={description}
             pathname={this.props.path} />
@@ -32,34 +33,36 @@ class PentaxM42 extends React.Component {
   }
 }
 
-export default PentaxM42;
+export default NikonF;
 
 export const pageQuery = graphql`
   query {
-    allPentaxM42Json {
+    allNikonFJson {
       edges {
         node {
           focalLength
           name
-          engravedName
-          lensType
           maxAperture
           minAperture
           elements
           groups
           blades
-          closeFocus
           filterThread
+          lensHood
+          closeFocus
           diameter
           length
-          diaphramType
           weight
           yearIntroduced
           style
           notes
-          sources
+          lensType
           lensCatShort
           lensCatLong
+          sources
+          specs
+          nikon
+          reviews
         }
       }
     }

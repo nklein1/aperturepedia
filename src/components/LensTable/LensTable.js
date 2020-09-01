@@ -109,6 +109,11 @@ class LensTable extends React.Component {
       columnsToRender = parseLensColumns('minolta_sr');
       mount = 'sr';
       captionTitle = 'Minolta SR-Mount Lens List';
+    } else if (this.props.data.allNikonFJson) {
+      allLensData = this.props.data.allNikonFJson;
+      columnsToRender = parseLensColumns('nikon_f');
+      mount = 'f';
+      captionTitle = 'Nikon F-Mount Lens List';
     } else if (this.props.data.allCanonFdJson) {
       allLensData = this.props.data.allCanonFdJson;
       columnsToRender = parseLensColumns('canon_fd');

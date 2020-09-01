@@ -3,6 +3,7 @@
 .container {
   padding: 1rem;
   background-color: $lighterGrey;
+  overflow-wrap: break-word;
 
   .title {
     margin-bottom: 0.75rem;
