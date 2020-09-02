@@ -1,0 +1,139 @@
+[
+  {
+    "mountName": "SR",
+    "oemName": "Minolta",
+    "intro": "Here's a list of helpful links I've found while researching Minolta SR (MC & MD) lenses roughly organized by topic.",
+    "imgURL": "http://thesybersite.com/public/minolta-md-lenses.jpg",
+    "imgMdLink": "../images/minolta_md_hero.jpg",
+    "imgSmLink": "../images/minolta_md_hero_sm.jpg",
+    "imgAlt": "Minolta SR Lens Collection",
+    "oemHistLinks": [
+      {
+        "url": "http://www.subclub.org/minman/history.htm",
+        "name": "Minolta History at Minman",
+        "helpText": ""
+      }
+    ],
+
+    "lensSpecLinks": [
+      {
+        "url": "http://minolta.eazypix.de/lenses",
+        "name": "Dennis Lohmann's Minolta Lens specs table",
+        "helpText": "(The definitive Minolta SR mount spec table created by Dennis Lohman and the inspiration for this site)"
+      },
+      {
+        "url": "http://artaphot.ch/minolta-sr/objektive",
+        "name": "Lens Writeups at Artaphot.ch",
+        "helpText": "(Note: Most lens pages have links to great comparison tests; much of the content is in German, but Google Translate works well here)"
+      },
+      {
+        "url": "http://www.subclub.org/minman/length.htm",
+        "name": "Lens Writeups at Minman",
+        "helpText": ""
+      },
+      {
+        "url": "http://www.massimoscottinelweb.com/Minolta%20produz.obiettivi.htm",
+        "name": "MINOLTA - Tabella comparativa produzione obiettivi manualfocus' by Massimo Scotti",
+        "helpText": "(Note: image-based text is in Italian, so Google Translate isn't as helpful here)"
+      }
+    ],
+    "mountHistLinks": [
+      {
+        "url": "http://minolta.eazypix.de/lenses/",
+        "name": "A great visual writeup by Dennis Lohmann showing/explaining the different Minolta Lens Versions",
+        "helpText": "(Scroll below the lens specs table to see the 'Lens Classification' section)"
+      },
+      {
+        "url": "http://thesybersite.com/minolta/historical/Minolta_Lens_Chronology.htm",
+        "name": "RED Bailey’s Minolta Collection",
+        "helpText": "(A historical timeline of all Minolta & Chiyoda Kogaku lenses made for the SR mount)"
+      },
+      {
+        "url": "http://www.rokkorfiles.com/Lens%20History.html",
+        "name": "'A Brief History of Minolta lenses' at Rokkorfiles.com",
+        "helpText": ""
+      }
+    ],
+    "reviewLinks": [
+      {
+        "url": "http://artaphot.ch/minolta-sr/objektiv-vergleiche",
+        "name": "Minolta Lens Guide at Artaphot.ch",
+        "helpText": "(Comprehensive resource with subjective analysis and comparisons covering nearly all Minolta lenses. Note: Most content is in German, but Google Translate works well here)"
+      },
+      {
+        "url": "http://www.rokkorfiles.com/Lens%20Reviews.html",
+        "name": "Lens reviews at Rokkorfiles",
+        "helpText": ""
+      },
+      {
+        "url": "https://lensqaworks.com/",
+        "name": "Minolta Lens Reviews at Lens QA Works",
+        "helpText": ""
+      },
+      {
+        "url": "https://casualphotophile.com/lens-review-index/",
+        "name": "Minolta Lens Reviews at Casual Photophile",
+        "helpText": "(High quality articles but unfortunately only covering a handful of Minolta Lenses. Highly recommended also for their camera reviews and other articles)"
+      },
+      {
+        "url": "https://vintagelensreviews.com/",
+        "name": "Minolta Lens Reviews and Lens Tests at Vintage Lens Reviews",
+        "helpText": ""
+      },
+      {
+        "url": "https://phillipreeve.net/blog/lenses/minolta-mcmd/",
+        "name": "Minolta MC/MD Articles/Reviews at Phillip Reeve.com",
+        "helpText": ""
+      },
+      {
+        "url": "https://phillipreeve.net/blog/manual-minolta-lens-ratings/",
+        "name": "The rated List of Minolta MD/MC Lenses on the Sony a7' by Phillip Reeve",
+        "helpText": ""
+      },
+      {
+        "url": "http://minolta.eazypix.de/lenses/indexTEST.html",
+        "name": "Lens Performance Tests by Dennis Lohmann",
+        "helpText": ""
+      },
+      {
+        "url": "https://web.archive.org/web/20070221091305/http://www.paulfvs.dds.nl/lenstest.html",
+        "name": "MC and MD lens tests in Dutch photography magazines",
+        "helpText": "(From www.paulfvs.dds.nl via the Internet Archive)"
+      }
+    ],
+    "repairLinks": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLWUxAx7ODw3sMT6V2XrQQb2xztW9lSHtQ",
+        "name": "Lens Disassembly Guides by Matt Bierner on YouTube",
+        "helpText": ""
+      },
+      {
+        "url": "http://minolta.eazypix.de/lr/indexLR.html",
+        "name": "Some Minolta SR lens repair guides preserved by Dennis Lohmann",
+        "helpText": "(Original text is in Japanese, but Google Translate can help with that)"
+      },
+      {
+        "url": "https://www.butkus.org/chinon/minolta.htm",
+        "name": "Minolta Camera & Lens manuals preserved by M. Butkus",
+        "helpText": ""
+      },
+      {
+        "url": "http://web.archive.org/web/20011206114400/www.geocities.com/eskoufos/fmm.html",
+        "name": "A list of some free Minolta manuals",
+        "helpText": "(From www.geocities.com/eskoufos via the Internet Archive)"
+      }
+    ],
+    "miscLinks": [
+      {
+        "url": "http://forum.mflenses.com/manual-focus-lenses-f3.html",
+        "name": "The Manual Focus Lenses forum at MFLenses.com",
+        "helpText": "(This is the most active forum I've found on the subject of MF lenses of all manufacturers. A good resource)"
+      },
+      {
+        "url": "http://minolta.eazypix.de/shades/lensshades.html",
+        "name": "A list of Minolta OEM lens shades for SR-mount lenses by Dennis Lohmann",
+        "helpText": ""
+      }
+    ]
+  }
+]

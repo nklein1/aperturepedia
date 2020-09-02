@@ -1,0 +1,93 @@
+[
+  {
+    "mountName": "FD",
+    "oemName": "Canon",
+    "intro": "Here's a list of helpful links I've found while researching Canon FD & FL lenses, roughly organized by topic.",
+    "imgURL": "https://i.pinimg.com/originals/1e/e6/28/1ee628ef9c8532089867544d64caebf5.jpg",
+    "imgAlt": "Canon FD Lens Collection",
+    "imgMdLink": "../images/minolta_md_hero.jpg",
+    "imgSmLink": "../images/minolta_md_hero_sm.jpg",
+    "oemHistLinks": [
+      {
+        "url": "https://global.canon/en/c-museum/history/story05.html",
+        "name": "'History Hall (1970-1975)' at the Canon Camera Museum",
+        "helpText": "(Canon's official guide to their company history)"
+      }
+    ],
+
+    "lensSpecLinks": [
+      {
+        "url": "https://global.canon/en/c-museum/lens-series.html",
+        "name": "'Lens Hall' at the Canon Camera Musem",
+        "helpText": "(Canon's official reference guide for their legacy equipment. A great primary resource used in this site)"
+      },
+      {
+        "url": "http://www.canonclassics.com/",
+        "name": "CanonClassics.com",
+        "helpText": "(A great reference site dedicated to classic Canon cameras and lenses)"
+      },
+      {
+        "url": "http://www.mir.com.my/rb/photography/companies/canon/fdresources/fdlenses/index.htm",
+        "name": "FD Lens Writeups & History at Photography in Malaysia",
+        "helpText": "(A great reference site, also has good content for Olympus OM, Nikon F and other lens systems)"
+      },
+      {
+        "url": "http://www.mir.com.my/rb/photography/companies/canon/fdresources/fllenses/index.htm",
+        "name": "FL Lens Writeups & History at Photography in Malaysia",
+        "helpText": "(A great reference site, also has good content for Olympus OM, Nikon F and other lens systems)"
+      },
+      {
+        "url": "http://web.mit.edu/dennis/www/canon/fd-lens-info.html",
+        "name": "Dennis Baron's Canon FD Lens specs table",
+        "helpText": ""
+      },
+      {
+        "url": "http://www.canon-photography.com/lens-table-fd.htm",
+        "name": "John Waller's Canon FD Lens specs table",
+        "helpText": ""
+      },
+      {
+        "url": "http://artaphot.ch/canon-fd/fd-lenses",
+        "name": "Lens Profiles at Artaphot.ch",
+        "helpText": "(Note: Not as complete as their Minolta coverage)"
+      }
+    ],
+    "mountHistLinks": [
+      {
+        "url": "http://www.canon-photography.com/dating.htm",
+        "name": "Canon Production Years at canon-photography.com",
+        "helpText": ""
+      }
+    ],
+    "reviewLinks": [
+      {
+        "url": "https://phillipreeve.net/blog/guide-canon-fd-lenses-digital-age-2/",
+        "name": "'The Guide to Canon FD lenses on the Sony a7 series' by Phillip Reeve",
+        "helpText": ""
+      },
+      {
+        "url": "https://casualphotophile.com/lens-review-index/",
+        "name": "Lens Reviews at Casual Photophile",
+        "helpText": "(High quality articles but unfortunately only covering a handful of Canon Lenses. Highly recommended also for their camera reviews and other articles)"
+      },
+      {
+        "url": "https://www.kenrockwell.com/canon/fd/lenses.htm",
+        "name": "Lens reviews by Ken Rockwell",
+        "helpText": ""
+      },
+      {
+        "url": "https://www.outsidetheshot.com/lens-reviews/",
+        "name": "Lens reviews at OutsideTheShot.com",
+        "helpText": ""
+      }
+    ],
+    "repairLinks": [],
+    "miscLinks": [
+      {
+        "url": "http://forum.mflenses.com/manual-focus-lenses-f3.html",
+        "name": "(The Manual Focus Lenses forum at MFLenses.com",
+        "helpText": "This is the most active forum I've found on the subject of MF lenses of all manufacturers. A good resource)"
+      }
+    ]
+  }
+]

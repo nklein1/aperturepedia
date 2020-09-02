@@ -1,0 +1,69 @@
+[
+  {
+    "mountName": "AR",
+    "oemName": "Konica",
+    "intro": "Here's a list of helpful links I've found while researching Konica AR lenses, roughly organized by topic.",
+    "imgURL": "https://i.pinimg.com/originals/1e/e6/28/1ee628ef9c8532089867544d64caebf5.jpg",
+    "imgMdLink": "../images/minolta_md_hero.jpg",
+    "imgSmLink": "../images/minolta_md_hero_sm.jpg",
+    "imgAlt": "Konica AR Lens Collection",
+    "oemHistLinks": [
+      {
+        "url": "http://konicafiles.com/-a-bit-of-history/",
+        "name": "Konica History at Konicafiles.com",
+        "helpText": ""
+      }
+    ],
+
+    "lensSpecLinks": [
+      {
+        "url": "http://konicafiles.com/3-hexanon-ar-lenses/-comparative-table/",
+        "name": "Comparative table of AR lenses at Konicafiles.com",
+        "helpText": ""
+      },
+      {
+        "url": "http://www.buhla.de/Foto/Konica/eHexanonUebersicht.html",
+        "name": "Guide to Hexanon/Hexar lenses by Andreas Buhl",
+        "helpText": "(Mr. Buhl has created profile pages for each lens listed with specifications, photos, and subjective analysis. A great resource)"
+      }
+    ],
+    "mountHistLinks": [
+      {
+        "url": "http://konicafiles.com/3-hexanon-ar-lenses/-lens-types/",
+        "name": "'The Konica AR System' at Konicafiles.com",
+        "helpText": "(Great writeup of the AR system and its evolution)"
+      },
+      {
+        "url": "http://konicafiles.com/3-hexanon-ar-lenses/time-of-production/",
+        "name": "Konica AR Lens Production Timeline at Konicafiles.com",
+        "helpText": ""
+      },
+      {
+        "url": "http://www.buhla.de/Foto/Konica/eHexanonHaupt.html",
+        "name": "Konica Hexanon/Hexar lens Overview by Andreas Buhl",
+        "helpText": ""
+      }
+    ],
+    "reviewLinks": [
+      {
+        "url": "http://artaphot.ch/konica-ar/objektive",
+        "name": "Konica Lens Guide at Artaphot.ch",
+        "helpText": "(Note: Most content is in German, but Google Translate works well here)"
+      }
+    ],
+    "repairLinks": [
+      {
+        "url": "https://www.butkus.org/chinon/konica.htm",
+        "name": "Assorted Konica PDF Manuals preserved by Mike Butkus",
+        "helpText": "(Most are camera manuals, but towards the bottom of the page there is one or two PDF documents specific to Konica lenses)"
+      }
+    ],
+    "miscLinks": [
+      {
+        "url": "http://forum.mflenses.com/manual-focus-lenses-f3.html",
+        "name": "The Manual Focus Lenses forum at MFLenses.com",
+        "helpText": "(This is the most active forum I've found on the subject of MF lenses of all manufacturers. A good resource)"
+      }
+    ]
+  }
+]

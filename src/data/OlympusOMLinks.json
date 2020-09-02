@@ -1,0 +1,67 @@
+[
+  {
+    "mountName": "OM",
+    "oemName": "Olympus",
+    "intro": "Here's a list of helpful links I've found while researching Olympus OM lenses, roughly organized by topic.",
+    "imgURL": "https://esif.world-traveller.org/om-sif/lensgroup/images/lensposter.jpg",
+    "imgMdLink": "../images/minolta_md_hero.jpg",
+    "imgSmLink": "../images/minolta_md_hero_sm.jpg",
+    "imgAlt": "Olympus OM Lens Collection",
+    "oemHistLinks": [
+      {
+        "url": "https://esif.world-traveller.org/om-sif/concepts.htm",
+        "name": "Olympus OM History by Hans van Veluwen",
+        "helpText": ""
+      }
+    ],
+
+    "lensSpecLinks": [
+      {
+        "url": "https://esif.world-traveller.org/om-sif/lensgroup.htm",
+        "name": "Guide to Olympus OM lenses by Hans van Veluwen",
+        "helpText": ""
+      },
+      {
+        "url": "https://esif.world-traveller.org/om-sif/lensgroup/lenstable.htm",
+        "name": "Comparative table of Olympus OM lenses by Hans van Veluwen",
+        "helpText": ""
+      },
+      {
+        "url": "https://www.mir.com.my/rb/photography/hardwares/classics/olympusom1n2/shared/zuiko/htmls/",
+        "name": "Olympus Zuiko Lens Writeups & History at Photography in Malaysia",
+        "helpText": "(A great reference site (need to scroll down to view links to individual lens pages), also has good content for Canon FD, Nikon F and other lens systems)"
+      },
+      {
+        "url": "http://www.alanwood.net/olympus/#lenses",
+        "name": "Olympus Macro Lenses by Alan Wood",
+        "helpText": "(Source of technical details on Olympus Zuiko macro lenses)"
+      }
+    ],
+    "mountHistLinks": [],
+    "reviewLinks": [
+      {
+        "url": "https://phillipreeve.net/blog/guide-to-classic-olympus-om-zuiko-lenses-on-film-and-sony-full-frame/",
+        "name": "Guide to Olympus OM lenses at Phillipreeve.net",
+        "helpText": "(Great set of brief reviews)"
+      },
+      {
+        "url": "https://casualphotophile.com/lens-review-index/",
+        "name": "Lens Reviews at Casual Photophile",
+        "helpText": "(High quality articles but their reviews unfortunately only covering a few Olympus Zuiko lenses. Highly recommended also for their camera reviews and other articles)"
+      }
+    ],
+    "repairLinks": [],
+    "miscLinks": [
+      {
+        "url": "http://forum.mflenses.com/manual-focus-lenses-f3.html",
+        "name": "The Manual Focus Lenses forum at MFLenses.com",
+        "helpText": "(This is the most active forum I've found on the subject of MF lenses of all manufacturers. A good resource)"
+      },
+      {
+        "url": "https://esif.world-traveller.org/om-sif/lensgroup/lensterms.htm",
+        "name": "Zuiko Lens Terminology by Hans van Veluwen",
+        "helpText": ""
+      }
+    ]
+  }
+]

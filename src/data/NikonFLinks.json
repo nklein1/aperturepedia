@@ -1,0 +1,104 @@
+[
+  {
+    "mountName": "F",
+    "oemName": "Nikon",
+    "intro": "Here's a list of helpful links I've found while researching Nikon F lenses, roughly organized by topic.",
+    "imgURL": "https://i.pinimg.com/originals/ba/7b/a1/ba7ba19c75325b68726eed7aaad7be2d.jpg",
+    "imgMdLink": "../images/minolta_md_hero.jpg",
+    "imgSmLink": "../images/minolta_md_hero_sm.jpg",
+    "imgAlt": "Nikon F Lens Collection",
+    "oemHistLinks": [
+      {
+        "url": "https://imaging.nikon.com/history/",
+        "name": "Official Nikon Company History",
+        "helpText": ""
+      }
+    ],
+
+    "lensSpecLinks": [
+      {
+        "url": "http://www.photosynthesis.co.nz/nikon/lenses.html",
+        "name": "Roland Vink's Nikon SLR lens table",
+        "helpText": "T(he most comprehensive Nikon SLR spec table I've found so far)"
+      },
+      {
+        "url": "http://www.destoutz.ch/nikon-f.html",
+        "name": "Richard de Stoutz' Nikon Collection",
+        "helpText": ""
+      },
+      {
+        "url": "http://www.mir.com.my/rb/photography/companies/nikon/nikkoresources/",
+        "name": "Nikon F Resources at Photography in Malaysia Site",
+        "helpText": ""
+      }
+    ],
+    "mountHistLinks": [
+      {
+        "url": "http://www.photosynthesis.co.nz/nikon/lenstype.html",
+        "name": "Detailed Timeline of Nikon F Lens Versions by Roland Vink",
+        "helpText": ""
+      },
+      {
+        "url": "https://www.cameraquest.com/fhistory.htm",
+        "name": "General Nikon F Lens History by Stephen Gandy",
+        "helpText": ""
+      }
+    ],
+    "reviewLinks": [
+      {
+        "url": "https://www.kenrockwell.com/nikon/nikkor.htm#mf",
+        "name": "Ken Rockwell's Nikkor Lens Reviews",
+        "helpText": ""
+      },
+      {
+        "url": "https://casualphotophile.com/lens-review-index/",
+        "name": "Lens Reviews at Casual Photophile",
+        "helpText": "(High quality articles but their reviews unfortunately only covering a few Nikkor lenses. Highly recommended also for their camera reviews and other articles)"
+      },
+      {
+        "url": "http://www.momentcorp.com/review/index.html",
+        "name": "Lens Reviews by Fredrik A. Rasmussen",
+        "helpText": ""
+      },
+      {
+        "url": "http://www.naturfotograf.com/lens_surv.html#top1",
+        "name": "Lens Survey And Subjective Evaluations by Bjørn Rørslett",
+        "helpText": ""
+      },
+      {
+        "url": "https://matthewdurrphotography.com/lens-reviews/",
+        "name": "Lens Reviews by Matthew Durr",
+        "helpText": ""
+      }
+    ],
+    "repairLinks": [
+      {
+        "url": "https://www.youtube.com/results?search_query=nikkor+lens+repair&sp=EgIQAw%253D%253D",
+        "name": "Search Results for 'Nikkor Lens Repair' playlists on YouTube",
+        "helpText": ""
+      }
+    ],
+    "miscLinks": [
+      {
+        "url": "http://forum.mflenses.com/manual-focus-lenses-f3.html",
+        "name": "The Manual Focus Lenses forum at MFLenses.com",
+        "helpText": "(This is the most active forum I've found on the subject of MF lenses of all manufacturers. A good resource)"
+      },
+      {
+        "url": "http://rick_oleson.tripod.com/index-153.html",
+        "name": "Visual comparison of Non-Ai, Ai and AiS Nikon mounts by Rick Oleson",
+        "helpText": ""
+      },
+      {
+        "url": "https://nikongear.net/revival/index.php?PHPSESSID=a88cb8418d61fd1ff8d77f2c5b808d75&board=3.0",
+        "name": "Nikon Gear Forum",
+        "helpText": ""
+      },
+      {
+        "url": "https://redbook-jp.com/redbook-e/index.html",
+        "name": "Nikon Kenkyukai Tokyo",
+        "helpText": "(A collector's club site with interesting information on some specialty Nikkor lenses)"
+      }
+    ]
+  }
+]

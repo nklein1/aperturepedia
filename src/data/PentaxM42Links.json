@@ -1,0 +1,82 @@
+[
+  {
+    "mountName": "M42",
+    "oemName": "Asahi Pentax",
+    "intro": "Here's a list of helpful links I've found while researching Pentax M42 lenses roughly organized by topic.",
+    "imgURL": "https://i.pinimg.com/originals/1e/e6/28/1ee628ef9c8532089867544d64caebf5.jpg",
+    "imgMdLink": "../images/minolta_md_hero.jpg",
+    "imgSmLink": "../images/minolta_md_hero_sm.jpg",
+    "imgAlt": "Pentax M42 Lens Collection",
+    "oemHistLinks": [
+      {
+        "url": "http://www.ricoh-imaging.co.jp/english/pentax/pentaxhistory/course/",
+        "name": "The Pentax 'Course of History' Official Historical Timeline",
+        "helpText": ""
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=y0CRXZ3dX3U",
+        "name": "History of Pentax: The Beatles, Tragedy, WW2 (Picture This! Podcast on YouTube)",
+        "helpText": ""
+      }
+    ],
+    "lensSpecLinks": [
+      {
+        "url": "http://kmp.pentaxians.eu/lenses/",
+        "name": "Guide to Pentax K-mount lenses at Pentaxians.eu",
+        "helpText": "(Great guide, served as a primary source of data for the K-mount table on this site)"
+      },
+      {
+        "url": "https://www.pentaxforums.com/lensreviews/Pentax-K-Mount-Lenses-i1.html",
+        "name": "M42-Mount Lenses at PentaxForums",
+        "helpText": "(A highly-active Pentax forum with extensive lens profiles including specs and user-submitted reviews. A highly-recommended resource for all Pentax equipment)"
+      },
+      {
+        "url": "http://www.aohc.it/catalogo.php?catalogo=obiettivi",
+        "name": "Lens Profiles at Asahi Optical Historical Club",
+        "helpText": ""
+      },
+      {
+        "url": "http://www.willker.de/wie/texte/takumar.html",
+        "name": "Lens Table compiled by Peter Jonkman",
+        "helpText": ""
+      },
+      {
+        "url": "https://kajiwara.weebly.com/index-et-prix-des-takumar.html",
+        "name": "Lens Writeups at kajiwara.weebly.com",
+        "helpText": "(Text is in French, but Google Translate can help here)"
+      },
+      {
+        "url": "http://m42lens.com/m42-database-search",
+        "name": "M42 Lens DB",
+        "helpText": "(Profles for a large collection of M42 & M37 screwmount lenses made by a variety of manufacturers. Asahi Pentax lenses can be found by filtering by vendor: 'Asahi Optical Co.')"
+      }
+    ],
+    "mountHistLinks": [],
+    "reviewLinks": [
+      {
+        "url": "https://www.pentaxforums.com/lensreviews/Pentax-Takumar-M42-Screwmount-Lenses-i3.html",
+        "name": "M42-Mount Lenses at PentaxForums.com",
+        "helpText": "(The above link is repeated here with good reason: Pentax Forums is the best resource I've found for reviews and info on Pentax M42 lenses)"
+      },
+      {
+        "url": "https://casualphotophile.com/lens-review-index/",
+        "name": "Lens Reviews at Casual Photophile",
+        "helpText": "(High quality articles but unfortunately only covering a few Pentax lenses. Highly recommended also for their camera reviews and other articles)"
+      }
+    ],
+    "repairLinks": [
+      {
+        "url": "http://www.pentax-manuals.com/literature/literature.htm",
+        "name": "PDF Manuals at Pentax-Manuals.com",
+        "helpText": "(Contains user manuals and pamphlets for various Pentax cameras and lenses. (PDFs are password-protected, the password for all PDFs is 'Pentax')"
+      }
+    ],
+    "miscLinks": [
+      {
+        "url": "http://forum.mflenses.com/manual-focus-lenses-f3.html",
+        "name": "The Manual Focus Lenses forum at MFLenses.com",
+        "helpText": "(This is the most active forum I've found on the subject of MF lenses of all manufacturers. A good resource)"
+      }
+    ]
+  }
+]

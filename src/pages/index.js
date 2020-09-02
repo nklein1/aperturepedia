@@ -5,30 +5,27 @@ import Typography from '@material-ui/core/Typography';
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/seo';
 
-import { getRandomString } from '../utils/utils';
-
 const breadcrumbs = [
   { url: '/', title:'Aperturepedia' }
 ];
 
 const sources = [
+  'http://forum.mflenses.com/manual-focus-lenses-f3.html',
   'http://minolta.eazypix.de/lenses',
-  'http://mflenses.com/',
   'https://lensqaworks.com',
   'http://artaphot.ch/minolta-sr/objektive/',
+  'https://www.mir.com.my/rb/photography/',
+  'https://www.pentaxforums.com/lensreviews/',
+  'http://kmp.pentaxians.eu/lenses/',
+  'http://www.photosynthesis.co.nz/nikon/',
+  'http://www.destoutz.ch/nikon-f.html',
+  'https://casualphotophile.com/lens-review-index/',
   'http://allphotolenses.com/lenses/a.html',
-  'https://www.mir.com.my/rb/photography/hardwares/classics/olympusom1n2/shared/zuiko/htmls/',
-  'https://esif.world-traveller.org/om-sif/lensgroup.htm',
-  'http://www.alanwood.net/olympus/#lenses',
   'https://global.canon/en/c-museum/lens-series.html',
   'http://web.mit.edu/dennis/www/canon/fd-lens-info.html',
   'http://konicafiles.com/3-hexanon-ar-lenses/-comparative-table/',
   'http://www.buhla.de/Foto/Konica/eHexanonUebersicht.html',
-  'http://kmp.pentaxians.eu/lenses/',
-  'https://www.pentaxforums.com/lensreviews/Pentax-K-Mount-Lenses-i1.html',
   'http://www.aohc.it/catalogo.php?catalogo=obiettivi',
-  'https://www.pentaxforums.com/lensreviews/Pentax-Takumar-M42-Screwmount-Lenses-i3.html',
-  'https://www.pentaxforums.com/lensreviews/Pentax-Takumar-M37-Screwmount-Lenses-i62.html',
   'http://www.willker.de/wie/texte/takumar.html',
 ];
 
@@ -52,6 +49,9 @@ const IndexPage = (props) => (
         <Link to="/minolta-sr">Minolta SR</Link>
       </li>
       <li>
+        <Link to="/nikon-f">Nikon F</Link>
+      </li>
+      <li>
         <Link to="/canon-fd">Canon FD</Link>
       </li>
       <li>
@@ -70,18 +70,13 @@ const IndexPage = (props) => (
         <Link to="/konica-ar">Konica AR</Link>
       </li>
     </ul>
-    <Typography variant={'h5'}>Future Supported Lens Mounts:</Typography>
-    <em>These will be supported in a future version of Aperturepedia</em>
-    <ul>
-      <li>Nikon F</li>
-    </ul>
     <Typography variant={'h5'}>Credits:</Typography>
     <p>
       The app itself was built by <a href={'https://github.com/nklein1'} target={'_blank'} rel={'noopener'}>Nick Klein</a>, but the data has been sourced from a number of online resources. I've listed them on each System page, but here you can see them all together.
     </p>
     <ul>
       {sources.map(node => (
-        <li key={'source-' + getRandomString()}>
+        <li key={'source-' + node}>
           <a href={node} target={'_blank'} rel={'noopener'}>{node}</a>
         </li>
       ))}
