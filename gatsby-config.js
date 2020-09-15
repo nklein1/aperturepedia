@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/apdata/`,
+        path: `./src/resources/`,
       },
     },
     {

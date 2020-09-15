@@ -69,4 +69,4 @@ yarn-error.log
 .yarn-integrity
 
 # Don't commit lens data files
-src/apdata/*
+src/resources/*

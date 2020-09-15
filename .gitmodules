@@ -1,3 +1,3 @@
-[submodule "src/apdata"]
-	path = src/apdata
+[submodule "src/resources"]
+	path = src/resources
 	url = git@github.com:nklein1/aperturepedia-sources.git
