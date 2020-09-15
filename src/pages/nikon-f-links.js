@@ -8,7 +8,7 @@ import mdImg from '../images/nikon_f_hero.jpg';
 import smImg from '../images/nikon_f_hero_sm.jpg';
 
 const breadcrumbs = [
-  { url: '/', title:'Aperturepedia' }
+  { url: '/nikon-f-links/', title:'Nikon F Links' }
 ];
 
 const NikonFLinks = (props) => (

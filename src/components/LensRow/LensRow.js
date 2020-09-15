@@ -144,7 +144,7 @@ class LensRow extends React.Component {
           <ul className={styles.ul}>
             {links.map(link => (
               <li className={styles.source} key={'link-' + getRandomString()}>
-                <a href={link} target={'_blank'} rel={'noopener'}>{link}</a>
+                <a href={link} target={'_blank'} rel={'noopener noreferrer'}>{link}</a>
               </li>
             ))}
           </ul>
@@ -170,7 +170,7 @@ class LensRow extends React.Component {
           </p>
           <p className={!lData.url ? styles.hidden : ''}>
             <strong>Source(s): </strong>
-            <a href={lData.url} title={lData.url} target={'_blank'}>{lData.url}</a>
+            <a href={lData.url} title={lData.url} target={'_blank'} rel={'noopener noreferrer'}>{lData.url}</a>
           </p>
 
           { this.renderDetailLinks(lData.sources, 'Sources') }

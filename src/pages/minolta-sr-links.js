@@ -8,7 +8,7 @@ import mdImg from '../images/minolta_md_hero.jpg';
 import smImg from '../images/minolta_md_hero_sm.jpg';
 
 const breadcrumbs = [
-  { url: '/', title:'Aperturepedia' }
+  { url: '/minolta-sr-links/', title:'Minolta SR Links' }
 ];
 
 const MinoltaSRLinks = (props) => (

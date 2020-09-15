@@ -8,7 +8,7 @@ import mdImg from '../images/canon_fd_hero.jpg';
 import smImg from '../images/canon_fd_hero_sm.jpg';
 
 const breadcrumbs = [
-  { url: '/', title:'Aperturepedia' }
+  { url: '/canon-fd-links/', title:'Canon FD Links' }
 ];
 
 const CanonFDLinks = (props) => (

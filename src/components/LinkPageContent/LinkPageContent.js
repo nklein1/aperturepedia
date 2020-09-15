@@ -15,7 +15,7 @@ class LinkPageContent extends React.Component {
           <ul className={styles.ul}>
           {data.map(item => (
             <li key={`source-${item.url}`}>
-              <a href={item.url} target={'_blank'} rel={'noopener'}>{item.name}</a>
+              <a href={item.url} target={'_blank'} rel={'noopener noreferrer'}>{item.name}</a>
               <em className={styles.helpText}>{item.helpText}</em>
             </li>
             ))}
@@ -39,7 +39,7 @@ class LinkPageContent extends React.Component {
             <p>
               {data.intro}
               <br/><br/>
-              <em>Some of these pages may be broken or in your non-native language. If they're broken, I'd recommend searching for them on the <a href="https://archive.org/web/" target={'_blank'} rel={'noopener'}>Internet Archive's Wayback Machine</a>. If you need a web page to be translated, I've found <a href="https://translate.google.com/" target={'_blank'} rel={'noopener'}>Google Translate</a> to be a serviceable solution.</em>
+              <em>Some of these pages may be broken or in your non-native language. If they're broken, I'd recommend searching for them on the <a href="https://archive.org/web/" target={'_blank'} rel={'noopener noreferrer'}>Internet Archive's Wayback Machine</a>. If you need a web page to be translated, I've found <a href="https://translate.google.com/" target={'_blank'} rel={'noopener noreferrer'}>Google Translate</a> to be a serviceable solution.</em>
               <br/><br/>
               <strong>If you have any links you think should be here, feel free to email them to me.</strong> The contact email address is <strong>this website's name</strong> at <strong>gmail dot com</strong>. <em>(This hint is an effort to minimize spam)</em>
             </p>

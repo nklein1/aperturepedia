@@ -4,19 +4,12 @@ import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
-import SourceList from '../components/SourceList/SourceList';
 
 class PentaxM42 extends React.Component {
   render() {
-    const sources = [
-      'http://www.aohc.it/catalogo.php?catalogo=obiettivi',
-      'https://www.pentaxforums.com/lensreviews/Pentax-Takumar-M42-Screwmount-Lenses-i3.html',
-      'http://www.willker.de/wie/texte/takumar.html'
-    ];
     const description = 'Aperturepedia\'s list of Pentax M42 screwmount lenses used in Pentax 35mm interchangeable lens SLR cameras';
     const breadcrumbs = [
-      { url: '/', title:'Aperturepedia' },
-      { url: '/pentax-m42', title:'Pentax M42' }
+      { url: '/pentax-m42/', title:'Pentax M42 Lens Table' }
     ];
     return (
       <Layout title={'Pentax M42 Lenses'} pathname={this.props.path}>
@@ -26,7 +19,6 @@ class PentaxM42 extends React.Component {
             description={description}
             pathname={this.props.path} />
         <LensTable data={this.props.data} />
-        <SourceList sources={sources} />
       </Layout>
     );
   }

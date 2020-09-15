@@ -4,19 +4,12 @@ import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
-import SourceList from '../components/SourceList/SourceList';
 
 class OlympusOM extends React.Component {
   render() {
-    const sources = [
-      'https://www.mir.com.my/rb/photography/hardwares/classics/olympusom1n2/shared/zuiko/htmls/',
-      'https://esif.world-traveller.org/om-sif/lensgroup.htm',
-      'http://www.alanwood.net/olympus/#lenses'
-    ];
     const description = 'Aperturepedia\'s list of Olympus OM-mount lenses used in all Olympus OM-system interchangeable lens SLR cameras';
     const breadcrumbs = [
-      { url: '/', title:'Aperturepedia' },
-      { url: '/olympus-om', title:'Olympus OM' }
+      { url: '/olympus-om/', title:'Olympus OM Lens Table' }
     ];
 
     return (
@@ -27,7 +20,6 @@ class OlympusOM extends React.Component {
             description={description}
             pathname={this.props.path} />
         <LensTable data={this.props.data} />
-        <SourceList sources={sources} />
       </Layout>
     );
   }

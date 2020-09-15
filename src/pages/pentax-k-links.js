@@ -8,7 +8,7 @@ import mdImg from '../images/pentax_k_hero.jpg';
 import smImg from '../images/pentax_k_hero_sm.jpg';
 
 const breadcrumbs = [
-  { url: '/', title:'Aperturepedia' }
+  { url: '/pentax-k-links/', title:'Pentax K Links' }
 ];
 
 const PentaxKLinks = (props) => (

@@ -33,57 +33,57 @@ const Header = ({ siteTitle, pathname }, props) => {
     { name: 'Minolta SR',
       isActive: pathname.includes('minolta-sr'),
       links: [
-        { name: 'SR Lens Table', link: '/minolta-sr' },
-        { name: 'Other SR Links', link: '/minolta-sr-links' },
+        { name: 'SR Lens Table', link: '/minolta-sr/' },
+        { name: 'Other SR Links', link: '/minolta-sr-links/' },
       ]
     },
     { name: 'Nikon F',
       isActive: pathname.includes('canon-fd'),
       links: [
-        { name: 'F Lens Table', link: '/nikon-f' },
-        { name: 'Other F Links', link: '/nikon-f-links' },
+        { name: 'F Lens Table', link: '/nikon-f/' },
+        { name: 'Other F Links', link: '/nikon-f-links/' },
       ]
     },
     { name: 'Canon FD',
       isActive: pathname.includes('canon-fd'),
       links: [
-        { name: 'FD Lens Table', link: '/canon-fd' },
-        { name: 'Other FD Links', link: '/canon-fd-links' },
+        { name: 'FD Lens Table', link: '/canon-fd/' },
+        { name: 'Other FD Links', link: '/canon-fd-links/' },
       ]
     },
     { name: 'Pentax K',
       isActive: pathname.includes('pentax-k'),
       links: [
-        { name: 'K Lens Table', link: '/pentax-k' },
-        { name: 'Other K Links', link: '/pentax-k-links' },
+        { name: 'K Lens Table', link: '/pentax-k/' },
+        { name: 'Other K Links', link: '/pentax-k-links/' },
       ]
     },
     { name: 'Pentax M42',
       isActive: pathname.includes('pentax-m42'),
       links: [
-        { name: 'M42 Lens Table', link: '/pentax-m42' },
-        { name: 'Other M42 Links', link: '/pentax-m42-links' },
+        { name: 'M42 Lens Table', link: '/pentax-m42/' },
+        { name: 'Other M42 Links', link: '/pentax-m42-links/' },
       ]
     },
     { name: 'Pentax M37',
       isActive: pathname.includes('pentax-m37'),
       links: [
-        { name: 'M37 Lens Table', link: '/pentax-m37' },
-        { name: 'Other M37 Links', link: '/pentax-m37-links' },
+        { name: 'M37 Lens Table', link: '/pentax-m37/' },
+        { name: 'Other M37 Links', link: '/pentax-m37-links/' },
       ]
     },
     { name: 'Olympus OM',
       isActive: pathname.includes('olympus-om'),
       links: [
-        { name: 'OM Lens Table', link: '/olympus-om' },
-        { name: 'Other OM Links', link: '/olympus-om-links' },
+        { name: 'OM Lens Table', link: '/olympus-om/' },
+        { name: 'Other OM Links', link: '/olympus-om-links/' },
       ]
     },
     { name: 'Konica AR',
       isActive: pathname.includes('konica-ar'),
       links: [
-        { name: 'AR Lens Table', link: '/konica-ar' },
-        { name: 'Other AR Links', link: '/konica-ar-links' },
+        { name: 'AR Lens Table', link: '/konica-ar/' },
+        { name: 'Other AR Links', link: '/konica-ar-links/' },
       ]
     }
   ];

@@ -1,13 +1,18 @@
 @import '../../scss/variables.module.scss';
 
 .container {
-  max-height: 75vh;
-
   .row {
     .cell {
       font-size: 0.9rem;
       line-height: 1rem;
       font-weight: 700;
+
+      .desktop {
+        display: block;
+      }
+      .mobile {
+        display: none;
+      }
     }
 
     .lensName, .focalLength {
@@ -22,12 +27,18 @@
 
 @media screen and (max-width: $mdBreakpoint) {
   .container {
-    max-height: 75vh;
-
     .row {
       .cell {
         font-size: 0.8rem;
         line-height: 1rem;
+
+        .desktop {
+          display: none;
+        }
+
+        .mobile {
+          display: block;
+        }
       }
     }
   }

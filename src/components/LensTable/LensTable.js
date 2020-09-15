@@ -48,7 +48,8 @@ class LensTable extends React.Component {
             className={classNames(styles.cell, styles.small)}
             key={'TableHeaderCell-' + columns[i].name + i}
             align={'center'}>
-          {columns[i].name}
+            <span className={styles.desktop}>{columns[i].name}</span>
+            <span className={styles.mobile}>{columns[i].sName ? columns[i].sName : columns[i].name}</span>
         </TableCell>
       );
     }
@@ -153,7 +154,7 @@ class LensTable extends React.Component {
               Column one and two feature the focal length and maximum aperture of each lens.
               Other columns show additional data for that lens, including the lens name,
               optical formula, dimensions, weight, and year introduced, among others.
-              </span>
+            </span>
           </caption>
           <TableHead>
             <TableRow className={styles.row}>

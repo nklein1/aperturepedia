@@ -46,38 +46,38 @@ const IndexPage = (props) => (
     <Typography variant={'h5'}>Currently Supported Lenses:</Typography>
     <ul>
       <li>
-        <Link to="/minolta-sr">Minolta SR</Link>
+        <Link to="/minolta-sr/">Minolta SR</Link>
       </li>
       <li>
-        <Link to="/nikon-f">Nikon F</Link>
+        <Link to="/nikon-f/">Nikon F</Link>
       </li>
       <li>
-        <Link to="/canon-fd">Canon FD</Link>
+        <Link to="/canon-fd/">Canon FD</Link>
       </li>
       <li>
-        <Link to="/pentax-k">Pentax K</Link>
+        <Link to="/pentax-k/">Pentax K</Link>
       </li>
       <li>
-        <Link to="/pentax-m42">Pentax M42</Link>
+        <Link to="/pentax-m42/">Pentax M42</Link>
       </li>
       <li>
-        <Link to="/pentax-m37">Pentax M37</Link>
+        <Link to="/pentax-m37/">Pentax M37</Link>
       </li>
       <li>
-        <Link to="/olympus-om">Olympus OM</Link>
+        <Link to="/olympus-om/">Olympus OM</Link>
       </li>
       <li>
-        <Link to="/konica-ar">Konica AR</Link>
+        <Link to="/konica-ar/">Konica AR</Link>
       </li>
     </ul>
     <Typography variant={'h5'}>Credits:</Typography>
     <p>
-      The app itself was built by <a href={'https://github.com/nklein1'} target={'_blank'} rel={'noopener'}>Nick Klein</a>, but the data has been sourced from a number of online resources. I've listed them on each System page, but here you can see them all together.
+      The app itself was built by <a href={'https://github.com/nklein1'} target={'_blank'} rel={'noopener noreferrer'}>Nick Klein</a>, but the data has been sourced from a number of online resources. I've listed them on each System page, but here you can see them all together.
     </p>
     <ul>
       {sources.map(node => (
         <li key={'source-' + node}>
-          <a href={node} target={'_blank'} rel={'noopener'}>{node}</a>
+          <a href={node} target={'_blank'} rel={'noopener noreferrer'}>{node}</a>
         </li>
       ))}
     </ul>

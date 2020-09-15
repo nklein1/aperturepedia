@@ -8,7 +8,7 @@ import mdImg from '../images/konica_ar_hero.jpg';
 import smImg from '../images/konica_ar_hero_sm.jpg';
 
 const breadcrumbs = [
-  { url: '/', title:'Aperturepedia' }
+  { url: '/konica-ar-links/', title:'Konica AR Links' }
 ];
 
 const KonicaARLinks = (props) => (

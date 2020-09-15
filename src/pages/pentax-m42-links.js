@@ -8,7 +8,7 @@ import mdImg from '../images/pentax_m42_hero.jpg';
 import smImg from '../images/pentax_m42_hero_sm.jpg';
 
 const breadcrumbs = [
-  { url: '/', title:'Aperturepedia' }
+  { url: '/pentax-m42-links/', title:'Pentax M42 Links' }
 ];
 
 const PentaxM42Links = (props) => (

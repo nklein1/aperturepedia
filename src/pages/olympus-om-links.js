@@ -8,7 +8,7 @@ import mdImg from '../images/olympus_om_hero.jpg';
 import smImg from '../images/olympus_om_hero_sm.jpg';
 
 const breadcrumbs = [
-  { url: '/', title:'Aperturepedia' }
+  { url: '/olympus-om-links/', title:'Olympus OM Links' }
 ];
 
 const OlympusOMLinks = (props) => (
