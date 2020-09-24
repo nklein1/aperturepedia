@@ -7,6 +7,7 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/konica_ar_hero.jpg';
 import smImg from '../images/konica_ar_hero_sm.jpg';
 
+    const description = 'Aperturepedia\'s list of Konica Hexanon & Hexar lenses used in Konica\'s AR mounted 35mm interchangeable lens SLR cameras';
 const breadcrumbs = [
   { url: '/konica-ar-links/', title:'Konica AR Links' }
 ];

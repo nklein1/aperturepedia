@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Aperturepedia`,
     description: `Aperturepedia: a guide to vintage first-party SLR lenses.`,
+    keywords: `Aperturepedia Minolta SR Rokkor MC MD nikon nikkor canon fd fl olympus om zuiko pentax takumar m42 m37 smc konica hexanon lenses lens aperture lenstable table lenslist list SLR cameras`,
     author: `Nick Klein`,
     siteUrl: `http://www.aperturepedia.com`
   },
@@ -12,6 +13,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `http://www.aperturepedia.com`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

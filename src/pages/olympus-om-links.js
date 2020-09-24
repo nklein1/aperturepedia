@@ -7,6 +7,7 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/olympus_om_hero.jpg';
 import smImg from '../images/olympus_om_hero_sm.jpg';
 
+const description = 'Aperturepedia\'s list of reviews and other helpful links for Olympus OM-mount lenses used in all Olympus OM-system interchangeable lens SLR cameras';
 const breadcrumbs = [
   { url: '/olympus-om-links/', title:'Olympus OM Links' }
 ];
@@ -16,6 +17,7 @@ const OlympusOMLinks = (props) => (
     <SEO
         title={'Olympus OM Links'}
         breadcrumbs={breadcrumbs}
+        description={description}
         pathname={props.path} />
     <LinkPageContent
         data={props.data.allOlympusOmLinksJson}

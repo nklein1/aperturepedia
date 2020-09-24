@@ -7,17 +7,19 @@ import LensTable from '../components/LensTable/LensTable';
 
 class MinoltaSR extends React.Component {
   render() {
-    const description = 'Aperturepedia\'s list of Minolta SR-mount lenses used in all Minolta 35mm interchangeable lens SLR cameras';
+    const description = 'Compare stats for Minolta SR-mount lenses with Aperturepedia\'s lens specs table';
+    const keywords = 'Aperturepedia Minolta SR Rokkor MC MD lenses lens aperture lenstable table lenslist list SLR cameras';
     const breadcrumbs = [
       { url: '/minolta-sr/', title:'Minolta SR Lens Table' }
     ];
 
     return (
-      <Layout title={'Minolta SR Lenses'} pathname={this.props.path}>
+      <Layout title={'Minolta SR (Rokkor MC & MD) Lenses'} pathname={this.props.path}>
         <SEO
             title={'Minolta SR Lenses'}
             breadcrumbs={breadcrumbs}
             description={description}
+            keywords={keywords}
             pathname={this.props.path} />
         <LensTable data={this.props.data} />
       </Layout>

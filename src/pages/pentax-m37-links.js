@@ -7,6 +7,7 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/pentax_m37_hero.jpg';
 import smImg from '../images/pentax_m37_hero_sm.jpg';
 
+const description = 'Aperturepedia\'s list of reviews and other helpful links for Asahi Pentax M37 screwmount lenses used in Pentax\'s early Asahiflex SLR cameras';
 const breadcrumbs = [
   { url: '/pentax-m37-links/', title:'Pentax M37 Links' }
 ];
@@ -16,6 +17,7 @@ const PentaxM37Links = (props) => (
     <SEO
         title={'Pentax M37 Links'}
         breadcrumbs={breadcrumbs}
+        description={description}
         pathname={props.path} />
     <LinkPageContent
         data={props.data.allPentaxM37LinksJson}

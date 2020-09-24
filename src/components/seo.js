@@ -11,7 +11,7 @@ import Helmet from 'react-helmet';
 import { globalHistory } from '@reach/router'
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title, breadcrumbs, pathname }) {
+function SEO({ description, lang, meta, title, keywords, breadcrumbs, pathname }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,6 +19,7 @@ function SEO({ description, lang, meta, title, breadcrumbs, pathname }) {
           siteMetadata {
             title
             description
+            keywords
             author
             siteUrl
           }
@@ -28,7 +29,8 @@ function SEO({ description, lang, meta, title, breadcrumbs, pathname }) {
   )
 
   const metaDescription = description || site.siteMetadata.description;
-  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
+  const metaKeywords = keywords || site.siteMetadata.keywords;
+  // const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
 
   const baseSchema = [
     {
@@ -62,13 +64,15 @@ function SEO({ description, lang, meta, title, breadcrumbs, pathname }) {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      link={
-        canonical ? [{ rel: `canonical`, href: canonical }] : []
-      }
+
       meta={[
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          name: `keywords`,
+          content: metaKeywords,
         },
         {
           property: `og:title`,
@@ -116,6 +120,8 @@ SEO.defaultProps = {
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
+  canonical: PropTypes.string,
+  keywords: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   breadcrumbs: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,

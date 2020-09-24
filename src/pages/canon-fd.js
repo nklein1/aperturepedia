@@ -7,7 +7,7 @@ import LensTable from '../components/LensTable/LensTable';
 
 class CanonFD extends React.Component {
   render() {
-    const description = 'Aperturepedia\'s list of Canon FL, FD, and New FD lenses used in Canon 35mm interchangeable lens SLR cameras between 1971 and 1992';
+    const description = 'Aperturepedia\'s list of specs, reviews, repair guides and other helpful links for Canon FL, FD, and New FD lenses used in Canon 35mm interchangeable lens SLR cameras between 1971 and 1992. ';
     const breadcrumbs = [
       { url: '/canon-fd/', title:'Canon FD Lens Table' }
     ];

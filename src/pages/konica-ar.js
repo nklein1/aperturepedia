@@ -7,15 +7,15 @@ import LensTable from '../components/LensTable/LensTable';
 
 class KonicaAR extends React.Component {
   render() {
-    const description = 'Aperturepedia\'s list of Konica AR-mount lenses used in Konica\'s 35mm interchangeable lens SLR cameras';
+    const description = 'Aperturepedia\'s list of Konica Hexanon & Hexar lenses used in Konica\'s AR mounted 35mm interchangeable lens SLR cameras';
     const breadcrumbs = [
       { url: '/konica-ar/', title:'Konica AR Lens Table' }
     ];
 
     return (
-      <Layout title={'Konica AR Lenses'} pathname={this.props.path}>
+      <Layout title={'Konica AR (Hexanon & Hexar) Lenses'} pathname={this.props.path}>
         <SEO
-            title={'Konica AR Lenses'}
+            title={'Konica AR (Hexanon & Hexar) Lenses'}
             breadcrumbs={breadcrumbs}
             description={description}
             pathname={this.props.path} />

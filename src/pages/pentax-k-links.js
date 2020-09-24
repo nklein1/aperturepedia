@@ -7,6 +7,7 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/pentax_k_hero.jpg';
 import smImg from '../images/pentax_k_hero_sm.jpg';
 
+const description = 'Aperturepedia\'s list of reviews and other helpful links for Pentax K bayonet mount lenses used in Pentax 35mm interchangeable lens SLR cameras';
 const breadcrumbs = [
   { url: '/pentax-k-links/', title:'Pentax K Links' }
 ];
@@ -16,6 +17,7 @@ const PentaxKLinks = (props) => (
     <SEO
         title={'Pentax K Links'}
         breadcrumbs={breadcrumbs}
+        description={description}
         pathname={props.path} />
     <LinkPageContent
         data={props.data.allPentaxKLinksJson}

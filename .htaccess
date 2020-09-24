@@ -1,0 +1,27 @@
+# Gatsby-Plugin-Htaccess
+# This file is a reduced version of the Apache Server Configs v3.0.0 | MIT License
+# https://github.com/h5bp/server-configs-apache
+
+
+
+# ----------------------------------------------------------------------
+# | Expires headers                                                    |
+# ----------------------------------------------------------------------
+
+# This matches the settings descriped at: 
+# https://www.gatsbyjs.org/docs/caching/
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.html$">
+        Header set Cache-Control "public, max-age=0, must-revalidate"
+    </FilesMatch>
+    <FilesMatch "\.(js|css)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(json)$">
+        Header set Cache-Control "public, max-age=3153600, immutable"
+    </FilesMatch>
+    <Files sw.js>
+        Header set Cache-Control "public, max-age=0, must-revalidate"
+    </Files>
+</IfModule>

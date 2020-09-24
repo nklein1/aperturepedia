@@ -7,6 +7,8 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/minolta_md_hero.jpg';
 import smImg from '../images/minolta_md_hero_sm.jpg';
 
+const description = 'Compare stats for Minolta SR-mount lenses with Aperturepedia\'s lens specs table';
+const keywords = 'Aperturepedia Minolta SR Rokkor MC MD lenses lens aperture lenstable table lenslist list SLR cameras';
 const breadcrumbs = [
   { url: '/minolta-sr-links/', title:'Minolta SR Links' }
 ];
@@ -16,6 +18,8 @@ const MinoltaSRLinks = (props) => (
     <SEO
         title={'Minolta SR Links'}
         breadcrumbs={breadcrumbs}
+        description={description}
+        keywords={keywords}
         pathname={props.path} />
       <LinkPageContent
         data={props.data.allMinoltaSrLinksJson}
