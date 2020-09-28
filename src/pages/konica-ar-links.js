@@ -7,24 +7,28 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/konica_ar_hero.jpg';
 import smImg from '../images/konica_ar_hero_sm.jpg';
 
-    const description = 'Aperturepedia\'s list of Konica Hexanon & Hexar lenses used in Konica\'s AR mounted 35mm interchangeable lens SLR cameras';
-const breadcrumbs = [
-  { url: '/konica-ar-links/', title:'Konica AR Links' }
-];
+const KonicaARLinks = ({data, path}) => {
+  const seoData = data.allSeoContentJson.edges[0].node.konicaArLinks;
+  const breadcrumbs = [
+    { url: path, title: data.title }
+  ];
 
-const KonicaARLinks = (props) => (
-  <Layout>
-    <SEO
-        title={'Konica AR Links'}
-        breadcrumbs={breadcrumbs}
-        pathname={props.path} />
-    <LinkPageContent
-        data={props.data.allKonicaArLinksJson}
-        mdImg={mdImg}
-        smImg={smImg}>
-    </LinkPageContent>
-  </Layout>
-)
+  return (
+    <Layout>
+      <SEO
+          title={seoData.title}
+          breadcrumbs={breadcrumbs}
+          description={seoData.descr}
+          keywords={seoData.keywords}
+          pathname={path} />
+      <LinkPageContent
+          data={data.allKonicaArLinksJson}
+          mdImg={mdImg}
+          smImg={smImg}>
+      </LinkPageContent>
+    </Layout>
+  );
+}
 
 export default KonicaARLinks
 
@@ -67,6 +71,17 @@ export const pageQuery = graphql`
             url
             name
             helpText
+          }
+        }
+      }
+    },
+    allSeoContentJson {
+      edges {
+        node {
+          konicaArLinks {
+            title
+            descr
+            keywords
           }
         }
       }

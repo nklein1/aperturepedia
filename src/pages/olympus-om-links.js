@@ -7,25 +7,28 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/olympus_om_hero.jpg';
 import smImg from '../images/olympus_om_hero_sm.jpg';
 
-const description = 'Aperturepedia\'s list of reviews and other helpful links for Olympus OM-mount lenses used in all Olympus OM-system interchangeable lens SLR cameras';
-const breadcrumbs = [
-  { url: '/olympus-om-links/', title:'Olympus OM Links' }
-];
+const OlympusOMLinks = ({data, path}) => {
+  const seoData = data.allSeoContentJson.edges[0].node.olympusOmLinks;
+  const breadcrumbs = [
+    { url: path, title: data.title }
+  ];
 
-const OlympusOMLinks = (props) => (
-  <Layout>
-    <SEO
-        title={'Olympus OM Links'}
-        breadcrumbs={breadcrumbs}
-        description={description}
-        pathname={props.path} />
-    <LinkPageContent
-        data={props.data.allOlympusOmLinksJson}
-        mdImg={mdImg}
-        smImg={smImg}>
-    </LinkPageContent>
-  </Layout>
-)
+  return (
+    <Layout>
+      <SEO
+          title={seoData.title}
+          breadcrumbs={breadcrumbs}
+          description={seoData.descr}
+          keywords={seoData.keywords}
+          pathname={path} />
+      <LinkPageContent
+          data={data.allOlympusOmLinksJson}
+          mdImg={mdImg}
+          smImg={smImg}>
+      </LinkPageContent>
+    </Layout>
+  );
+}
 
 export default OlympusOMLinks
 
@@ -58,6 +61,17 @@ export const pageQuery = graphql`
             url
             name
             helpText
+          }
+        }
+      }
+    },
+    allSeoContentJson {
+      edges {
+        node {
+          olympusOmLinks {
+            title
+            descr
+            keywords
           }
         }
       }

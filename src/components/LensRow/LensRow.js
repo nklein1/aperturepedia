@@ -21,7 +21,7 @@ class LensRow extends React.Component {
       groups:             PropTypes.string,
       blades:             PropTypes.string,
       frontFilterThread:  PropTypes.string,
-      diaphramType:       PropTypes.string,
+      diaphragmType:      PropTypes.string,
       closeFocus:         PropTypes.string,
       diameter:           PropTypes.string,
       length:             PropTypes.string,
@@ -176,6 +176,7 @@ class LensRow extends React.Component {
           { this.renderDetailLinks(lData.sources, 'Sources') }
           { this.renderDetailLinks(lData.reviews, 'Reviews') }
           { this.renderDetailLinks(lData.sampleImg, 'Sample Photos') }
+          { this.renderDetailLinks(lData.lensImgs, 'Lens Images, Optical Diagrams & Sample Photos') }
           { this.renderDetailLinks(lData.repair, 'Repair Guides') }
 
         </div>

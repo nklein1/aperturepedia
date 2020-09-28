@@ -46,9 +46,15 @@
   border-bottom: 2px solid $white;
   border-top: 2px solid $white;
   position: absolute;
-  width: 100%;
   border-radius: 0px;
   display: none;
+  min-width: 100%;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: -o-max-content;
+  min-width: max-content;
+  left: 50%;
+  transform: translateX(-50%);
 
   // &:hover {
   //   border-bottom: 2px solid $black;

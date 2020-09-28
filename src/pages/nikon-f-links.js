@@ -7,25 +7,28 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/nikon_f_hero.jpg';
 import smImg from '../images/nikon_f_hero_sm.jpg';
 
-const description = 'Aperturepedia\'s list of reviews and other helpful links for Nikon F-mount lenses used in Nikon 35mm interchangeable lens SLR cameras';
-const breadcrumbs = [
-  { url: '/nikon-f-links/', title:'Nikon F Links' }
-];
+const NikonFLinks = ({data, path}) => {
+  const seoData = data.allSeoContentJson.edges[0].node.nikonFLinks;
+  const breadcrumbs = [
+    { url: path, title: data.title }
+  ];
 
-const NikonFLinks = (props) => (
-  <Layout>
-    <SEO
-        title={'Nikon F Links'}
-        breadcrumbs={breadcrumbs}
-        description={description}
-        pathname={props.path} />
-    <LinkPageContent
-        data={props.data.allNikonFLinksJson}
-        mdImg={mdImg}
-        smImg={smImg}>
-    </LinkPageContent>
-  </Layout>
-)
+  return (
+    <Layout>
+      <SEO
+          title={seoData.title}
+          breadcrumbs={breadcrumbs}
+          description={seoData.descr}
+          keywords={seoData.keywords}
+          pathname={path} />
+      <LinkPageContent
+          data={data.allNikonFLinksJson}
+          mdImg={mdImg}
+          smImg={smImg}>
+      </LinkPageContent>
+    </Layout>
+  );
+}
 
 export default NikonFLinks
 
@@ -68,6 +71,17 @@ export const pageQuery = graphql`
             url
             name
             helpText
+          }
+        }
+      }
+    },
+    allSeoContentJson {
+      edges {
+        node {
+          nikonFLinks {
+            title
+            descr
+            keywords
           }
         }
       }

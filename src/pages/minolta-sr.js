@@ -6,20 +6,22 @@ import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
 
 class MinoltaSR extends React.Component {
-  render() {
-    const description = 'Compare stats for Minolta SR-mount lenses with Aperturepedia\'s lens specs table';
-    const keywords = 'Aperturepedia Minolta SR Rokkor MC MD lenses lens aperture lenstable table lenslist list SLR cameras';
-    const breadcrumbs = [
-      { url: '/minolta-sr/', title:'Minolta SR Lens Table' }
+  constructor(props) {
+    super(props);
+    this.seoData = this.props.data.allSeoContentJson.edges[0].node.minoltaSrDb;
+    this.breadcrumbs = [
+      { url: this.props.path, title: this.seoData.title }
     ];
+  }
 
+  render() {
     return (
-      <Layout title={'Minolta SR (Rokkor MC & MD) Lenses'} pathname={this.props.path}>
+      <Layout title={this.seoData.title} pathname={this.props.path}>
         <SEO
-            title={'Minolta SR Lenses'}
-            breadcrumbs={breadcrumbs}
-            description={description}
-            keywords={keywords}
+            title={this.seoData.title}
+            description={this.seoData.descr}
+            keywords={this.seoData.keywords}
+            breadcrumbs={this.breadcrumbs}
             pathname={this.props.path} />
         <LensTable data={this.props.data} />
       </Layout>
@@ -51,11 +53,22 @@ export const pageQuery = graphql`
           notes
           sources
           reviews
-          sampleImg
+          lensImgs
           repair
           lensType
           lensCatShort
           lensCatLong
+        }
+      }
+    },
+    allSeoContentJson {
+      edges {
+        node {
+          minoltaSrDb {
+            title
+            descr
+            keywords
+          }
         }
       }
     }

@@ -6,17 +6,22 @@ import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
 
 class PentaxM42 extends React.Component {
-  render() {
-    const description = 'Aperturepedia\'s list of Pentax M42 screwmount lenses used in Pentax 35mm interchangeable lens SLR cameras';
-    const breadcrumbs = [
-      { url: '/pentax-m42/', title:'Pentax M42 Lens Table' }
+  constructor(props) {
+    super(props);
+    this.seoData = this.props.data.allSeoContentJson.edges[0].node.pentaxM42Db;
+    this.breadcrumbs = [
+      { url: this.props.path, title: this.seoData.title }
     ];
+  }
+
+  render() {
     return (
-      <Layout title={'Pentax M42 Lenses'} pathname={this.props.path}>
+      <Layout title={this.seoData.title} pathname={this.props.path}>
         <SEO
-            title={'Pentax M42 Lenses'}
-            breadcrumbs={breadcrumbs}
-            description={description}
+            title={this.seoData.title}
+            description={this.seoData.descr}
+            keywords={this.seoData.keywords}
+            breadcrumbs={this.breadcrumbs}
             pathname={this.props.path} />
         <LensTable data={this.props.data} />
       </Layout>
@@ -44,7 +49,7 @@ export const pageQuery = graphql`
           filterThread
           diameter
           length
-          diaphramType
+          diaphragmType
           weight
           yearIntroduced
           style
@@ -52,6 +57,17 @@ export const pageQuery = graphql`
           sources
           lensCatShort
           lensCatLong
+        }
+      }
+    },
+    allSeoContentJson {
+      edges {
+        node {
+          pentaxM42Db {
+            title
+            descr
+            keywords
+          }
         }
       }
     }

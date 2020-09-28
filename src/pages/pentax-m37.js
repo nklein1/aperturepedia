@@ -6,17 +6,22 @@ import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
 
 class PentaxM37 extends React.Component {
-  render() {
-    const description = 'Aperturepedia\'s list of Asahi Pentax M37 screwmount lenses used in Pentax\'s early Asahiflex SLR cameras';
-    const breadcrumbs = [
-      { url: '/pentax-m37/', title:'Pentax M37 Lens Table' }
+  constructor(props) {
+    super(props);
+    this.seoData = this.props.data.allSeoContentJson.edges[0].node.pentaxM37Db;
+    this.breadcrumbs = [
+      { url: this.props.path, title: this.seoData.title }
     ];
+  }
+
+  render() {
     return (
-      <Layout title={'Pentax M37 Lenses'} pathname={this.props.path}>
+      <Layout title={this.seoData.title} pathname={this.props.path}>
         <SEO
-            title={'Pentax M37 Lenses'}
-            breadcrumbs={breadcrumbs}
-            description={description}
+            title={this.seoData.title}
+            description={this.seoData.descr}
+            keywords={this.seoData.keywords}
+            breadcrumbs={this.breadcrumbs}
             pathname={this.props.path} />
         <LensTable data={this.props.data} />
       </Layout>
@@ -43,15 +48,25 @@ export const pageQuery = graphql`
           filterThread
           diameter
           length
-          diaphramType
+          diaphragmType
           weight
           yearIntroduced
-
           notes
           officialNotes
           sources
           lensCatShort
           lensCatLong
+        }
+      }
+    },
+    allSeoContentJson {
+      edges {
+        node {
+          pentaxM37Db {
+            title
+            descr
+            keywords
+          }
         }
       }
     }

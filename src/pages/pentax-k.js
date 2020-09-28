@@ -6,17 +6,22 @@ import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
 
 class PentaxK extends React.Component {
-  render() {
-    const description = 'Aperturepedia\'s list of Pentax K bayonet mount lenses used in Pentax 35mm interchangeable lens SLR cameras';
-    const breadcrumbs = [
-      { url: '/pentax-k/', title:'Pentax K Lens Table' }
+  constructor(props) {
+    super(props);
+    this.seoData = this.props.data.allSeoContentJson.edges[0].node.pentaxKDb;
+    this.breadcrumbs = [
+      { url: this.props.path, title: this.seoData.title }
     ];
+  }
+
+  render() {
     return (
-      <Layout title={'Pentax K Lenses'} pathname={this.props.path}>
+      <Layout title={this.seoData.title} pathname={this.props.path}>
         <SEO
-            title={'Pentax K Lenses'}
-            breadcrumbs={breadcrumbs}
-            description={description}
+            title={this.seoData.title}
+            description={this.seoData.descr}
+            keywords={this.seoData.keywords}
+            breadcrumbs={this.breadcrumbs}
             pathname={this.props.path} />
         <LensTable data={this.props.data} />
       </Layout>
@@ -50,6 +55,17 @@ export const pageQuery = graphql`
           lensCatShort
           lensCatLong
           sources
+        }
+      }
+    },
+    allSeoContentJson {
+      edges {
+        node {
+          pentaxKDb {
+            title
+            descr
+            keywords
+          }
         }
       }
     }

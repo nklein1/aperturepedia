@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Typography from '@material-ui/core/Typography';
 
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/seo';
 
-const description = 'Aperturepedia is a comprehensive guide to vintage SLR lenses made by Minolta, Nikon, Canon, Pentax, Olympus & Konica. Contains lens specs tables and links to lens reviews and other sites with helpful info.';
+const description = 'Aperturepedia is a comprehensive guide to vintage SLR lenses made by Minolta, Nikon, Canon, Pentax, Olympus & Konica, with databases of lens specs plus links to other sites with lens reviews and other helpful info.';
 const breadcrumbs = [
   { url: '/', title:'Aperturepedia' }
 ];
@@ -31,8 +30,8 @@ const sources = [
 ];
 
 const links = [
-  { path: '/minolta-sr/', name: 'Minolta SR (Rokkor)' },
-  { path: '/nikon-f/', name: 'Nikon F (Nikkor)' },
+  { path: '/minolta-sr/', name: 'Minolta Rokkor SR (MC/MD)' },
+  { path: '/nikon-f/', name: 'Nikon Nikkor F' },
   { path: '/canon-fd/', name: 'Canon FD' },
   { path: '/pentax-k/', name: 'Pentax K' },
   { path: '/pentax-m42/', name: 'Pentax Takumar M42' },
@@ -45,8 +44,10 @@ const IndexPage = (props) => (
   <Layout>
     <SEO
         title={'Home'}
+        description={description}
         breadcrumbs={breadcrumbs}
         pathname={props.path} />
+    <div style={{padding:' 0 1rem 1rem 1rem'}}>
     <Typography variant={'h4'}>
       Welcome to Aperturepedia
     </Typography>
@@ -83,6 +84,7 @@ const IndexPage = (props) => (
     <p>
       Want to get involved? I'm eager to collaborate with anyone who's interested in contributing. Feel free to contact me at the email address above.
     </p>
+    </div>
   </Layout>
 )
 

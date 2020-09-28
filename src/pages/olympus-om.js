@@ -6,18 +6,22 @@ import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
 
 class OlympusOM extends React.Component {
-  render() {
-    const description = 'Aperturepedia\'s list of Olympus OM-mount lenses used in all Olympus OM-system interchangeable lens SLR cameras';
-    const breadcrumbs = [
-      { url: '/olympus-om/', title:'Olympus OM Lens Table' }
+  constructor(props) {
+    super(props);
+    this.seoData = this.props.data.allSeoContentJson.edges[0].node.olympusOmDb;
+    this.breadcrumbs = [
+      { url: this.props.path, title: this.seoData.title }
     ];
+  }
 
+  render() {
     return (
-      <Layout title={'Olympus OM Lenses'} pathname={this.props.path}>
+      <Layout title={this.seoData.title} pathname={this.props.path}>
         <SEO
-            title={'Olympus OM Lenses'}
-            breadcrumbs={breadcrumbs}
-            description={description}
+            title={this.seoData.title}
+            description={this.seoData.descr}
+            keywords={this.seoData.keywords}
+            breadcrumbs={this.breadcrumbs}
             pathname={this.props.path} />
         <LensTable data={this.props.data} />
       </Layout>
@@ -46,11 +50,25 @@ export const pageQuery = graphql`
           length
           weight
           yearIntroduced
+          yearDiscontinued
           lensType
           lensCatShort
           lensCatLong
           notes
           sources
+          reviews
+          lensImgs
+        }
+      }
+    },
+    allSeoContentJson {
+      edges {
+        node {
+          olympusOmDb {
+            title
+            descr
+            keywords
+          }
         }
       }
     }

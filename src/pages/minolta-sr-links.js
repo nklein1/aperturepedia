@@ -7,32 +7,33 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/minolta_md_hero.jpg';
 import smImg from '../images/minolta_md_hero_sm.jpg';
 
-const description = 'Compare stats for Minolta SR-mount lenses with Aperturepedia\'s lens specs table';
-const keywords = 'Aperturepedia Minolta SR Rokkor MC MD lenses lens aperture lenstable table lenslist list SLR cameras';
-const breadcrumbs = [
-  { url: '/minolta-sr-links/', title:'Minolta SR Links' }
-];
+const MinoltaSRLinks = ({data, path}) => {
+  const seoData = data.allSeoContentJson.edges[0].node.minoltaSrLinks;
+  const breadcrumbs = [
+    { url: path, title: data.title }
+  ];
 
-const MinoltaSRLinks = (props) => (
-  <Layout>
-    <SEO
-        title={'Minolta SR Links'}
-        breadcrumbs={breadcrumbs}
-        description={description}
-        keywords={keywords}
-        pathname={props.path} />
-      <LinkPageContent
-        data={props.data.allMinoltaSrLinksJson}
-        mdImg={mdImg}
-        smImg={smImg}>
-      </LinkPageContent>
-  </Layout>
-)
+  return (
+    <Layout>
+      <SEO
+          title={seoData.title}
+          breadcrumbs={breadcrumbs}
+          description={seoData.descr}
+          keywords={seoData.keywords}
+          pathname={path} />
+        <LinkPageContent
+          data={data.allMinoltaSrLinksJson}
+          mdImg={mdImg}
+          smImg={smImg}>
+        </LinkPageContent>
+    </Layout>
+  );
+}
 
 export default MinoltaSRLinks
 
 export const pageQuery = graphql`
-  query {
+  query TestQuery {
     allMinoltaSrLinksJson {
       edges {
         node {
@@ -70,6 +71,17 @@ export const pageQuery = graphql`
             url
             name
             helpText
+          }
+        }
+      }
+    },
+    allSeoContentJson {
+      edges {
+        node {
+          minoltaSrLinks {
+            title
+            descr
+            keywords
           }
         }
       }

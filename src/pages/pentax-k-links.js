@@ -7,25 +7,28 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/pentax_k_hero.jpg';
 import smImg from '../images/pentax_k_hero_sm.jpg';
 
-const description = 'Aperturepedia\'s list of reviews and other helpful links for Pentax K bayonet mount lenses used in Pentax 35mm interchangeable lens SLR cameras';
-const breadcrumbs = [
-  { url: '/pentax-k-links/', title:'Pentax K Links' }
-];
+const PentaxKLinks = ({data, path}) => {
+  const seoData = data.allSeoContentJson.edges[0].node.pentaxKLinks;
+  const breadcrumbs = [
+    { url: path, title: data.title }
+  ];
 
-const PentaxKLinks = (props) => (
-  <Layout>
-    <SEO
-        title={'Pentax K Links'}
-        breadcrumbs={breadcrumbs}
-        description={description}
-        pathname={props.path} />
-    <LinkPageContent
-        data={props.data.allPentaxKLinksJson}
-        mdImg={mdImg}
-        smImg={smImg}>
-    </LinkPageContent>
-  </Layout>
-)
+  return (
+    <Layout>
+      <SEO
+          title={seoData.title}
+          breadcrumbs={breadcrumbs}
+          description={seoData.descr}
+          keywords={seoData.keywords}
+          pathname={path} />
+      <LinkPageContent
+          data={data.allPentaxKLinksJson}
+          mdImg={mdImg}
+          smImg={smImg}>
+      </LinkPageContent>
+    </Layout>
+  )
+}
 
 export default PentaxKLinks
 
@@ -63,6 +66,17 @@ export const pageQuery = graphql`
             url
             name
             helpText
+          }
+        }
+      }
+    },
+    allSeoContentJson {
+      edges {
+        node {
+          pentaxKLinks {
+            title
+            descr
+            keywords
           }
         }
       }

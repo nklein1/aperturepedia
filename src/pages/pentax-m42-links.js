@@ -7,25 +7,28 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/pentax_m42_hero.jpg';
 import smImg from '../images/pentax_m42_hero_sm.jpg';
 
-const description = 'Aperturepedia\'s list of reviews and other helpful links for Pentax M42 screwmount lenses used in Pentax 35mm interchangeable lens SLR cameras';
-const breadcrumbs = [
-  { url: '/pentax-m42-links/', title:'Pentax M42 Links' }
-];
+const PentaxM42Links = ({data, path}) => {
+  const seoData = data.allSeoContentJson.edges[0].node.pentaxM42Links;
+  const breadcrumbs = [
+    { url: path, title: data.title }
+  ];
 
-const PentaxM42Links = (props) => (
-  <Layout>
-    <SEO
-        title={'Pentax M42 Links'}
-        breadcrumbs={breadcrumbs}
-        description={description}
-        pathname={props.path} />
-    <LinkPageContent
-        data={props.data.allPentaxM42LinksJson}
-        mdImg={mdImg}
-        smImg={smImg}>
-    </LinkPageContent>
-  </Layout>
-)
+  return (
+    <Layout>
+      <SEO
+          title={seoData.title}
+          breadcrumbs={breadcrumbs}
+          description={seoData.descr}
+          keywords={seoData.keywords}
+          pathname={path} />
+      <LinkPageContent
+          data={data.allPentaxM42LinksJson}
+          mdImg={mdImg}
+          smImg={smImg}>
+      </LinkPageContent>
+    </Layout>
+  );
+}
 
 export default PentaxM42Links
 
@@ -63,6 +66,17 @@ export const pageQuery = graphql`
             url
             name
             helpText
+          }
+        }
+      }
+    },
+    allSeoContentJson {
+      edges {
+        node {
+          pentaxM42Links {
+            title
+            descr
+            keywords
           }
         }
       }

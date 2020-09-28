@@ -7,25 +7,27 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/canon_fd_hero.jpg';
 import smImg from '../images/canon_fd_hero_sm.jpg';
 
-const description = 'Aperturepedia\'s list of specs, reviews, repair guides and other helpful links for Canon FL, FD, and New FD lenses used in Canon 35mm interchangeable lens SLR cameras between 1971 and 1992. ';
-const breadcrumbs = [
-  { url: '/canon-fd-links/', title:'Canon FD Links' }
-];
-
-const CanonFDLinks = (props) => (
-  <Layout>
-    <SEO
-        title={'Canon FD Links'}
-        breadcrumbs={breadcrumbs}
-        description={description}
-        pathname={props.path} />
-    <LinkPageContent
-        data={props.data.allCanonFdLinksJson}
-        mdImg={mdImg}
-        smImg={smImg}>
-    </LinkPageContent>
-  </Layout>
-)
+const CanonFDLinks = ({data, path}) => {
+  const seoData = data.allSeoContentJson.edges[0].node.canonFdLinks;
+  const breadcrumbs = [
+    { url: path, title: data.title }
+  ];
+  return (
+    <Layout>
+      <SEO
+          title={seoData.title}
+          breadcrumbs={breadcrumbs}
+          description={seoData.descr}
+          keywords={seoData.keywords}
+          pathname={path} />
+      <LinkPageContent
+          data={data.allCanonFdLinksJson}
+          mdImg={mdImg}
+          smImg={smImg}>
+      </LinkPageContent>
+    </Layout>
+  );
+}
 
 export default CanonFDLinks
 
@@ -63,6 +65,17 @@ export const pageQuery = graphql`
             url
             name
             helpText
+          }
+        }
+      }
+    },
+    allSeoContentJson {
+      edges {
+        node {
+          canonFdLinks {
+            title
+            descr
+            keywords
           }
         }
       }

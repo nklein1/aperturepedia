@@ -6,18 +6,22 @@ import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
 
 class KonicaAR extends React.Component {
-  render() {
-    const description = 'Aperturepedia\'s list of Konica Hexanon & Hexar lenses used in Konica\'s AR mounted 35mm interchangeable lens SLR cameras';
-    const breadcrumbs = [
-      { url: '/konica-ar/', title:'Konica AR Lens Table' }
+  constructor(props) {
+    super(props);
+    this.seoData = this.props.data.allSeoContentJson.edges[0].node.konicaArDb;
+    this.breadcrumbs = [
+      { url: this.props.path, title: this.seoData.title }
     ];
+  }
 
+  render() {
     return (
-      <Layout title={'Konica AR (Hexanon & Hexar) Lenses'} pathname={this.props.path}>
+      <Layout title={this.seoData.title} pathname={this.props.path}>
         <SEO
-            title={'Konica AR (Hexanon & Hexar) Lenses'}
-            breadcrumbs={breadcrumbs}
-            description={description}
+            title={this.seoData.title}
+            description={this.seoData.descr}
+            keywords={this.seoData.keywords}
+            breadcrumbs={this.breadcrumbs}
             pathname={this.props.path} />
         <LensTable data={this.props.data} />
       </Layout>
@@ -53,6 +57,17 @@ export const pageQuery = graphql`
           lensType
           lensCatShort
           lensCatLong
+        }
+      }
+    },
+    allSeoContentJson {
+      edges {
+        node {
+          konicaArDb {
+            title
+            descr
+            keywords
+          }
         }
       }
     }

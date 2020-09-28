@@ -6,17 +6,22 @@ import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
 
 class CanonFD extends React.Component {
-  render() {
-    const description = 'Aperturepedia\'s list of specs, reviews, repair guides and other helpful links for Canon FL, FD, and New FD lenses used in Canon 35mm interchangeable lens SLR cameras between 1971 and 1992. ';
-    const breadcrumbs = [
-      { url: '/canon-fd/', title:'Canon FD Lens Table' }
+  constructor(props) {
+    super(props);
+    this.seoData = this.props.data.allSeoContentJson.edges[0].node.canonFdDb;
+    this.breadcrumbs = [
+      { url: this.props.path, title: this.seoData.title }
     ];
+  }
+
+  render() {
     return (
-      <Layout title={'Canon FD Lenses'} pathname={this.props.path}>
+      <Layout title={this.seoData.title} pathname={this.props.path}>
         <SEO
-            title={'Canon FD Lenses'}
-            breadcrumbs={breadcrumbs}
-            description={description}
+            title={this.seoData.title}
+            description={this.seoData.descr}
+            keywords={this.seoData.keywords}
+            breadcrumbs={this.breadcrumbs}
             pathname={this.props.path} />
         <LensTable data={this.props.data} />
       </Layout>
@@ -49,10 +54,21 @@ export const pageQuery = graphql`
           style
           sources
           reviews
-          lensImg
+          lensImgs
           lensType
           lensCatShort
           lensCatLong
+        }
+      }
+    },
+    allSeoContentJson {
+      edges {
+        node {
+          canonFdDb {
+            title
+            descr
+            keywords
+          }
         }
       }
     }

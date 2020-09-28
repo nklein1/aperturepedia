@@ -6,18 +6,22 @@ import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
 
 class NikonF extends React.Component {
-  render() {
-    const description = 'Aperturepedia\'s list of Nikon F-mount lenses used in Nikon 35mm interchangeable lens SLR cameras';
-    const breadcrumbs = [
-      { url: '/nikon-f/', title:'Nikon F Lens Table' }
+  constructor(props) {
+    super(props);
+    this.seoData = this.props.data.allSeoContentJson.edges[0].node.nikonFDb;
+    this.breadcrumbs = [
+      { url: this.props.path, title: this.seoData.title }
     ];
+  }
 
+  render() {
     return (
-      <Layout title={'Nikon F Lenses'} pathname={this.props.path}>
+      <Layout title={this.seoData.title} pathname={this.props.path}>
         <SEO
-            title={'Nikon F Lenses'}
-            breadcrumbs={breadcrumbs}
-            description={description}
+            title={this.seoData.title}
+            description={this.seoData.descr}
+            keywords={this.seoData.keywords}
+            breadcrumbs={this.breadcrumbs}
             pathname={this.props.path} />
         <LensTable data={this.props.data} />
       </Layout>
@@ -55,6 +59,17 @@ export const pageQuery = graphql`
           specs
           nikon
           reviews
+        }
+      }
+    },
+    allSeoContentJson {
+      edges {
+        node {
+          nikonFDb {
+            title
+            descr
+            keywords
+          }
         }
       }
     }
