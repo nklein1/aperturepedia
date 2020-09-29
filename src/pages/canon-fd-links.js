@@ -7,10 +7,10 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/canon_fd_hero.jpg';
 import smImg from '../images/canon_fd_hero_sm.jpg';
 
-const CanonFDLinks = ({data, path}) => {
+const CanonFDLinks = ({data, location}) => {
   const seoData = data.allSeoContentJson.edges[0].node.canonFdLinks;
   const breadcrumbs = [
-    { url: path, title: data.title }
+    { url: location.pathname, title: data.title }
   ];
   return (
     <Layout>
@@ -19,7 +19,7 @@ const CanonFDLinks = ({data, path}) => {
           breadcrumbs={breadcrumbs}
           description={seoData.descr}
           keywords={seoData.keywords}
-          pathname={path} />
+          location={location} />
       <LinkPageContent
           data={data.allCanonFdLinksJson}
           mdImg={mdImg}

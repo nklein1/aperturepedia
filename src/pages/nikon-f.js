@@ -10,19 +10,19 @@ class NikonF extends React.Component {
     super(props);
     this.seoData = this.props.data.allSeoContentJson.edges[0].node.nikonFDb;
     this.breadcrumbs = [
-      { url: this.props.path, title: this.seoData.title }
+      { url: this.props.location.pathname, title: this.seoData.title }
     ];
   }
 
   render() {
     return (
-      <Layout title={this.seoData.title} pathname={this.props.path}>
+      <Layout title={this.seoData.title} pathname={this.props.location.pathname}>
         <SEO
             title={this.seoData.title}
             description={this.seoData.descr}
             keywords={this.seoData.keywords}
             breadcrumbs={this.breadcrumbs}
-            pathname={this.props.path} />
+            location={this.props.location} />
         <LensTable data={this.props.data} />
       </Layout>
     );

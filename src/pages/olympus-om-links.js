@@ -7,10 +7,10 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/olympus_om_hero.jpg';
 import smImg from '../images/olympus_om_hero_sm.jpg';
 
-const OlympusOMLinks = ({data, path}) => {
+const OlympusOMLinks = ({data, location}) => {
   const seoData = data.allSeoContentJson.edges[0].node.olympusOmLinks;
   const breadcrumbs = [
-    { url: path, title: data.title }
+    { url: location.pathname, title: data.title }
   ];
 
   return (
@@ -20,7 +20,7 @@ const OlympusOMLinks = ({data, path}) => {
           breadcrumbs={breadcrumbs}
           description={seoData.descr}
           keywords={seoData.keywords}
-          pathname={path} />
+          location={location} />
       <LinkPageContent
           data={data.allOlympusOmLinksJson}
           mdImg={mdImg}

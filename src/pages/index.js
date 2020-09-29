@@ -46,7 +46,8 @@ const IndexPage = (props) => (
         title={'Home'}
         description={description}
         breadcrumbs={breadcrumbs}
-        pathname={props.path} />
+        pathname={props.path}
+        location={props.location} />
     <div style={{padding:' 0 1rem 1rem 1rem'}}>
     <Typography variant={'h4'}>
       Welcome to Aperturepedia

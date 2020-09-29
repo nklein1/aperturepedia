@@ -7,10 +7,10 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/minolta_md_hero.jpg';
 import smImg from '../images/minolta_md_hero_sm.jpg';
 
-const MinoltaSRLinks = ({data, path}) => {
+const MinoltaSRLinks = ({data, location}) => {
   const seoData = data.allSeoContentJson.edges[0].node.minoltaSrLinks;
   const breadcrumbs = [
-    { url: path, title: data.title }
+    { url: location.pathname, title: data.title }
   ];
 
   return (
@@ -20,7 +20,7 @@ const MinoltaSRLinks = ({data, path}) => {
           breadcrumbs={breadcrumbs}
           description={seoData.descr}
           keywords={seoData.keywords}
-          pathname={path} />
+          location={location} />
         <LinkPageContent
           data={data.allMinoltaSrLinksJson}
           mdImg={mdImg}

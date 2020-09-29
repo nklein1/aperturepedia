@@ -7,10 +7,10 @@ import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/pentax_k_hero.jpg';
 import smImg from '../images/pentax_k_hero_sm.jpg';
 
-const PentaxKLinks = ({data, path}) => {
+const PentaxKLinks = ({data, location}) => {
   const seoData = data.allSeoContentJson.edges[0].node.pentaxKLinks;
   const breadcrumbs = [
-    { url: path, title: data.title }
+    { url: location.pathname, title: data.title }
   ];
 
   return (
@@ -20,7 +20,7 @@ const PentaxKLinks = ({data, path}) => {
           breadcrumbs={breadcrumbs}
           description={seoData.descr}
           keywords={seoData.keywords}
-          pathname={path} />
+          location={location} />
       <LinkPageContent
           data={data.allPentaxKLinksJson}
           mdImg={mdImg}

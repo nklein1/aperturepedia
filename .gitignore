@@ -71,3 +71,5 @@ yarn-error.log
 # Don't commit lens data files
 src/resources/
 src/resources/*
+
+robots.txt

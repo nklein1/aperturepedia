@@ -10,8 +10,9 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { globalHistory } from '@reach/router'
 import { useStaticQuery, graphql } from 'gatsby';
+import thumbImg from '../images/thumbnail.png';
 
-function SEO({ description, lang, meta, title, keywords, breadcrumbs, pathname }) {
+function SEO({ description, lang, meta, title, keywords, breadcrumbs, location }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -30,15 +31,16 @@ function SEO({ description, lang, meta, title, keywords, breadcrumbs, pathname }
 
   const metaDescription = description || site.siteMetadata.description;
   const metaKeywords = keywords || site.siteMetadata.keywords;
-  // const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
+  const canonical = location ? `${site.siteMetadata.siteUrl}${location.pathname}` : null;
+  // console.log('location.pathname', location.pathname);
 
   const baseSchema = [
     {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
       'url': globalHistory.location.origin,
-      name: title,
-    },
+      'name': title
+    }
   ];
 
   const schemaJSONLD = breadcrumbs ? [
@@ -87,6 +89,14 @@ function SEO({ description, lang, meta, title, keywords, breadcrumbs, pathname }
           content: `website`,
         },
         {
+          property: `og:url`,
+          content: canonical,
+        },
+        {
+          property: `og:image`,
+          content: `${site.siteMetadata.siteUrl}${thumbImg}`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -102,6 +112,14 @@ function SEO({ description, lang, meta, title, keywords, breadcrumbs, pathname }
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `twitter:url`,
+          content: canonical,
+        },
+        {
+          name: `twitter:image`,
+          content: `${site.siteMetadata.siteUrl}${thumbImg}`,
+        }
       ].concat(meta)}
     >
       <script type={'application/ld+json'}>
@@ -125,7 +143,7 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   breadcrumbs: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-  pathname: PropTypes.string,
+  location: PropTypes.object
 }
 
 export default SEO
