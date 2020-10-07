@@ -38,7 +38,7 @@ export const pageQuery = graphql`
         node {
           focalLength
           name
-          engravedName
+          fullName
           lensType
           maxAperture
           minAperture
@@ -55,6 +55,8 @@ export const pageQuery = graphql`
           style
           notes
           sources
+          reviews
+          repair
           lensCatShort
           lensCatLong
         }

@@ -85,6 +85,16 @@
       border-right: 1px solid $mdGrey;
     }
 
+    .iconRow {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      & > * {
+        padding: 0 3px;
+      }
+    }
+
     &.focalLength, &.notes {
       padding-left: 10px;
       padding-right: 10px;
@@ -135,6 +145,12 @@
 
     .padded {
       margin: 1rem 0;
+    }
+
+    .linkTitle {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
     }
 
     .ul {

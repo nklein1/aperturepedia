@@ -54,6 +54,7 @@ export const pageQuery = graphql`
           notes
           officialNotes
           sources
+          reviews
           lensCatShort
           lensCatLong
         }

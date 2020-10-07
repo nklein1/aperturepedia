@@ -3,6 +3,13 @@ import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
+import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
+import RateReviewIcon from '@material-ui/icons/RateReview';
+import BuildIcon from '@material-ui/icons/Build';
+import InfoIcon from '@material-ui/icons/Info';
+import NotesIcon from '@material-ui/icons/Notes';
+
+import ApIcon from '../ApIcon/ApIcon';
 
 import { getRandomString, getFullLensName } from '../../utils/utils';
 import styles from './LensRow.module.scss';
@@ -28,7 +35,8 @@ class LensRow extends React.Component {
       weight:             PropTypes.string,
       yearIntroduced:     PropTypes.string,
       style:              PropTypes.string,
-      notes:              PropTypes.string
+      notes:              PropTypes.string,
+      sources:            PropTypes.array
     }).isRequired,
     lensStyle:        PropTypes.string,
     className:        PropTypes.string,
@@ -58,6 +66,8 @@ class LensRow extends React.Component {
           )}
           align={'center'}
           rowSpan={(lColumn.slug === 'focalLength' || lColumn.slug === 'maxAperture') && lRowSpan > 1 ? lRowSpan : 1}
+
+          title={this.state.isExpanded ? 'Click to collapse lens details' : 'Click to expand lens details'}
           key={'TableCell-' + lData.lensCatLong + lData.style + getRandomString()}>
           <span className={styles.lensType}>
             {lColumn.slug === 'focalLength' && lData.lensType !== 'false' ? lData.lensType : ''}
@@ -90,6 +100,7 @@ class LensRow extends React.Component {
           )}
           align={'center'}
           rowSpan={1}
+          title={this.state.isExpanded ? 'Click to collapse lens details' : 'Click to expand lens details'}
           key={'TableCell-' + lData.lensCatLong + lData.style + lColumn.slug}>
         { linkCount }
       </TableCell>
@@ -106,8 +117,44 @@ class LensRow extends React.Component {
           )}
           align={'center'}
           rowSpan={1}
+          title={this.state.isExpanded ? 'Click to collapse lens details' : 'Click to expand lens details'}
           key={'TableCell-' + lData.lensCatLong + lData.style + lColumn.slug}>
         <strong>{lData[lColumn.slug] ? 'Yes' : ''}</strong>
+      </TableCell>
+    );
+  }
+
+  renderResources(lData, lColumn, i, lRowSpan) {
+    const sources = lData.sources || [];
+    const reviews = lData.reviews || [];
+    const repair = lData.repair || [];
+    const lensImgs = lData.lensImgs || [];
+    const notes = lData.notes || lData.officialNotes || null;
+
+    const infoTip = sources.length + ' Source Link' + ((sources.length > 1) ? 's' : '');
+    const reviewTip = reviews.length + ' Review Link' + ((reviews.length > 1) ? 's' : '');
+    const repairTip = repair.length + ' Repair Link' + ((repair.length > 1) ? 's' : '');
+    const imageTip = lensImgs.length + ' Image Resource' + ((lensImgs.length > 1) ? 's' : '');
+    const notesTip = 'Contains Notes';
+
+    return (
+      <TableCell
+          className={classNames(
+            styles.cell,
+            styles[lColumn.slug],
+            styles.small,
+          )}
+          align={'center'}
+          rowSpan={1}
+          key={'TableCell-' + lData.lensCatLong + lData.style + lColumn.slug}>
+        <div className={styles.iconRow}>
+          { sources.length > 0 && <ApIcon iconType={InfoIcon} iconTitle={infoTip} iconSize={'1.2rem'} /> }
+          { reviews.length > 0 && <ApIcon iconType={RateReviewIcon} iconTitle={reviewTip} iconSize={'1.2rem'} /> }
+          { repair.length > 0 && <ApIcon iconType={BuildIcon} iconTitle={repairTip} iconSize={'1.2rem'} /> }
+          { lensImgs.length > 0 && <ApIcon iconType={PhotoLibraryIcon} iconTitle={imageTip} iconSize={'1.2rem'} /> }
+          { notes && <ApIcon iconType={NotesIcon} iconTitle={notesTip} iconSize={'1.2rem'} /> }          
+        </div>
+
       </TableCell>
     );
   }
@@ -121,12 +168,12 @@ class LensRow extends React.Component {
       } else if (lensColumns[i].slug === 'maxAperture' && this.props.showMaxAperture === true) {
         // Render 'Max Aperture' cell with custom 'rowSpan' value
         toRender.push( this.renderCell(lensData, lensColumns[i], i, this.props.maxApSpan) );
-      } else if (lensColumns[i].slug === 'notes' || lensColumns[i].slug === 'officialNotes') {
-        // Render 'Notes' cell with custom boolean value
-        toRender.push( this.renderBoolCell(lensData, lensColumns[i], i, 1) );
+      // } else if (lensColumns[i].slug === 'notes' || lensColumns[i].slug === 'officialNotes') {
+      //   // Render 'Notes' cell with custom boolean value
+      //   toRender.push( this.renderBoolCell(lensData, lensColumns[i], i, 1) );
       } else if (lensColumns[i].slug === 'sources') {
-        // Render 'Links' cell with links count
-        toRender.push( this.renderLinksCell(lensData, lensColumns[i], i, 1) );
+        // Render 'Resources' cell with icons + tooltips
+        toRender.push( this.renderResources(lensData, lensColumns[i], i, 1) );
       } else if (lensColumns[i].slug !== 'focalLength' && lensColumns[i].slug !== 'maxAperture' && lensColumns[i].slug !== 'source' && lensColumns[i].slug !== 'notes' && lensColumns[i].slug !== 'officialNotes') {
         // Render Table cell normally
         toRender.push( this.renderCell(lensData, lensColumns[i], i, 1) );
@@ -135,12 +182,16 @@ class LensRow extends React.Component {
     return toRender;
   }
 
-  renderDetailLinks(links, title) {
+  renderDetailLinks(links, icon, title) {
     let toRender = [];
     if (links && links.length > 0) {
       toRender.push(
         <div className={styles.padded} key={'linkdiv-' + getRandomString()}>
-          <strong>{title}: </strong>
+          <strong className={styles.linkTitle}>
+            <ApIcon iconType={icon} iconTitle={''} iconSize={'1rem'} /> 
+            &nbsp;
+            {title}: 
+          </strong>
           <ul className={styles.ul}>
             {links.map(link => (
               <li className={styles.source} key={'link-' + getRandomString()}>
@@ -161,11 +212,19 @@ class LensRow extends React.Component {
         <div className={styles.detailPanelInner}>
         <h2>{getFullLensName(lData)}</h2>
           <p className={!lData.officialNotes ? styles.hidden : styles.text}>
-            <strong>Manufacturer Notes: </strong>
+            <strong className={styles.linkTitle}>
+              <ApIcon iconType={NotesIcon} iconTitle={''} iconSize={'1rem'} /> 
+              &nbsp;
+              Manufacturer Notes:
+            </strong>
             {lData.officialNotes}
           </p>
           <p className={!lData.notes ? styles.hidden : ''}>
-            <strong>Notes: </strong>
+            <strong className={styles.linkTitle}>
+              <ApIcon iconType={NotesIcon} iconTitle={''} iconSize={'1rem'} /> 
+              &nbsp;
+              Notes:
+            </strong>
             {lData.notes}
           </p>
           <p className={!lData.url ? styles.hidden : ''}>
@@ -173,12 +232,11 @@ class LensRow extends React.Component {
             <a href={lData.url} title={lData.url} target={'_blank'} rel={'noopener noreferrer'}>{lData.url}</a>
           </p>
 
-          { this.renderDetailLinks(lData.sources, 'Sources') }
-          { this.renderDetailLinks(lData.reviews, 'Reviews') }
-          { this.renderDetailLinks(lData.sampleImg, 'Sample Photos') }
-          { this.renderDetailLinks(lData.lensImgs, 'Lens Images, Optical Diagrams & Sample Photos') }
-          { this.renderDetailLinks(lData.repair, 'Repair Guides & Misc. Manuals') }
-
+          { this.renderDetailLinks(lData.sources, InfoIcon, 'Sources') }
+          { this.renderDetailLinks(lData.reviews, RateReviewIcon, 'Reviews') }
+          { this.renderDetailLinks(lData.sampleImg, PhotoLibraryIcon, 'Sample Photos') }
+          { this.renderDetailLinks(lData.lensImgs, PhotoLibraryIcon, 'Lens Images, Optical Diagrams & Sample Photos') }
+          { this.renderDetailLinks(lData.repair, BuildIcon, 'Repair Guides & Misc. Manuals') }
         </div>
       </TableCell>
     );
@@ -194,8 +252,6 @@ class LensRow extends React.Component {
               styles.row,
               lensStyle ? styles[mount + lensStyle] : ''
             )}
-            title={this.state.isExpanded ? 'Click to collapse lens details' : 'Click to expand lens details'}
-
             onClick={() => this.setState({ isExpanded: !this.state.isExpanded })}
             key={'TableRow-' + lensData.lensCatLong + lensData.style + getRandomString()}>
           { this.renderLensColumns(lensData, lensColumns) }

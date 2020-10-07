@@ -1,0 +1,12 @@
+@import '../../scss/variables.module.scss';
+
+.iconWrapper {
+  display: inline-block;
+
+  .icon {}
+}
+.tooltip {
+  font-size: 0.9rem !important;
+}
+
+@media screen and (max-width: $mdBreakpoint) {}

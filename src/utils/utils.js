@@ -30,8 +30,8 @@ export function parseLensColumns(type) {
       {'name': 'Lens Hood', 'sName': 'Hood', 'slug': 'lensHood'},
       {'name': 'Year', 'slug': 'yearIntroduced'},
       {'name': 'Style', 'slug': 'style'},
-      {'name': 'Links', 'slug': 'sources'},
-      {'name': 'Notes?', 'slug': 'notes'}
+      {'name': 'Resources', 'slug': 'sources'}
+      // {'name': 'Notes?', 'slug': 'notes'}
     ];
   } else if (type === 'pentax_m42' || type === 'pentax_m37') {
     columnsToRender = [
@@ -49,8 +49,8 @@ export function parseLensColumns(type) {
       {'name': 'Length (mm)', 'slug': 'length'},
       {'name': 'Weight (g)', 'slug': 'weight'},
       {'name': 'Year', 'slug': 'yearIntroduced'},
-      {'name': 'Links', 'slug': 'sources'},
-      {'name': 'Notes?', 'slug': 'notes'}
+      {'name': 'Resources', 'slug': 'sources'}
+      // {'name': 'Notes?', 'slug': 'notes'}
     ];
   } else if (type === 'pentax_k' || type === 'canon_fd' || type === 'olympus_om') {
     columnsToRender = [
@@ -67,8 +67,8 @@ export function parseLensColumns(type) {
       {'name': 'Length (mm)', 'slug': 'length'},
       {'name': 'Weight (g)', 'slug': 'weight'},
       {'name': 'Year', 'slug': 'yearIntroduced'},
-      {'name': 'Links', 'slug': 'sources'},
-      {'name': 'Notes?', 'slug': 'notes'}
+      {'name': 'Resources', 'slug': 'sources'}
+      // {'name': 'Notes?', 'slug': 'notes'}
     ];
   } else if (type === 'nikon_f') {
     columnsToRender = [
@@ -86,8 +86,8 @@ export function parseLensColumns(type) {
       {'name': 'Weight (g)', 'slug': 'weight'},
       {'name': 'Date Introduced', 'sName': 'Year', 'slug': 'yearIntroduced'},
       {'name': 'Style', 'slug': 'style'},
-      {'name': 'Links', 'slug': 'sources'},
-      {'name': 'Notes?', 'slug': 'notes'}
+      {'name': 'Resources', 'slug': 'sources'}
+      // {'name': 'Notes?', 'slug': 'notes'}
     ];
   }
   return columnsToRender;
