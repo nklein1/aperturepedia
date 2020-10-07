@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 
-import { getRandomString } from '../../utils/utils';
+import { getRandomString, getFullLensName } from '../../utils/utils';
 import styles from './LensRow.module.scss';
 
 class LensRow extends React.Component {
@@ -159,7 +159,7 @@ class LensRow extends React.Component {
     toRender.push(
       <TableCell classes={{root: styles.detailPanel}} colSpan={lColumns.length-2} key={'TableDetailCell-' + lData.lensCatLong + lData.style + getRandomString()}>
         <div className={styles.detailPanelInner}>
-        <h2>{lData.name}</h2>
+        <h2>{getFullLensName(lData)}</h2>
           <p className={!lData.officialNotes ? styles.hidden : styles.text}>
             <strong>Manufacturer Notes: </strong>
             {lData.officialNotes}
@@ -177,7 +177,7 @@ class LensRow extends React.Component {
           { this.renderDetailLinks(lData.reviews, 'Reviews') }
           { this.renderDetailLinks(lData.sampleImg, 'Sample Photos') }
           { this.renderDetailLinks(lData.lensImgs, 'Lens Images, Optical Diagrams & Sample Photos') }
-          { this.renderDetailLinks(lData.repair, 'Repair Guides') }
+          { this.renderDetailLinks(lData.repair, 'Repair Guides & Misc. Manuals') }
 
         </div>
       </TableCell>

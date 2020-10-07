@@ -3,6 +3,12 @@
 # https://github.com/h5bp/server-configs-apache
 
 
+# ----------------------------------------------------------------------
+# | Enforce non-www domain                                             |
+# ----------------------------------------------------------------------
+RewriteEngine On
+RewriteCond %{HTTP_HOST}  ^www.aperturepedia.com [NC]
+RewriteRule ^(.*) http://aperturepedia.com/$1 [L,R=301]
 
 # ----------------------------------------------------------------------
 # | Expires headers                                                    |

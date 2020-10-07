@@ -105,46 +105,47 @@ class LensTable extends React.Component {
     let columnsToRender = [];
     let mount = '';
     let captionTitle = '';
+    // TODO: Get caption title from page title
     if (this.props.data.allMinoltaSrJson) {
       allLensData = this.props.data.allMinoltaSrJson;
       columnsToRender = parseLensColumns('minolta_sr');
       mount = 'sr';
-      captionTitle = 'Minolta SR-Mount Lens List';
+      captionTitle = 'Minolta SR-Mount Lens Database';
     } else if (this.props.data.allNikonFJson) {
       allLensData = this.props.data.allNikonFJson;
       columnsToRender = parseLensColumns('nikon_f');
       mount = 'f';
-      captionTitle = 'Nikon F-Mount Lens List';
+      captionTitle = 'Nikon F-Mount Lens Database';
     } else if (this.props.data.allCanonFdJson) {
       allLensData = this.props.data.allCanonFdJson;
       columnsToRender = parseLensColumns('canon_fd');
       mount = 'fd';
-      captionTitle = 'Canon FD-Mount Lens List';
+      captionTitle = 'Canon FD-Mount Lens Database';
     } else if (this.props.data.allPentaxKJson) {
       allLensData = this.props.data.allPentaxKJson;
       columnsToRender = parseLensColumns('pentax_k');
       mount = 'k';
-      captionTitle = 'Pentax K-Mount Lens List';
+      captionTitle = 'Pentax K-Mount Lens Database';
     } else if (this.props.data.allPentaxM42Json) {
       allLensData = this.props.data.allPentaxM42Json;
       columnsToRender = parseLensColumns('pentax_m42');
       mount = 'm42';
-      captionTitle = 'Pentax M42-Mount Lens List';
+      captionTitle = 'Pentax M42-Mount Lens Database';
     } else if (this.props.data.allPentaxM37Json) {
       allLensData = this.props.data.allPentaxM37Json;
       columnsToRender = parseLensColumns('pentax_m37');
       mount = 'm37';
-      captionTitle = 'Pentax M37-Mount Lens List';
+      captionTitle = 'Pentax M37-Mount Lens Database';
     } else if (this.props.data.allOlympusOmJson) {
       allLensData = this.props.data.allOlympusOmJson;
       columnsToRender = parseLensColumns('olympus_om');
       mount = 'om';
-      captionTitle = 'Olympus OM-Mount Lens List';
+      captionTitle = 'Olympus OM-Mount Lens Database';
     } else if (this.props.data.allKonicaArJson) {
       allLensData = this.props.data.allKonicaArJson;
       columnsToRender = parseLensColumns('konica_ar');
       mount = 'ar';
-      captionTitle = 'Konica AR-Mount Lens List';
+      captionTitle = 'Konica AR-Mount Lens Database';
     }
     return (
       <TableContainer component={Paper} className={styles.container}>

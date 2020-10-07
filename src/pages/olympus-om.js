@@ -16,7 +16,7 @@ class OlympusOM extends React.Component {
 
   render() {
     return (
-      <Layout title={this.seoData.title} pathname={this.props.location.pathname}>
+      <Layout title={this.seoData.title}>
         <SEO
             title={this.seoData.title}
             description={this.seoData.descr}
@@ -58,6 +58,7 @@ export const pageQuery = graphql`
           sources
           reviews
           lensImgs
+          repair
         }
       }
     },

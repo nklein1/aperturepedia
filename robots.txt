@@ -2,8 +2,15 @@ User-agent: googlebot
 User-agent: google
 User-agent: bingbot
 User-agent: bing
-Disallow: /bedven/bedrijf/
-Crawl-delay: 10
+User-agent: msnbot
+User-agent: Twitterbot
+User-agent: TelegramBot
+User-agent: Pinterestbot
+User-agent: LinkedInBot
+User-agent: Googlebot-Image
+User-agent: baiduspider
+User-agent: Applebot
+Allow: /
 
-User-agent: *
-Disallow: /
+User-agent: Yandex
+Crawl-delay: 10

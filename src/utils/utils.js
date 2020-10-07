@@ -3,6 +3,14 @@ export function getRandomString() {
   return Math.random().toString(36).substring(2, 8) + Math.random().toString(36).substring(2, 8);
 }
 
+
+export function getFullLensName(lens) {
+  if (lens.fullName) {
+    return lens.fullName;
+  }
+  return lens.focalLength + 'mm f/' + lens.maxAperture + ' ' + lens.name;
+}
+
 export function parseLensColumns(type) {
   let columnsToRender = [];
   if (type === 'minolta_sr' || type === 'konica_ar') {

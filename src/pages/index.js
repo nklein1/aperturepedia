@@ -30,14 +30,14 @@ const sources = [
 ];
 
 const links = [
-  { path: '/minolta-sr/', name: 'Minolta Rokkor SR (MC/MD)' },
-  { path: '/nikon-f/', name: 'Nikon Nikkor F' },
-  { path: '/canon-fd/', name: 'Canon FD' },
-  { path: '/pentax-k/', name: 'Pentax K' },
-  { path: '/pentax-m42/', name: 'Pentax Takumar M42' },
+  { path: '/minolta-sr', name: 'Minolta Rokkor SR (MC/MD)' },
+  { path: '/nikon-f', name: 'Nikon Nikkor F' },
+  { path: '/canon-fd', name: 'Canon FD' },
+  { path: '/pentax-k', name: 'Pentax K' },
+  { path: '/pentax-m42', name: 'Pentax Takumar M42' },
   { path: '/pentax-m37/ ', name: 'Asahi Pentax Takumar M37' },
-  { path: '/olympus-om/', name: 'Olympus Zuiko OM' },
-  { path: '/konica-ar/', name: 'Konica Hexanon / Hexar AR' }
+  { path: '/olympus-om', name: 'Olympus Zuiko OM' },
+  { path: '/konica-ar', name: 'Konica Hexanon / Hexar AR' }
 ];
 
 const IndexPage = (props) => (

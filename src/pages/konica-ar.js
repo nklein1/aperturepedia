@@ -16,7 +16,7 @@ class KonicaAR extends React.Component {
 
   render() {
     return (
-      <Layout title={this.seoData.title} pathname={this.props.location.pathname}>
+      <Layout title={this.seoData.title}>
         <SEO
             title={this.seoData.title}
             description={this.seoData.descr}
@@ -54,6 +54,7 @@ export const pageQuery = graphql`
           style
           notes
           sources
+          reviews
           lensType
           lensCatShort
           lensCatLong

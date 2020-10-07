@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `Aperturepedia`,
-    description: `Aperturepedia: a guide to vintage first-party SLR lenses.`,
-    keywords: `Aperturepedia Minolta SR Rokkor MC MD nikon nikkor canon fd fl olympus om zuiko pentax takumar m42 m37 smc konica hexanon lenses lens aperture lenstable table lenslist list SLR cameras`,
+    description: `Aperturepedia: a comprehensive guide to vintage first-party SLR lenses.`,
+    keywords: `Aperturepedia Minolta SR Rokkor MC MD nikon nikkor canon fd fl olympus om zuiko pentax takumar m42 m37 smc konica hexanon lenses lens aperture review guide database table list SLR cameras`,
     author: `Nick Klein`,
-    siteUrl: `http://www.aperturepedia.com`
+    siteUrl: `http://aperturepedia.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -13,10 +13,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-remove-trailing-slashes`,
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
-        siteUrl: `http://www.aperturepedia.com`,
+        siteUrl: `http://aperturepedia.com`,
+        noTrailingSlash: true
       },
     },
     {
@@ -51,12 +53,13 @@ module.exports = {
         trackingId: `UA-38789595-2`,
       },
     },
-    {
-      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
-      options: {
-        devMode: true,
-      },
-    }
+    // {
+    //   //  Enable this when I want to analyze bundle size
+    //   resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+    //   options: {
+    //     devMode: false,
+    //   },
+    // }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

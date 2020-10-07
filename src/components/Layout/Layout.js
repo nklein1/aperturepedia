@@ -1,25 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
 import Typography from '@material-ui/core/Typography';
 
 import Header from '../Header/Header';
 import styles from  './Layout.module.scss';
 
-const Layout = ({ children, title, pathname }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+const Layout = ({children, title}) => {
   return (
     <div className={styles.container}>
-      <Header siteTitle={data.site.siteMetadata.title} pathname={pathname} />
+      <Header />
       <div className={styles.content}>
         <Typography variant={'h5'} className={styles.title}>
           {title}

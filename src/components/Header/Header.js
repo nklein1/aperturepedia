@@ -22,7 +22,7 @@ import NavItem from '../NavItem/NavItem';
 
 import styles from './Header.module.scss';
 
-const Header = ({ siteTitle, pathname }, props) => {
+const Header = (props) => {
 
   const [state, setState] = React.useState({
     path: globalHistory.location.pathname,
@@ -31,59 +31,59 @@ const Header = ({ siteTitle, pathname }, props) => {
 
   const navList = [
     { name: 'Minolta SR',
-      isActive: pathname.includes('minolta-sr'),
+      isActive: state.path.includes('minolta-sr'),
       links: [
-        { name: 'SR Lens Database', link: '/minolta-sr/' },
-        { name: 'Other SR Links', link: '/minolta-sr-links/' },
+        { name: 'SR Lens Database', link: '/minolta-sr' },
+        { name: 'Other SR Links', link: '/minolta-sr-links' }
       ]
     },
     { name: 'Nikon F',
-      isActive: pathname.includes('canon-fd'),
+      isActive: state.path.includes('nikon-f'),
       links: [
-        { name: 'F Lens Database', link: '/nikon-f/' },
-        { name: 'Other F Links', link: '/nikon-f-links/' },
+        { name: 'F Lens Database', link: '/nikon-f' },
+        { name: 'Other F Links', link: '/nikon-f-links' }
       ]
     },
     { name: 'Canon FD',
-      isActive: pathname.includes('canon-fd'),
+      isActive: state.path.includes('canon-fd'),
       links: [
-        { name: 'FD Lens Database', link: '/canon-fd/' },
-        { name: 'Other FD Links', link: '/canon-fd-links/' },
+        { name: 'FD Lens Database', link: '/canon-fd' },
+        { name: 'Other FD Links', link: '/canon-fd-links' }
       ]
     },
     { name: 'Pentax K',
-      isActive: pathname.includes('pentax-k'),
+      isActive: state.path.includes('pentax-k'),
       links: [
-        { name: 'K Lens Database', link: '/pentax-k/' },
-        { name: 'Other K Links', link: '/pentax-k-links/' },
+        { name: 'K Lens Database', link: '/pentax-k' },
+        { name: 'Other K Links', link: '/pentax-k-links' }
       ]
     },
     { name: 'Pentax M42',
-      isActive: pathname.includes('pentax-m42'),
+      isActive: state.path.includes('pentax-m42'),
       links: [
-        { name: 'M42 Lens Database', link: '/pentax-m42/' },
-        { name: 'Other M42 Links', link: '/pentax-m42-links/' },
+        { name: 'M42 Lens Database', link: '/pentax-m42' },
+        { name: 'Other M42 Links', link: '/pentax-m42-links' }
       ]
     },
     { name: 'Pentax M37',
-      isActive: pathname.includes('pentax-m37'),
+      isActive: state.path.includes('pentax-m37'),
       links: [
-        { name: 'M37 Lens Database', link: '/pentax-m37/' },
-        { name: 'Other M37 Links', link: '/pentax-m37-links/' },
+        { name: 'M37 Lens Database', link: '/pentax-m37' },
+        { name: 'Other M37 Links', link: '/pentax-m37-links' }
       ]
     },
     { name: 'Olympus OM',
-      isActive: pathname.includes('olympus-om'),
+      isActive: state.path.includes('olympus-om'),
       links: [
-        { name: 'OM Lens Database', link: '/olympus-om/' },
-        { name: 'Other OM Links', link: '/olympus-om-links/' },
+        { name: 'OM Lens Database', link: '/olympus-om' },
+        { name: 'Other OM Links', link: '/olympus-om-links' }
       ]
     },
     { name: 'Konica AR',
-      isActive: pathname.includes('konica-ar'),
+      isActive: state.path.includes('konica-ar'),
       links: [
-        { name: 'AR Lens Database', link: '/konica-ar/' },
-        { name: 'Other AR Links', link: '/konica-ar-links/' },
+        { name: 'AR Lens Database', link: '/konica-ar' },
+        { name: 'Other AR Links', link: '/konica-ar-links' }
       ]
     }
   ];
@@ -163,16 +163,6 @@ const Header = ({ siteTitle, pathname }, props) => {
       </Toolbar>
     </AppBar>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-  pathname: PropTypes.string
-}
-
-Header.defaultProps = {
-  siteTitle: 'Aperturepedia',
-  pathname: '/'
 }
 
 export default Header;
