@@ -14,7 +14,7 @@ const NikonFLinks = ({data, location}) => {
   ];
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO
           title={seoData.title}
           breadcrumbs={breadcrumbs}

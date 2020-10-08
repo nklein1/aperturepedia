@@ -13,7 +13,7 @@ const CanonFDLinks = ({data, location}) => {
     { url: location.pathname, title: data.title }
   ];
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO
           title={seoData.title}
           breadcrumbs={breadcrumbs}

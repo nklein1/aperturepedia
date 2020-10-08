@@ -1,7 +1,6 @@
 import React from 'react';
 // import * as PropTypes from 'prop-types';
-import SvgIcon from '@material-ui/core/SvgIcon';
-import Tooltip from '@material-ui/core/Tooltip';
+import { SvgIcon, Tooltip } from '@material-ui/core';
 
 import styles from './ApIcon.module.scss';
 

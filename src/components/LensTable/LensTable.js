@@ -1,12 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
-import Table from '@material-ui/core/Table';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableBody from '@material-ui/core/TableBody';
-import TableRow from '@material-ui/core/TableRow';
-import TableCell from '@material-ui/core/TableCell';
-import Paper from '@material-ui/core/Paper';
+import { Table,
+        TableContainer,
+        TableHead,
+        TableBody,
+        TableRow,
+        TableCell,
+        Paper } from '@material-ui/core';
 
 import {
   getRandomString,

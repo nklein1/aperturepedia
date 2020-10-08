@@ -1,13 +1,12 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
-import TableRow from '@material-ui/core/TableRow';
-import TableCell from '@material-ui/core/TableCell';
-import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
-import RateReviewIcon from '@material-ui/icons/RateReview';
-import BuildIcon from '@material-ui/icons/Build';
-import InfoIcon from '@material-ui/icons/Info';
-import NotesIcon from '@material-ui/icons/Notes';
+import { TableRow, TableCell } from '@material-ui/core';
+import { PhotoLibrary as PhotoLibraryIcon,
+        RateReview as RateReviewIcon,
+        Build as BuildIcon,
+        Info as InfoIcon,
+        Notes as NotesIcon } from '@material-ui/icons';
 
 import ApIcon from '../ApIcon/ApIcon';
 

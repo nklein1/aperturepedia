@@ -53,15 +53,39 @@ module.exports = {
         trackingId: `UA-38789595-2`,
       },
     },
-    // {
-    //   //  Enable this when I want to analyze bundle size
-    //   resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
-    //   options: {
-    //     devMode: false,
-    //   },
-    // }
+    {
+      //  Enable this when I want to analyze bundle size
+      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+      options: {
+        devMode: true,
+      },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
-  ],
+    // `gatsby-plugin-offline`
+    // {
+    //   resolve: `gatsby-plugin-offline`,
+    //   options: {
+    //     precachePages: [
+    //       `/`,
+    //       `/minolta-sr`,
+    //       `/minolta-sr-links`,
+    //       `/pentax-k`,
+    //       `/pentax-k-links`,
+    //       `/pentax-m42`,
+    //       `/pentax-m42-links`,
+    //       `/pentax-m37`,
+    //       `/pentax-m37-links`,
+    //       `/canon-fd`,
+    //       `/canon-fd-links`,
+    //       `/nikon-f`,
+    //       `/nikon-f-links`,
+    //       `/olympus-om`,
+    //       `/olympus-om-links`,
+    //       `/konica-ar`,
+    //       `/konica-ar-links`
+    //     ]
+    //   }
+    // }
+  ]
 }

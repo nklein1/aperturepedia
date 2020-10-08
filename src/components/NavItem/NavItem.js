@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
-
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-import Paper from '@material-ui/core/Paper';
+import { ClickAwayListener,
+        MenuItem,
+        MenuList,
+        Paper } from '@material-ui/core';
 
 import styles from './NavItem.module.scss';
 

@@ -3,84 +3,82 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { globalHistory } from '@reach/router'
-
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import Button from '@material-ui/core/Button';
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import SvgIcon from '@material-ui/core/SvgIcon';
-
-import Menu from '@material-ui/icons/Menu';
+import  { AppBar,
+        Toolbar,
+        Typography,
+        ListItemText,
+        ListItem,
+        Divider,
+        SvgIcon,
+        Button,
+        Drawer,
+        List } from '@material-ui/core';
+import { Menu } from '@material-ui/icons';
 
 import MobileNavItem from '../MobileNavItem/MobileNavItem';
 import NavItem from '../NavItem/NavItem';
 
 import styles from './Header.module.scss';
 
-const Header = (props) => {
+const Header = ({location}) => {
 
   const [state, setState] = React.useState({
-    path: globalHistory.location.pathname,
+    path: location.pathname,
     right: false
   });
 
   const navList = [
     { name: 'Minolta SR',
-      isActive: state.path.includes('minolta-sr'),
+      isActive: location.pathname.includes('minolta-sr'),
       links: [
         { name: 'SR Lens Database', link: '/minolta-sr' },
         { name: 'Other SR Links', link: '/minolta-sr-links' }
       ]
     },
     { name: 'Nikon F',
-      isActive: state.path.includes('nikon-f'),
+      isActive: location.pathname.includes('nikon-f'),
       links: [
         { name: 'F Lens Database', link: '/nikon-f' },
         { name: 'Other F Links', link: '/nikon-f-links' }
       ]
     },
     { name: 'Canon FD',
-      isActive: state.path.includes('canon-fd'),
+      isActive: location.pathname.includes('canon-fd'),
       links: [
         { name: 'FD Lens Database', link: '/canon-fd' },
         { name: 'Other FD Links', link: '/canon-fd-links' }
       ]
     },
     { name: 'Pentax K',
-      isActive: state.path.includes('pentax-k'),
+      isActive: location.pathname.includes('pentax-k'),
       links: [
         { name: 'K Lens Database', link: '/pentax-k' },
         { name: 'Other K Links', link: '/pentax-k-links' }
       ]
     },
     { name: 'Pentax M42',
-      isActive: state.path.includes('pentax-m42'),
+      isActive: location.pathname.includes('pentax-m42'),
       links: [
         { name: 'M42 Lens Database', link: '/pentax-m42' },
         { name: 'Other M42 Links', link: '/pentax-m42-links' }
       ]
     },
     { name: 'Pentax M37',
-      isActive: state.path.includes('pentax-m37'),
+      isActive: location.pathname.includes('pentax-m37'),
       links: [
         { name: 'M37 Lens Database', link: '/pentax-m37' },
         { name: 'Other M37 Links', link: '/pentax-m37-links' }
       ]
     },
     { name: 'Olympus OM',
-      isActive: state.path.includes('olympus-om'),
+      isActive: location.pathname.includes('olympus-om'),
       links: [
         { name: 'OM Lens Database', link: '/olympus-om' },
         { name: 'Other OM Links', link: '/olympus-om-links' }
       ]
     },
     { name: 'Konica AR',
-      isActive: state.path.includes('konica-ar'),
+      isActive: location.pathname.includes('konica-ar'),
       links: [
         { name: 'AR Lens Database', link: '/konica-ar' },
         { name: 'Other AR Links', link: '/konica-ar-links' }

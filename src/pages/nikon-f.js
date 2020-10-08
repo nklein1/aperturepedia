@@ -16,7 +16,7 @@ class NikonF extends React.Component {
 
   render() {
     return (
-      <Layout title={this.seoData.title}>
+      <Layout title={this.seoData.title} location={this.props.location}>
         <SEO
             title={this.seoData.title}
             description={this.seoData.descr}
@@ -58,9 +58,9 @@ export const pageQuery = graphql`
           lensCatShort
           lensCatLong
           sources
-          specs
-          nikon
           reviews
+          lensImgs
+          repair
         }
       }
     },

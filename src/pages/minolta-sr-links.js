@@ -14,7 +14,7 @@ const MinoltaSRLinks = ({data, location}) => {
   ];
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO
           title={seoData.title}
           breadcrumbs={breadcrumbs}

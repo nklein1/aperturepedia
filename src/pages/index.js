@@ -1,5 +1,5 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+import { Typography } from '@material-ui/core';
 
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/seo';
@@ -41,7 +41,7 @@ const links = [
 ];
 
 const IndexPage = (props) => (
-  <Layout>
+  <Layout location={props.location}>
     <SEO
         title={'Home'}
         description={description}

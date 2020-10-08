@@ -1,5 +1,5 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+import { Typography } from '@material-ui/core';
 import styles from  './LinkPageContent.module.scss';
 
 class LinkPageContent extends React.Component {

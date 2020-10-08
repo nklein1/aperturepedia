@@ -32,7 +32,6 @@ function SEO({ description, lang, meta, title, keywords, breadcrumbs, location }
   const metaDescription = description || site.siteMetadata.description;
   const metaKeywords = keywords || site.siteMetadata.keywords;
   const canonical = location ? `${site.siteMetadata.siteUrl}${location.pathname}` : null;
-  // console.log('location.pathname', location.pathname);
 
   const baseSchema = [
     {
