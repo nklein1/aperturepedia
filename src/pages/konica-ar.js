@@ -10,6 +10,7 @@ class KonicaAR extends React.Component {
     super(props);
     this.seoData = this.props.data.allSeoContentJson.edges[0].node.konicaArDb;
     this.breadcrumbs = [
+      { url: '/', title: 'Aperturepedia' },
       { url: this.props.location.pathname, title: this.seoData.title }
     ];
   }

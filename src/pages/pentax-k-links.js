@@ -10,16 +10,17 @@ import smImg from '../images/pentax_k_hero_sm.jpg';
 const PentaxKLinks = ({data, location}) => {
   const seoData = data.allSeoContentJson.edges[0].node.pentaxKLinks;
   const breadcrumbs = [
-    { url: location.pathname, title: data.title }
+    { url: '/', title: 'Aperturepedia' },
+    { url: location.pathname, title: seoData.title }
   ];
 
   return (
     <Layout location={location}>
       <SEO
           title={seoData.title}
-          breadcrumbs={breadcrumbs}
           description={seoData.descr}
           keywords={seoData.keywords}
+          breadcrumbs={breadcrumbs}
           location={location} />
       <LinkPageContent
           data={data.allPentaxKLinksJson}

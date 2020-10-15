@@ -10,7 +10,8 @@ import smImg from '../images/pentax_m42_hero_sm.jpg';
 const PentaxM42Links = ({data, location}) => {
   const seoData = data.allSeoContentJson.edges[0].node.pentaxM42Links;
   const breadcrumbs = [
-    { url: location.pathname, title: data.title }
+    { url: '/', title: 'Aperturepedia' },
+    { url: location.pathname, title: seoData.title }
   ];
 
   return (

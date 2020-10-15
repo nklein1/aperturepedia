@@ -95,6 +95,7 @@ class LensTable extends React.Component {
             maxApSpan={lCount[node.lensCatLong] ? lCount[node.lensCatLong].count : 1}
             showFocalLength={showFocalLength}
             showMaxAperture={showMaxAperture}
+            count={count}
         />
       );
     });

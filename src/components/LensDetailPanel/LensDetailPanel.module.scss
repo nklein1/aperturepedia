@@ -1,0 +1,72 @@
+@import '../../scss/variables.module.scss';
+
+.detailContainer {
+  display: block !important; // Fixes MUI padding bugs when hidden
+  visibility: collapse;
+
+  .detailPanel {
+    display: none;
+    visibility: collapse;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    border-bottom: 1px solid $mdGrey;
+
+    .detailPanelInner {}
+
+    .text {
+      white-space: pre-wrap;
+    }
+
+    .padded {
+      margin: 1rem 0;
+    }
+
+    .linkTitle {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .ul {
+      font-size: 0.9rem;
+      line-height: 1.1rem;
+      padding: 0 1.2rem;
+      margin: 0;
+      word-wrap: break-word;
+    }
+
+    .hidden {
+      display: none;
+    }
+  }
+
+  &.isExpanded {
+    display: table-row !important; // Fixes MUI padding bugs when hidden
+    visibility: visible;
+
+    .detailPanel {
+      display: table-cell;
+      visibility: visible;
+    }
+  }
+}
+
+@media screen and (max-width: $mdBreakpoint) {
+  .row {
+    .cell {
+      font-size: 0.8rem;
+      line-height: 0.9rem;
+      font-weight: 500;
+
+      &.focalLength, &.notes {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+
+    .focalLength, .maxAperture {
+      font-size: 1rem;
+      line-height: 0.9rem;
+    }
+  }
+}

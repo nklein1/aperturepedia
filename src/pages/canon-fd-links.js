@@ -10,7 +10,8 @@ import smImg from '../images/canon_fd_hero_sm.jpg';
 const CanonFDLinks = ({data, location}) => {
   const seoData = data.allSeoContentJson.edges[0].node.canonFdLinks;
   const breadcrumbs = [
-    { url: location.pathname, title: data.title }
+    { url: '/', title: 'Aperturepedia' },
+    { url: location.pathname, title: seoData.title }
   ];
   return (
     <Layout location={location}>

@@ -1,0 +1,76 @@
+@import '../scss/variables.module.scss';
+
+@mixin renderRow($background, $color:$black) {
+  .cell {
+    background: $background;
+    color: $color;
+  }
+
+  &:hover {
+    .cell {
+      // color: lighten($color, 10%);
+      // font-weight: 700;
+      background: darken($background, 15%);
+    }
+  }
+}
+
+.indexWrapper {
+  padding: 0 5% 1rem;
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 12rem;
+
+    .colLeft {
+      text-align: right;
+      width: 48%;
+    }
+    .colRight {
+      width: 48%;
+
+      ul {
+        padding: 0 1rem;
+        margin: 0.5rem 0 0 0;
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: $mdBreakpoint) {
+  .indexWrapper {
+    padding: 0 1rem 1rem;
+  }
+
+
+  .indexWrapper {
+    padding: 0 1rem 1rem;
+    .row {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-top: 2rem;
+
+      .colLeft {
+        text-align: left;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      .colRight {
+        width: 100%;
+
+        ul {
+          padding: 0 1rem;
+          margin: 0.5rem 0 0 0;
+        }
+      }
+    }
+  }
+
+
+}

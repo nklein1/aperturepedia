@@ -1,16 +1,9 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { globalHistory } from '@reach/router'
 import { useStaticQuery, graphql } from 'gatsby';
 import thumbImg from '../images/thumbnail.png';
+import favicon from '../images/favicon.png';
 
 function SEO({ description, lang, meta, title, keywords, breadcrumbs, location }) {
   const { site } = useStaticQuery(
@@ -29,6 +22,7 @@ function SEO({ description, lang, meta, title, keywords, breadcrumbs, location }
     `
   )
 
+  const metaUrl = site.siteMetadata.siteUrl;
   const metaDescription = description || site.siteMetadata.description;
   const metaKeywords = keywords || site.siteMetadata.keywords;
   const canonical = location ? `${site.siteMetadata.siteUrl}${location.pathname}` : null;
@@ -37,8 +31,10 @@ function SEO({ description, lang, meta, title, keywords, breadcrumbs, location }
     {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
-      'url': globalHistory.location.origin,
-      'name': title
+      'url': metaUrl,
+      'name': title,
+      'description': metaDescription,
+      "inLanguage": "en-US"
     }
   ];
 
@@ -51,8 +47,12 @@ function SEO({ description, lang, meta, title, keywords, breadcrumbs, location }
         {
           '@type': 'ListItem',
           'position': index,
-          'name': breadcrumb.title,
-          'item': globalHistory.location.origin + breadcrumb.url
+          'item': {
+            '@type': 'WebSite',
+            '@id': metaUrl + breadcrumb.url,
+            'url': metaUrl + breadcrumb.url,
+            'name': breadcrumb.title
+          }
         }
       ))
     }
@@ -65,7 +65,10 @@ function SEO({ description, lang, meta, title, keywords, breadcrumbs, location }
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-
+      link={[
+        { rel: 'icon', type: 'image/png', sizes: "16x16", href: `${favicon}` },
+        { rel: 'icon', type: 'image/png', sizes: "32x32", href: `${favicon}` }
+      ]}
       meta={[
         {
           name: `description`,

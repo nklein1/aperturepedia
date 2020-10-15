@@ -10,7 +10,8 @@ import smImg from '../images/nikon_f_hero_sm.jpg';
 const NikonFLinks = ({data, location}) => {
   const seoData = data.allSeoContentJson.edges[0].node.nikonFLinks;
   const breadcrumbs = [
-    { url: location.pathname, title: data.title }
+    { url: '/', title: 'Aperturepedia' },
+    { url: location.pathname, title: seoData.title }
   ];
 
   return (

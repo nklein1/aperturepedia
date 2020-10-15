@@ -10,7 +10,8 @@ import smImg from '../images/olympus_om_hero_sm.jpg';
 const OlympusOMLinks = ({data, location}) => {
   const seoData = data.allSeoContentJson.edges[0].node.olympusOmLinks;
   const breadcrumbs = [
-    { url: location.pathname, title: data.title }
+    { url: '/', title: 'Aperturepedia' },
+    { url: location.pathname, title: seoData.title }
   ];
 
   return (

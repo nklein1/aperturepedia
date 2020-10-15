@@ -10,7 +10,8 @@ import smImg from '../images/konica_ar_hero_sm.jpg';
 const KonicaARLinks = ({data, location}) => {
   const seoData = data.allSeoContentJson.edges[0].node.konicaArLinks;
   const breadcrumbs = [
-    { url: location.pathname, title: data.title }
+    { url: '/', title: 'Aperturepedia' },
+    { url: location.pathname, title: seoData.title }
   ];
 
   return (

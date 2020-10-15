@@ -2,13 +2,28 @@
 # This file is a reduced version of the Apache Server Configs v3.0.0 | MIT License
 # https://github.com/h5bp/server-configs-apache
 
-
 # ----------------------------------------------------------------------
 # | Enforce non-www domain                                             |
 # ----------------------------------------------------------------------
-RewriteEngine On
-RewriteCond %{HTTP_HOST}  ^www.aperturepedia.com [NC]
-RewriteRule ^(.*) http://aperturepedia.com/$1 [L,R=301]
+#RewriteEngine On
+#RewriteCond %{HTTP_HOST}  ^www.aperturepedia.com [NC]
+#RewriteRule ^(.*) http://aperturepedia.com/$1 [L,R=301]
+
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)/$ /$1 [L,R] # <- for test, for prod use [L,R=302]
+
+#RewriteEngine on
+
+# Include trailing slash on directory 
+#RewriteCond %{REQUEST_URI} !(.+)/$
+#RewriteCond %{REQUEST_FILENAME}
+#RewriteRule ^(.+)$ https://aperturepedia.com/$1/ [R=302,L]
+
+# Force HTTPS and WWW 
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [OR,NC]
+#RewriteCond %{https} off  
+#RewriteRule ^(.*)$ https://aperturepedia.com/$1 [R=302,L]
+
 
 # ----------------------------------------------------------------------
 # | Expires headers                                                    |

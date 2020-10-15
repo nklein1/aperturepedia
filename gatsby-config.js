@@ -4,21 +4,28 @@ module.exports = {
     description: `Aperturepedia: a comprehensive guide to vintage first-party SLR lenses.`,
     keywords: `Aperturepedia Minolta SR Rokkor MC MD nikon nikkor canon fd fl olympus om zuiko pentax takumar m42 m37 smc konica hexanon lenses lens aperture review guide database table list SLR cameras`,
     author: `Nick Klein`,
-    siteUrl: `http://aperturepedia.com`
+    siteUrl: `https://aperturepedia.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-json`,
-    `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-remove-trailing-slashes`,
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
-        siteUrl: `http://aperturepedia.com`,
-        noTrailingSlash: true
+        siteUrl: `https://aperturepedia.com`,
+        noTrailingSlash: false
       },
     },
     {
@@ -26,18 +33,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -50,19 +45,63 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-38789595-2`,
-        trackingId: `UA-38789595-2`,
+        siteSpeedSampleRate: 100,
+        head: true
       },
+    },
+    {
+      resolve: 'gatsby-plugin-web-vitals',
+      options: {
+        // The Google Analytics property ID; the reporting code won't be generated without it
+        trackingId: `UA-38789595-2`,
+        // An array with metrics you want to track and send to GA
+        metrics: [`FID`, `TTFB`, `LCP`, `CLS`, `FCP`],
+        // Event Category (optional) { string }, default 'Web Vitals'
+        eventCategory: `Web Vitals`,
+        // Include Web Vitals tracking in development
+        // Defaults to false meaning Vitals will only be tracked in production.
+        includeInDevelopment: false,
+        // Prints metrics in the console when true
+        debug: false,
+      }
     },
     {
       //  Enable this when I want to analyze bundle size
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
       options: {
-        devMode: true,
+        devMode: false,
       },
-    }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`
+    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `gatsby-starter-default`,
+    //     short_name: `starter`,
+    //     start_url: `/`,
+    //     background_color: `#663399`,
+    //     theme_color: `#663399`,
+    //     display: `minimal-ui`,
+    //     icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `Aperturepedia`,
+    //     short_name: `Aperturepedia`,
+    //     description: `A comprehensive guide to vintage first-party SLR lenses`,
+    //     lang: `en`,
+    //     start_url: `/`,
+    //     background_color: `#FFFFFF`,
+    //     theme_color: `#663399`,
+    //     display: `standalone`,
+    //     icon: `src/images/gatsby-icon.png`,
+    //     cache_busting_mode: `none`
+    //   },
+    // },
+    // // this (optional) plugin enables Progressive Web App + Offline functionality
+    // // To learn more, visit: https://gatsby.dev/offline
+    // // `gatsby-plugin-offline`
     // {
     //   resolve: `gatsby-plugin-offline`,
     //   options: {

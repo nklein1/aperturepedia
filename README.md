@@ -7,8 +7,8 @@ With the increased interest in vintage lenses due to their easy adaptability wit
 ## Criteria for lens inclusion:
 1. Lens must designed for full-frame film SLR cameras. _(rangefinder & medium format lenses may be added after 35mm lens data is complete)_
 2. Lenses must be manufactured or branded by the camera manufacturer (Minolta, Nikon, etc). No 3rd party lenses for now.
-3. Only manual focus lenses for now.
-4. Lens must be made in the 20th century (aka "vintage").
+3. Only manual focus lenses will be included for now due to their greater adaptability to modern mirrorless cameras.
+4. Lenses must have been made in the 20th century (aka "vintage").
 5. Lens systems are generally prioritized by popularity and availability of reference data.
 
 ## Currently Supported Lens Mounts
