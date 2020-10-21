@@ -49,41 +49,29 @@ module.exports = {
         head: true
       },
     },
-    {
-      resolve: 'gatsby-plugin-web-vitals',
-      options: {
-        // The Google Analytics property ID; the reporting code won't be generated without it
-        trackingId: `UA-38789595-2`,
-        // An array with metrics you want to track and send to GA
-        metrics: [`FID`, `TTFB`, `LCP`, `CLS`, `FCP`],
-        // Event Category (optional) { string }, default 'Web Vitals'
-        eventCategory: `Web Vitals`,
-        // Include Web Vitals tracking in development
-        // Defaults to false meaning Vitals will only be tracked in production.
-        includeInDevelopment: false,
-        // Prints metrics in the console when true
-        debug: false,
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-web-vitals',
+    //   options: {
+    //     // The Google Analytics property ID; the reporting code won't be generated without it
+    //     trackingId: `UA-38789595-2`,
+    //     // An array with metrics you want to track and send to GA
+    //     metrics: [`FID`, `TTFB`, `LCP`, `CLS`, `FCP`],
+    //     // Event Category (optional) { string }, default 'Web Vitals'
+    //     eventCategory: `Web Vitals`,
+    //     // Include Web Vitals tracking in development
+    //     // Defaults to false meaning Vitals will only be tracked in production.
+    //     includeInDevelopment: false,
+    //     // Prints metrics in the console when true
+    //     debug: false,
+    //   }
+    // },
     {
       //  Enable this when I want to analyze bundle size
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
       options: {
         devMode: false,
       },
-    },
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `gatsby-starter-default`,
-    //     short_name: `starter`,
-    //     start_url: `/`,
-    //     background_color: `#663399`,
-    //     theme_color: `#663399`,
-    //     display: `minimal-ui`,
-    //     icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-    //   },
-    // },
+    }
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {

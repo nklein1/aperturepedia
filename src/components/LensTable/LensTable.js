@@ -8,15 +8,11 @@ import { Table,
         TableCell,
         Paper } from '@material-ui/core';
 
-import {
-  getRandomString,
-  parseClassFromStyle,
-  parseLensColumns
-} from '../../utils/utils';
 import LensRow from '../LensRow/LensRow';
+import { parseClassFromStyle } from '../../utils/utils';
 import styles from './LensTable.module.scss';
 
-class LensTable extends React.Component {
+class LensTable extends React.PureComponent {
 
   countByFocalLength(lensList) {
     let lensCount = lensList.reduce((c, node) => {
@@ -85,16 +81,16 @@ class LensTable extends React.Component {
       }
       return (
         <LensRow
-            key={'LensRow-' + node.lensCatLong + node.style + getRandomString()}
+            key={'LensRow-' + node.lensCatLong + node.style + count}
             lensData={node}
             lensStyle={parseClassFromStyle(node.style)}
             className={styles.small}
             lensColumns={lensColumns}
-            mount={mount}
             focalSpan={lCount[node.lensCatShort] ? lCount[node.lensCatShort].count : 1}
             maxApSpan={lCount[node.lensCatLong] ? lCount[node.lensCatLong].count : 1}
             showFocalLength={showFocalLength}
             showMaxAperture={showMaxAperture}
+            mount={mount}
             count={count}
         />
       );
@@ -102,56 +98,11 @@ class LensTable extends React.Component {
   }
 
   render() {
-    let allLensData = [];
-    let columnsToRender = [];
-    let mount = '';
-    let captionTitle = '';
-    // TODO: Get caption title from page title
-    if (this.props.data.allMinoltaSrJson) {
-      allLensData = this.props.data.allMinoltaSrJson;
-      columnsToRender = parseLensColumns('minolta_sr');
-      mount = 'sr';
-      captionTitle = 'Minolta SR-Mount Lens Database';
-    } else if (this.props.data.allNikonFJson) {
-      allLensData = this.props.data.allNikonFJson;
-      columnsToRender = parseLensColumns('nikon_f');
-      mount = 'f';
-      captionTitle = 'Nikon F-Mount Lens Database';
-    } else if (this.props.data.allCanonFdJson) {
-      allLensData = this.props.data.allCanonFdJson;
-      columnsToRender = parseLensColumns('canon_fd');
-      mount = 'fd';
-      captionTitle = 'Canon FD-Mount Lens Database';
-    } else if (this.props.data.allPentaxKJson) {
-      allLensData = this.props.data.allPentaxKJson;
-      columnsToRender = parseLensColumns('pentax_k');
-      mount = 'k';
-      captionTitle = 'Pentax K-Mount Lens Database';
-    } else if (this.props.data.allPentaxM42Json) {
-      allLensData = this.props.data.allPentaxM42Json;
-      columnsToRender = parseLensColumns('pentax_m42');
-      mount = 'm42';
-      captionTitle = 'Pentax M42-Mount Lens Database';
-    } else if (this.props.data.allPentaxM37Json) {
-      allLensData = this.props.data.allPentaxM37Json;
-      columnsToRender = parseLensColumns('pentax_m37');
-      mount = 'm37';
-      captionTitle = 'Pentax M37-Mount Lens Database';
-    } else if (this.props.data.allOlympusOmJson) {
-      allLensData = this.props.data.allOlympusOmJson;
-      columnsToRender = parseLensColumns('olympus_om');
-      mount = 'om';
-      captionTitle = 'Olympus OM-Mount Lens Database';
-    } else if (this.props.data.allKonicaArJson) {
-      allLensData = this.props.data.allKonicaArJson;
-      columnsToRender = parseLensColumns('konica_ar');
-      mount = 'ar';
-      captionTitle = 'Konica AR-Mount Lens Database';
-    }
     return (
       <TableContainer component={Paper} className={styles.container}>
         <Table size={'small'} stickyHeader aria-label={'caption table'}>
-          <caption>{captionTitle} <br />
+          <caption>
+            {this.props.seo.descr} <br />
             <span>
               Column one and two feature the focal length and maximum aperture of each lens.
               Other columns show additional data for that lens, including the lens name,
@@ -160,11 +111,11 @@ class LensTable extends React.Component {
           </caption>
           <TableHead>
             <TableRow className={styles.row}>
-              {this.renderHeaderColumns(columnsToRender)}
+              {this.renderHeaderColumns(this.props.lensColumns)}
             </TableRow>
           </TableHead>
           <TableBody>
-            {this.renderTableBody(allLensData, columnsToRender, mount)}
+            {this.renderTableBody(this.props.lensData, this.props.lensColumns, this.props.mount)}
           </TableBody>
         </Table>
       </TableContainer>

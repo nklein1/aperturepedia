@@ -79,7 +79,7 @@ const IndexPage = (props) => (
           <ul>
             {links.map(node => (
               <li key={'link-' + node.path}>
-                <Link href={node.path}>{node.name}</Link>
+                <Link to={node.path}>{node.name}</Link>
               </li>
             ))}
           </ul>

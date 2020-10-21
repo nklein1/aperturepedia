@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
+import { parseLensColumns } from '../utils/utils';
 
 class KonicaAR extends React.Component {
   constructor(props) {
@@ -24,7 +25,11 @@ class KonicaAR extends React.Component {
             keywords={this.seoData.keywords}
             breadcrumbs={this.breadcrumbs}
             location={this.props.location} />
-        <LensTable data={this.props.data} />
+        <LensTable
+            lensData={this.props.data.allKonicaArJson}
+            lensColumns={parseLensColumns('konica_ar')}
+            mount={'ar'}
+            seo={this.seoData} />
       </Layout>
     );
   }

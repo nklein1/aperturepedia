@@ -41,11 +41,11 @@ const Header = memo(({location}) => {
         { name: 'Other F Links', link: '/nikon-f-links/' }
       ]
     },
-    { name: 'Canon FD/FL',
+    { name: 'Canon FD / FL',
       isActive: location.pathname.includes('canon-fd'),
       links: [
-        { name: 'FD/FL Lens Database', link: '/canon-fd/' },
-        { name: 'Other FD/FL Links', link: '/canon-fd-links/' }
+        { name: 'FD / FL Lens Database', link: '/canon-fd/' },
+        { name: 'Other FD / FL Links', link: '/canon-fd-links/' }
       ]
     },
     { name: 'Pentax K',

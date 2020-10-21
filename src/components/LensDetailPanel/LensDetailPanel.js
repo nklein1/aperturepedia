@@ -5,6 +5,7 @@ import { PhotoLibrary as PhotoLibraryIcon,
         RateReview as RateReviewIcon,
         Build as BuildIcon,
         Info as InfoIcon,
+        Star as StarIcon,
         Notes as NotesIcon } from '@material-ui/icons';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
@@ -38,7 +39,6 @@ const LensDetailPanel = memo(({lensData, lensColumns, isExpanded}) => {
     }
     return toRender;
   }
-
 
   return (
     <TableRow
@@ -81,6 +81,20 @@ const LensDetailPanel = memo(({lensData, lensColumns, isExpanded}) => {
           { renderDetailLinks(lensData.sampleImg, PhotoLibraryIcon, 'Sample Photos') }
           { renderDetailLinks(lensData.lensImgs, PhotoLibraryIcon, 'Lens Images, Optical Diagrams & Sample Photos') }
           { renderDetailLinks(lensData.repair, BuildIcon, 'Repair Guides & Misc. Manuals') }
+
+          <p className={!lensData.creditNote ?? !lensData.creditUrl ? styles.hidden : styles.text}>
+            <strong className={styles.linkTitle}>
+              <ApIcon iconType={StarIcon} iconTitle={''} iconSize={'1rem'} /> 
+              &nbsp;
+              Credit:
+            </strong>
+            {lensData.creditNote}
+            <span className={!lensData.creditUrl ? styles.hidden : styles.text}>
+              &nbsp;( 
+              <a href={lensData.creditUrl}>Source</a>
+              )
+            </span>
+          </p>
         </div>
       </TableCell>
 
