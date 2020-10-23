@@ -68,7 +68,7 @@ class LensRow extends React.PureComponent {
           rowSpan={(lColumn.slug === 'focalLength' || lColumn.slug === 'maxAperture') && lRowSpan > 1 ? lRowSpan : 1}
 
           title={this.state.isExpanded ? 'Click to collapse lens details' : 'Click to expand lens details'}
-          key={'TableCell-' + lData.lensCatLong + lData.style + lColumn.slug + this.props.count}>
+          key={'TableCell-' + lData.id + lColumn.slug}>
           <span className={styles.lensType}>
             {lColumn.slug === 'focalLength' && lData.lensType !== 'false' ? lData.lensType : ''}
           </span>
@@ -99,7 +99,7 @@ class LensRow extends React.PureComponent {
           )}
           align={'center'}
           rowSpan={1}
-          key={'TableCell-' + lData.lensCatLong + lData.style + lColumn.slug + this.props.count}>
+          key={'TableCell-' + lData.id + lColumn.slug}>
         <div className={styles.iconRow}>
           { sources.length > 0 && <ApIcon iconType={InfoIcon} iconTitle={infoTip} iconSize={'1.2rem'} /> }
           { reviews.length > 0 && <ApIcon iconType={RateReviewIcon} iconTitle={reviewTip} iconSize={'1.2rem'} /> }
@@ -142,7 +142,7 @@ class LensRow extends React.PureComponent {
               lensStyle ? styles[mount + lensStyle] : ''
             )}
             onClick={() => this.setState({ isExpanded: !this.state.isExpanded })}
-            key={'TableRow-' + lensData.lensCatLong + lensData.style + this.props.count}>
+            key={'TableRow-' + lensData.id}>
           { this.renderLensColumns(lensData, lensColumns) }
         </TableRow>
         <LensDetailPanel

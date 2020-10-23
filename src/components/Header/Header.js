@@ -27,60 +27,30 @@ const Header = memo(({location}) => {
   });
 
   const navList = [
-    { name: 'Minolta SR',
-      isActive: location.pathname.includes('minolta-sr'),
+    { name: 'Lens Databases',
+      isActive: !location.pathname.includes('links'),
       links: [
-        { name: 'SR Lens Database', link: '/minolta-sr/' },
-        { name: 'Other SR Links', link: '/minolta-sr-links/' }
+        { name: 'Minolta SR', link: '/minolta-sr/' },
+        { name: 'Nikon F', link: '/nikon-f/' },
+        { name: 'Canon FD / FL', link: '/canon-fd/' },
+        { name: 'Pentax K ', link: '/pentax-k/' },
+        { name: 'Pentax M42', link: '/pentax-m42/' },
+        { name: 'Asahi Pentax M37', link: '/pentax-m37/' },
+        { name: 'Olympus OM', link: '/olympus-om/' },
+        { name: 'Konica AR', link: '/konica-ar/' },
       ]
     },
-    { name: 'Nikon F',
-      isActive: location.pathname.includes('nikon-f'),
+    { name: 'Helpful Links',
+      isActive: location.pathname.includes('links'),
       links: [
-        { name: 'F Lens Database', link: '/nikon-f/' },
-        { name: 'Other F Links', link: '/nikon-f-links/' }
-      ]
-    },
-    { name: 'Canon FD / FL',
-      isActive: location.pathname.includes('canon-fd'),
-      links: [
-        { name: 'FD / FL Lens Database', link: '/canon-fd/' },
-        { name: 'Other FD / FL Links', link: '/canon-fd-links/' }
-      ]
-    },
-    { name: 'Pentax K',
-      isActive: location.pathname.includes('pentax-k'),
-      links: [
-        { name: 'K Lens Database', link: '/pentax-k/' },
-        { name: 'Other K Links', link: '/pentax-k-links/' }
-      ]
-    },
-    { name: 'Pentax M42',
-      isActive: location.pathname.includes('pentax-m42'),
-      links: [
-        { name: 'M42 Lens Database', link: '/pentax-m42/' },
-        { name: 'Other M42 Links', link: '/pentax-m42-links/' }
-      ]
-    },
-    { name: 'Pentax M37',
-      isActive: location.pathname.includes('pentax-m37'),
-      links: [
-        { name: 'M37 Lens Database', link: '/pentax-m37/' },
-        { name: 'Other M37 Links', link: '/pentax-m37-links/' }
-      ]
-    },
-    { name: 'Olympus OM',
-      isActive: location.pathname.includes('olympus-om'),
-      links: [
-        { name: 'OM Lens Database', link: '/olympus-om/' },
-        { name: 'Other OM Links', link: '/olympus-om-links/' }
-      ]
-    },
-    { name: 'Konica AR',
-      isActive: location.pathname.includes('konica-ar'),
-      links: [
-        { name: 'AR Lens Database', link: '/konica-ar/' },
-        { name: 'Other AR Links', link: '/konica-ar-links/' }
+        { name: 'Minolta SR', link: '/minolta-sr-links/' },
+        { name: 'Nikon F', link: '/nikon-f-links/' },
+        { name: 'Canon FD / FL', link: '/canon-fd-links/' },
+        { name: 'Pentax K', link: '/pentax-k-links/' },
+        { name: 'Pentax M42', link: '/pentax-m42-links/' },
+        { name: 'Asahi Pentax M37', link: '/pentax-m37-links/' },
+        { name: 'Olympus OM', link: '/olympus-om-links/' },
+        { name: 'Konica AR', link: '/konica-ar-links/' }
       ]
     }
   ];

@@ -42,6 +42,7 @@ export const pageQuery = graphql`
     allMinoltaSrJson {
       edges {
         node {
+          id
           focalLength
           name
           maxAperture

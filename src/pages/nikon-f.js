@@ -42,6 +42,7 @@ export const pageQuery = graphql`
     allNikonFJson {
       edges {
         node {
+          id
           focalLength
           name
           fullName

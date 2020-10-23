@@ -42,6 +42,7 @@ export const pageQuery = graphql`
     allPentaxKJson {
       edges {
         node {
+          id
           focalLength
           name
           fullName

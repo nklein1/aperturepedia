@@ -42,6 +42,7 @@ export const pageQuery = graphql`
     allKonicaArJson {
       edges {
         node {
+          id
           focalLength
           name
           maxAperture

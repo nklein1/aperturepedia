@@ -31,7 +31,6 @@ export function parseLensColumns(type) {
       {'name': 'Year', 'slug': 'yearIntroduced'},
       {'name': 'Style', 'slug': 'style'},
       {'name': 'Resources', 'slug': 'sources'}
-      // {'name': 'Notes?', 'slug': 'notes'}
     ];
   } else if (type === 'pentax_m42' || type === 'pentax_m37') {
     columnsToRender = [
@@ -50,9 +49,8 @@ export function parseLensColumns(type) {
       {'name': 'Weight (g)', 'slug': 'weight'},
       {'name': 'Year', 'slug': 'yearIntroduced'},
       {'name': 'Resources', 'slug': 'sources'}
-      // {'name': 'Notes?', 'slug': 'notes'}
     ];
-  } else if (type === 'pentax_k' || type === 'canon_fd' || type === 'olympus_om') {
+  } else if (type === 'pentax_k' || type === 'canon_fd' || type === 'olympus_om' || type === 'zeiss_cy') {
     columnsToRender = [
       {'name': 'Focal Length', 'slug': 'focalLength'},
       {'name': 'Maximum Aperture', 'sName': 'Max. Aperture', 'slug': 'maxAperture'},
@@ -68,7 +66,6 @@ export function parseLensColumns(type) {
       {'name': 'Weight (g)', 'slug': 'weight'},
       {'name': 'Year', 'slug': 'yearIntroduced'},
       {'name': 'Resources', 'slug': 'sources'}
-      // {'name': 'Notes?', 'slug': 'notes'}
     ];
   } else if (type === 'nikon_f') {
     columnsToRender = [

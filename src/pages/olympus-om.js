@@ -42,6 +42,7 @@ export const pageQuery = graphql`
     allOlympusOmJson {
       edges {
         node {
+          id
           focalLength
           name
           maxAperture

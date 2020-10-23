@@ -42,6 +42,7 @@ export const pageQuery = graphql`
     allPentaxM37Json {
       edges {
         node {
+          id
           focalLength
           name
           lensType

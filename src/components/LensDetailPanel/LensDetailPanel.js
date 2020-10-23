@@ -11,7 +11,7 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import ApIcon from '../ApIcon/ApIcon';
 
-import { getRandomString, getFullLensName } from '../../utils/utils';
+import { getFullLensName } from '../../utils/utils';
 
 import styles from './LensDetailPanel.module.scss';
 
@@ -21,7 +21,7 @@ const LensDetailPanel = memo(({lensData, lensColumns, isExpanded}) => {
     let toRender = [];
     if (links && links.length > 0) {
       toRender.push(
-        <div className={styles.padded} key={'linkdiv-' + getRandomString()}>
+        <div className={styles.padded} key={'linkwrapper-' + lensData.id + title}>
           <strong className={styles.linkTitle}>
             <ApIcon iconType={icon} iconTitle={''} iconSize={'1rem'} /> 
             &nbsp;
@@ -29,7 +29,7 @@ const LensDetailPanel = memo(({lensData, lensColumns, isExpanded}) => {
           </strong>
           <ul className={styles.ul}>
             {links.map(link => (
-              <li className={styles.source} key={'link-' + getRandomString()}>
+              <li className={styles.source} key={'link-' + lensData.id + link}>
                 <OutboundLink href={link} target={'_blank'} rel={'noopener noreferrer'}>{link}</OutboundLink>
               </li>
             ))}
@@ -47,12 +47,12 @@ const LensDetailPanel = memo(({lensData, lensColumns, isExpanded}) => {
           isExpanded ? styles.isExpanded : ''
         )}
         classes={{ root: styles.detailContainer }}
-        key={'TableDetailRow-' + lensData.lensCatLong + lensData.style + getRandomString()}>
+        key={'TableDetailRow-' + lensData.id}>
 
       <TableCell
           classes={{root: styles.detailPanel}}
           colSpan={lensColumns.length-2}
-          key={'TableDetailCell-' + lensData.lensCatLong + lensData.style + getRandomString()}>
+          key={'TableDetailCell-' + lensData.id}>
         <div className={styles.detailPanelInner}>
         <h2>{getFullLensName(lensData)}</h2>
           <p className={!lensData.officialNotes ? styles.hidden : styles.text}>

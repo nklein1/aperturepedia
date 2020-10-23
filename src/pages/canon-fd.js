@@ -42,6 +42,7 @@ export const pageQuery = graphql`
     allCanonFdJson {
       edges {
         node {
+          id
           name
           fullName
           shortName

@@ -81,7 +81,7 @@ class LensTable extends React.PureComponent {
       }
       return (
         <LensRow
-            key={'LensRow-' + node.lensCatLong + node.style + count}
+            key={'LensRow-' + node.id}
             lensData={node}
             lensStyle={parseClassFromStyle(node.style)}
             className={styles.small}
