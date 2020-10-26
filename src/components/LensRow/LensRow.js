@@ -11,7 +11,6 @@ import { PhotoLibrary as PhotoLibraryIcon,
 import ApIcon from '../ApIcon/ApIcon';
 import LensDetailPanel from '../LensDetailPanel/LensDetailPanel';
 
-import { getFullLensName } from '../../utils/utils';
 import styles from './LensRow.module.scss';
 
 class LensRow extends React.PureComponent {

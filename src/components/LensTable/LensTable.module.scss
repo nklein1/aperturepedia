@@ -1,5 +1,15 @@
 @import '../../scss/variables.module.scss';
 
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+      margin-bottom: 0.75rem;
+
+    .title {}
+  }
+
 .container {
   .row {
     .cell {
@@ -26,6 +36,11 @@
 }
 
 @media screen and (max-width: $mdBreakpoint) {
+  .title {
+    padding: 1rem 1rem 0rem 1rem;
+    margin-bottom: 0.75rem;
+  }
+
   .container {
     .row {
       .cell {

@@ -1,6 +1,5 @@
 import React, {memo} from 'react';
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import  { AppBar,
         Toolbar,
@@ -37,7 +36,7 @@ const Header = memo(({location}) => {
         { name: 'Pentax M42', link: '/pentax-m42/' },
         { name: 'Asahi Pentax M37', link: '/pentax-m37/' },
         { name: 'Olympus OM', link: '/olympus-om/' },
-        { name: 'Konica AR', link: '/konica-ar/' },
+        { name: 'Konica AR', link: '/konica-ar/' }
       ]
     },
     { name: 'Helpful Links',

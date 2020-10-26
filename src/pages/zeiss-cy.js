@@ -6,10 +6,10 @@ import Layout from '../components/Layout/Layout';
 import LensTable from '../components/LensTable/LensTable';
 import { parseLensColumns } from '../utils/utils';
 
-class PentaxK extends React.Component {
+class ZeissCY extends React.Component {
   constructor(props) {
     super(props);
-    this.seoData = this.props.data.allSeoContentJson.edges[0].node.pentaxKDb;
+    this.seoData = this.props.data.allSeoContentJson.edges[0].node.ZeissCyDb;
     this.breadcrumbs = [
       { url: '/', title: 'Aperturepedia' },
       { url: this.props.location.pathname, title: this.seoData.title }
@@ -27,51 +27,53 @@ class PentaxK extends React.Component {
             location={this.props.location} />
         <LensTable
             title={this.seoData.title}
-            lensData={this.props.data.allPentaxKJson}
-            lensColumns={parseLensColumns('pentax_k')}
-            mount={'k'}
+            lensData={this.props.data.allZeissCyJson}
+            lensColumns={parseLensColumns('zeiss_cy')}
+            mount={'cy'}
             seo={this.seoData} />
       </Layout>
     );
   }
 }
 
-export default PentaxK;
+export default ZeissCY;
 
 export const pageQuery = graphql`
   query {
-    allPentaxKJson {
+    allZeissCyJson {
       edges {
         node {
           id
           focalLength
           name
           fullName
-          shortName
           maxAperture
           minAperture
           elements
           groups
           blades
           filterThread
+          hood
           closeFocus
           diameter
           length
           weight
           yearIntroduced
-          style
-          notes
           lensType
           lensCatShort
           lensCatLong
+          notes
+          officialNotes
+          officalData
           sources
+          reviews
         }
       }
     },
     allSeoContentJson {
       edges {
         node {
-          pentaxKDb {
+          ZeissCyDb {
             title
             descr
             keywords

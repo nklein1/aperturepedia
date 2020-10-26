@@ -11,28 +11,33 @@
     padding-top: 0px;
     border-bottom: 1px solid $mdGrey;
 
-    .detailPanelInner {}
+    .detailPanelInner {
+      .detailPanelContent {
+        margin-left: 1.5rem;
 
-    .text {
-      white-space: pre-wrap;
-    }
+        .text {
+          white-space: pre-wrap;
+        }
 
-    .padded {
-      margin: 1rem 0;
-    }
+        .padded {
+          margin: 1rem 0;
+        }
 
-    .linkTitle {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
+        .linkTitle {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-left: -1.5rem;
+        }
 
-    .ul {
-      font-size: 0.9rem;
-      line-height: 1.1rem;
-      padding: 0 1.2rem;
-      margin: 0;
-      word-wrap: break-word;
+        .ul {
+          font-size: 0.9rem;
+          line-height: 1.1rem;
+          padding: 0 1.2rem;
+          margin: 0;
+          word-wrap: break-word;
+        }
+      }
     }
 
     .hidden {

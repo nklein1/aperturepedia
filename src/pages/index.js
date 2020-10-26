@@ -67,6 +67,13 @@ const IndexPage = (props) => (
             <br /><br/>
             <strong>It's very much a work in progress</strong>, and any feedback on features or enhancements are welcome.<br/>
             The contact email address is <strong>this website's name</strong> at <strong>gmail dot com</strong>. <em>(This hint is an effort to minimize spam)</em>
+
+            <br /><br/>
+            <strong>Furthermore you can also&nbsp;
+            <OutboundLink href={'https://forms.gle/Dvzx3j1gs5faUoPt5'} target={'_blank'} rel={'noopener noreferrer'}>
+              take our short User Survey
+            </OutboundLink>
+            &nbsp;to help me gather data on what site improvements users will find most useful.</strong>
           </span>
         </div>
       </div>

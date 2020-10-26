@@ -1,18 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Typography } from '@material-ui/core';
 
 import Header from '../Header/Header';
 import styles from  './Layout.module.scss';
 
-const Layout = ({children, title, location}) => {
+const Layout = ({children, location}) => {
   return (
     <div className={styles.container}>
       <Header location={location} />
       <div className={styles.content}>
-        <Typography variant={'h5'} className={styles.title}>
-          {title}
-        </Typography>
         {children}
       </div>
     </div>

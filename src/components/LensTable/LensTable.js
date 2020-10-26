@@ -6,7 +6,9 @@ import { Table,
         TableBody,
         TableRow,
         TableCell,
-        Paper } from '@material-ui/core';
+        Paper,
+        Typography } from '@material-ui/core';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import LensRow from '../LensRow/LensRow';
 import { parseClassFromStyle } from '../../utils/utils';
@@ -99,26 +101,39 @@ class LensTable extends React.PureComponent {
 
   render() {
     return (
-      <TableContainer component={Paper} className={styles.container}>
-        <Table size={'small'} stickyHeader aria-label={'caption table'}>
-          <caption>
-            {this.props.seo.descr} <br />
-            <span>
-              Column one and two feature the focal length and maximum aperture of each lens.
-              Other columns show additional data for that lens, including the lens name,
-              optical formula, dimensions, weight, and year introduced, among others.
-            </span>
-          </caption>
-          <TableHead>
-            <TableRow className={styles.row}>
-              {this.renderHeaderColumns(this.props.lensColumns)}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {this.renderTableBody(this.props.lensData, this.props.lensColumns, this.props.mount)}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <>
+        <div className={styles.header}>
+          <Typography variant={'h5'} className={styles.title}>
+            {this.props.title}
+          </Typography>
+          <div className={styles.toolbar}>
+            Want to help improve Aperturepedia?&nbsp;
+            <OutboundLink href={'https://forms.gle/Dvzx3j1gs5faUoPt5'} target={'_blank'} rel={'noopener noreferrer'}>
+              Take our User Survey!
+            </OutboundLink>
+          </div>
+        </div>
+        <TableContainer component={Paper} className={styles.container}>
+          <Table size={'small'} stickyHeader aria-label={'caption table'}>
+            <caption>
+              {this.props.seo.descr} <br />
+              <span>
+                Column one and two feature the focal length and maximum aperture of each lens.
+                Other columns show additional data for that lens, including the lens name,
+                optical formula, dimensions, weight, and year introduced, among others.
+              </span>
+            </caption>
+            <TableHead>
+              <TableRow className={styles.row}>
+                {this.renderHeaderColumns(this.props.lensColumns)}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {this.renderTableBody(this.props.lensData, this.props.lensColumns, this.props.mount)}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </>
     );
   }
 }

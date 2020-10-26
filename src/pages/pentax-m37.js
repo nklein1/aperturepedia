@@ -18,7 +18,7 @@ class PentaxM37 extends React.Component {
 
   render() {
     return (
-      <Layout title={this.seoData.title} location={this.props.location}>
+      <Layout location={this.props.location}>
         <SEO
             title={this.seoData.title}
             description={this.seoData.descr}
@@ -26,6 +26,7 @@ class PentaxM37 extends React.Component {
             breadcrumbs={this.breadcrumbs}
             location={this.props.location} />
         <LensTable
+            title={this.seoData.title}
             lensData={this.props.data.allPentaxM37Json}
             lensColumns={parseLensColumns('pentax_m37')}
             mount={'m37'}
