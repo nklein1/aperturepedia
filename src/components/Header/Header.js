@@ -12,6 +12,7 @@ import  { AppBar,
         Drawer,
         List } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import MobileNavItem from '../MobileNavItem/MobileNavItem';
 import NavItem from '../NavItem/NavItem';
@@ -125,6 +126,15 @@ const Header = memo(({location}) => {
               classes={{paper: styles.drawer}}>
             {list()}
           </Drawer>
+        </div>
+
+        <div className={classNames(
+            styles.alert,
+            styles.desktop)}>
+          Want to help improve Aperturepedia?&nbsp;
+          <OutboundLink href={'https://forms.gle/Dvzx3j1gs5faUoPt5'} target={'_blank'} rel={'noopener noreferrer'}>
+            Take our User Survey!
+          </OutboundLink>
         </div>
       </Toolbar>
     </AppBar>

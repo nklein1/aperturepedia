@@ -53,6 +53,11 @@ export const pageQuery = graphql`
             name
             helpText
           }
+          mountHistLinks {
+            url
+            name
+            helpText
+          }
           reviewLinks {
             url
             name

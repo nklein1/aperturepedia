@@ -2,7 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import SEO from '../components/seo';
-import Layout from '../components/Layout/Layout';
+import DbPageLayout from '../components/DbPageLayout/DbPageLayout';
+
 import LensTable from '../components/LensTable/LensTable';
 import { parseLensColumns } from '../utils/utils';
 
@@ -16,9 +17,34 @@ class MinoltaSR extends React.Component {
     ];
   }
 
+  // const renderModalContent = (links, icon, title) => {
+  //   let toRender = [];
+  //     toRender = {
+  //       <div className={styles.padded} key={'linkwrapper-' + lensData.id + title}>
+  //         <strong className={styles.linkTitle}>
+  //           <ApIcon iconType={icon} iconTitle={''} iconSize={'1rem'} /> 
+  //           &nbsp;
+  //           {title}: 
+  //         </strong>
+  //         <ul className={styles.ul}>
+  //           {links.map(link => (
+  //             <li className={styles.source} key={'link-' + lensData.id + link}>
+  //               <OutboundLink href={link} target={'_blank'} rel={'noopener noreferrer'}>{link}</OutboundLink>
+  //             </li>
+  //           ))}
+  //         </ul>
+  //       </div>
+  //     );
+  //   }
+  //   return toRender;
+  // }
+
   render() {
     return (
-      <Layout location={this.props.location}>
+      <DbPageLayout
+          location={this.props.location}
+          modalContent={this.modalContent}
+          seoData={this.seoData}>
         <SEO
             title={this.seoData.title}
             description={this.seoData.descr}
@@ -26,12 +52,11 @@ class MinoltaSR extends React.Component {
             breadcrumbs={this.breadcrumbs}
             location={this.props.location} />
         <LensTable
-            title={this.seoData.title}
             lensData={this.props.data.allMinoltaSrJson}
             lensColumns={parseLensColumns('minolta_sr')}
             mount={'sr'}
             seo={this.seoData} />
-      </Layout>
+      </DbPageLayout>
     );
   }
 }
@@ -73,9 +98,15 @@ export const pageQuery = graphql`
       edges {
         node {
           minoltaSrDb {
+            name
             title
             descr
             keywords
+            variants {
+              id
+              name
+              descr
+            }
           }
         }
       }

@@ -6,9 +6,7 @@ import { Table,
         TableBody,
         TableRow,
         TableCell,
-        Paper,
-        Typography } from '@material-ui/core';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+        Paper } from '@material-ui/core';
 
 import LensRow from '../LensRow/LensRow';
 import { parseClassFromStyle } from '../../utils/utils';
@@ -102,17 +100,6 @@ class LensTable extends React.PureComponent {
   render() {
     return (
       <>
-        <div className={styles.header}>
-          <Typography variant={'h5'} className={styles.title}>
-            {this.props.title}
-          </Typography>
-          <div className={styles.toolbar}>
-            Want to help improve Aperturepedia?&nbsp;
-            <OutboundLink href={'https://forms.gle/Dvzx3j1gs5faUoPt5'} target={'_blank'} rel={'noopener noreferrer'}>
-              Take our User Survey!
-            </OutboundLink>
-          </div>
-        </div>
         <TableContainer component={Paper} className={styles.container}>
           <Table size={'small'} stickyHeader aria-label={'caption table'}>
             <caption>

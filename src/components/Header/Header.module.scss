@@ -26,6 +26,14 @@
       color: inherit;
     }
 
+    .alert {
+      white-space: nowrap;
+      text-align: right;
+      font-size: 0.9rem;
+      padding: 1rem;
+      font-style: italic;
+    }
+
     .mobile {
       display: none;
     }

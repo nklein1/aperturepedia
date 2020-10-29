@@ -74,6 +74,7 @@ export const pageQuery = graphql`
       edges {
         node {
           ZeissCyDb {
+            name
             title
             descr
             keywords

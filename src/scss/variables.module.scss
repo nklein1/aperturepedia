@@ -26,22 +26,110 @@ $lighterGrey: #EFEFEF;
 $lightGrey: #CED4DA;
 $mdGrey: #666;
 
-$faintRed: #F77763;
-$lightRed: #CB5745;
-$red: #D64541;
-$medRed: #AD302D;
+$faintRed: #F9A592;
+$lightRed: #F77763;
+$red: #CB5745;
+$medRed: #D64541;
+// $faintRed: #F77763;
+// $lightRed: #CB5745;
+// $red: #D64541;
+// $medRed: #AD302D;
+// #f9a592
 
-$lightOrange: #e0a800;
-$orange: #d39E00;
+$lightOrange: #E0A800;
+$orange: #D39E00;
 
 // $lightGreen: #DAFDE2;
-$lightGreen: #ECFBC0;
+$faintGreen: #ECFBC0;
+$lightGreen: #D6F678;
 $green: #28A745;
 
 $brightYellow: #F9EA06;
 $faintYellow: #FCF9DE;
 
-$blue: #007bff;
+$blue: #007BFF;
+
+
+
+// // BRAND Colors
+
+
+// Konica AR Palette
+$ara: #FFFF99;
+$arb: #CCFF66;
+$arc: #66FF66;
+$ard: #00CC66;
+$are: #33CCCC;
+$aruc: #0000FF;
+$arpreset: #9966FF;
+$arhybrid: #CC00FF;
+$arplastic: #FF6699;
+$arreflex: #FFCC00;
+$arhx: #CC9900;
+
+// Canon FD Palette
+$fdfl: $orange2;
+$fdfd: $blue1;
+$fdnewfd: $blue2;
+$fdfdl: $darkRed; 
+$fdnewfdl: $darkRed;
+
+// Nikon F Palette
+// // Currently testing:
+// $ff: $grey1;
+// $fc: $grey2;
+// $fk: #A97EFD;
+// $fai: $blue1;
+// $fais: $blue2;
+// $fe: $lightGreen;
+
+// // Previously testing for comparison:
+// $ff: $orange2;
+// $fc: $orange3;
+// $fk: $grey1;
+// $fai: $blue2;
+// $fais: $blue3;
+// $fe: $lightGreen;
+
+$ff: #1b9ff1;
+$fc: #1385CC;
+$fk: #f9ce25;
+$fai: #f37356;
+$fais: #e45838;
+$fe: $lightGreen;
+
+// Pentax K Palette
+$ksmc: $orange2;
+$ksmcm: $blue1;
+$ksmca: $blue2;
+
+// Pentax M42 Palette
+$m42takumar: $orange2;
+$m42auto: $orange3;
+$m42super: $blue1;
+$m42smc: $blue2;
+
+// Minolta SR Palette
+$srsr: $grey1;
+$srar: $grey1;
+$srarii: $grey2;
+$srsrc: $grey3;
+$srarc: $grey3;
+$srmci: $orange1;
+$srmcii: $orange2;
+$srmcx: $orange3;
+$srmdi: $blue1;
+$srmdii: $blue2;
+$srmdiii: $blue3;
+$srmdiiia: $blue4;
+$srlei: $darkRed;
+$srmcce: $lightGreen;
+$srmdce: $lightGreen;
+
+
+
+
+
 
 // Theme Colors
 $lightGreyBorder: $lightGrey;

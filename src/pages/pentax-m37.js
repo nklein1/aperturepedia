@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import SEO from '../components/seo';
-import Layout from '../components/Layout/Layout';
+import DbPageLayout from '../components/DbPageLayout/DbPageLayout';
 import LensTable from '../components/LensTable/LensTable';
 import { parseLensColumns } from '../utils/utils';
 
@@ -18,7 +18,9 @@ class PentaxM37 extends React.Component {
 
   render() {
     return (
-      <Layout location={this.props.location}>
+      <DbPageLayout
+          location={this.props.location}
+          seoData={this.seoData}>
         <SEO
             title={this.seoData.title}
             description={this.seoData.descr}
@@ -26,12 +28,11 @@ class PentaxM37 extends React.Component {
             breadcrumbs={this.breadcrumbs}
             location={this.props.location} />
         <LensTable
-            title={this.seoData.title}
             lensData={this.props.data.allPentaxM37Json}
             lensColumns={parseLensColumns('pentax_m37')}
             mount={'m37'}
             seo={this.seoData} />
-      </Layout>
+      </DbPageLayout>
     );
   }
 }
@@ -74,6 +75,7 @@ export const pageQuery = graphql`
       edges {
         node {
           pentaxM37Db {
+            name
             title
             descr
             keywords

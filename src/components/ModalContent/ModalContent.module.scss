@@ -1,0 +1,113 @@
+@import '../../scss/variables.module.scss';
+
+@mixin renderBg($background, $color:$black) {
+  background: $background;
+  color: $color;
+}
+
+.modalWrapper {
+  padding: 0 24px 16px 24px;
+  .header {
+    .title {}
+  }
+
+  .section {
+    margin-top: 1rem;
+
+    .sectionTitle {
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: block;
+    }
+    .sectionContent {
+
+      .helpTxt {
+        display: block;
+        padding: 0.5rem 0 0.25rem 0;
+      }
+
+      .legendItem {
+        .name {
+          white-space: nowrap;
+          text-align: center;
+        }
+
+        // Konica AR-specific Styling
+        .ara { @include renderBg($ara); }
+        .arb { @include renderBg($arb); }
+        .arc { @include renderBg($arc); }
+        .ard { @include renderBg($ard); }
+        .are { @include renderBg($are); }
+        .aruc { @include renderBg($aruc); }
+        .arpreset { @include renderBg($arpreset); }
+        .arhybrid { @include renderBg($arhybrid); }
+        .arplastic { @include renderBg($arplastic); }
+        .arreflex { @include renderBg($arreflex); }
+        .arhx { @include renderBg($arhx); }
+
+        // Canon FD-specific Styling
+        .fdfl { @include renderBg($fdfl); }
+        .fdfd { @include renderBg($fdfd); }
+        .fdnewfd { @include renderBg($fdnewfd); }
+        .fdfdl { @include renderBg($fdfdl, $white); }
+        .fdnewfdl { @include renderBg($fdnewfdl, $white); }
+
+        // Nikon F-specific Styling
+        .ff { @include renderBg($ff); }
+        .fc { @include renderBg($fc); }
+        .fk { @include renderBg($fk); }
+        .fai { @include renderBg($fai); }
+        .fais { @include renderBg($fais); }
+        .fe { @include renderBg($fe); }
+
+        // Pentax K-specific Styling
+        .ksmc { @include renderBg($ksmc); }
+        .ksmcm { @include renderBg($ksmcm); }
+        .ksmca { @include renderBg($ksmca); }
+
+        // Pentax M42-specific Styling
+        .m42takumar { @include renderBg($m42takumar); }
+        .m42auto { @include renderBg($m42auto); }
+        .m42super { @include renderBg($m42super); }
+        .m42smc { @include renderBg($m42smc); }
+
+        // Minolta-specific Styling
+        .srsr { @include renderBg($srsr); }
+        .srar { @include renderBg($srar); }
+        .srarii { @include renderBg($srarii); }
+        .srsrc { @include renderBg($srsrc, $white); }
+        .srarc { @include renderBg($srarc, $white); }
+        .srmci { @include renderBg($srmci); }
+        .srmcii { @include renderBg($srmcii); }
+        .srmcx { @include renderBg($srmcx); }
+        .srmdi { @include renderBg($srmdi); }
+        .srmdii { @include renderBg($srmdii); }
+        .srmdiii { @include renderBg($srmdiii); }
+        .srmdiiia { @include renderBg($srmdiiia, $white); }
+        .srlei { @include renderBg($srlei, $white); }
+        .srmcce { @include renderBg($srmcce); }
+        .srmdce { @include renderBg($srmdce); }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mdBreakpoint) {
+  .row {
+    .cell {
+      font-size: 0.8rem;
+      line-height: 0.9rem;
+      font-weight: 500;
+
+      &.focalLength, &.notes {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+
+    .focalLength, .maxAperture {
+      font-size: 1rem;
+      line-height: 0.9rem;
+    }
+  }
+}

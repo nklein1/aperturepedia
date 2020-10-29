@@ -16,60 +16,61 @@
 }
 
 // Konica AR-specific Styling
-.ara.row { @include renderRow(#FFFF99); }
-.arb.row { @include renderRow(#CCFF66); }
-.arc.row { @include renderRow(#66FF66); }
-.ard.row { @include renderRow(#00CC66); }
-.are.row { @include renderRow(#33CCCC); }
-.aruc.row { @include renderRow(#0000FF); }
-.arpreset.row { @include renderRow(#9966FF); }
-.arhybrid.row { @include renderRow(#CC00FF); }
-.arplastic.row { @include renderRow(#FF6699); }
-.arreflex.row { @include renderRow(#FFCC00); }
-.arhx.row { @include renderRow(#CC9900); }
+.ara.row { @include renderRow($ara); }
+.arb.row { @include renderRow($arb); }
+.arc.row { @include renderRow($arc); }
+.ard.row { @include renderRow($ard); }
+.are.row { @include renderRow($are); }
+.aruc.row { @include renderRow($aruc); }
+.arpreset.row { @include renderRow($arpreset); }
+.arhybrid.row { @include renderRow($arhybrid); }
+.arplastic.row { @include renderRow($arplastic); }
+.arreflex.row { @include renderRow($arreflex); }
+.arhx.row { @include renderRow($arhx); }
 
 // Canon FD-specific Styling
-.fdfl.row { @include renderRow($orange2); }
-.fdfd.row { @include renderRow($blue1); }
-.fdnewfd.row { @include renderRow($blue2); }
-.fdfdl.row, .fdnewfdl.row { @include renderRow($darkRed, $white); }
+.fdfl.row { @include renderRow($fdfl); }
+.fdfd.row { @include renderRow($fdfd); }
+.fdnewfd.row { @include renderRow($fdnewfd); }
+.fdfdl.row { @include renderRow($fdfdl, $white); }
+.fdnewfdl.row { @include renderRow($fdnewfdl, $white); }
 
 // Nikon F-specific Styling
-.ff.row { @include renderRow(#1b9ff1); }
-.fc.row { @include renderRow(#1385CC); }
-.fk.row { @include renderRow(#f9ce25); }
-.fai.row { @include renderRow(#f37356); }
-.fais.row { @include renderRow(#e45838); }
-.fe.row { @include renderRow($lightGreen); }
+.ff.row { @include renderRow($ff); }
+.fc.row { @include renderRow($fc); }
+.fk.row { @include renderRow($fk); }
+.fai.row { @include renderRow($fai); }
+.fais.row { @include renderRow($fais); }
+.fe.row { @include renderRow($fe); }
 
 // Pentax K-specific Styling
-.ksmc.row { @include renderRow($orange2); }
-.ksmcm.row { @include renderRow($blue1); }
-.ksmca.row { @include renderRow($blue2); }
+.ksmc.row { @include renderRow($ksmc); }
+.ksmcm.row { @include renderRow($ksmcm); }
+.ksmca.row { @include renderRow($ksmca); }
 
 // Pentax M42-specific Styling
-.m42takumar.row, .m42tele.row { @include renderRow($orange2); }
-.m42auto.row { @include renderRow($orange3); }
-.m42super.row { @include renderRow($blue1); }
-.m42smc.row { @include renderRow($blue2); }
+.m42takumar.row { @include renderRow($m42takumar); }
+.m42auto.row { @include renderRow($m42auto); }
+.m42super.row { @include renderRow($m42super); }
+.m42smc.row { @include renderRow($m42smc); }
 
 // Minolta-specific Styling
-.srar.row, .srsr.row { @include renderRow($grey1); }
-.srarii.row { @include renderRow($grey2); }
-.srarc.row, .srsrc.row { @include renderRow($grey3, $white); }
-.srmci.row { @include renderRow($orange1); }
-.srmcii.row { @include renderRow($orange2); }
-.srmcx.row { @include renderRow($orange3); }
-.srmdi.row { @include renderRow($blue1); }
-.srmdii.row { @include renderRow($blue2); }
-.srmdiii.row { @include renderRow($blue3); }
-.srmdiiia.row { @include renderRow($blue4, $white); }
-.srlei.row { @include renderRow($darkRed, $white); }
-.srmcce.row, .srmdce.row { @include renderRow($lightGreen); }
-// .srmcce .cell, .srmdce .cell {
-//   // background-image: linear-gradient(-45deg, $orange2 25%, transparent 25%, transparent 50%, $orange2 50%, $orange2 75%, transparent 75%, transparent);
-//   // background-size: 4px 4px;
-// }
+.srsr.row { @include renderRow($srsr); }
+.srar.row { @include renderRow($srar); }
+.srarii.row { @include renderRow($srarii); }
+.srsrc.row { @include renderRow($srsrc, $white); }
+.srarc.row { @include renderRow($srarc, $white); }
+.srmci.row { @include renderRow($srmci); }
+.srmcii.row { @include renderRow($srmcii); }
+.srmcx.row { @include renderRow($srmcx); }
+.srmdi.row { @include renderRow($srmdi); }
+.srmdii.row { @include renderRow($srmdii); }
+.srmdiii.row { @include renderRow($srmdiii); }
+.srmdiiia.row { @include renderRow($srmdiiia, $white); }
+.srlei.row { @include renderRow($srlei, $white); }
+.srmcce.row { @include renderRow($srmcce); }
+.srmdce.row { @include renderRow($srmdce); }
+
 
 // General Styling
 .row {

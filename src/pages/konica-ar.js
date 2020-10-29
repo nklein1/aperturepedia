@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import SEO from '../components/seo';
-import Layout from '../components/Layout/Layout';
+import DbPageLayout from '../components/DbPageLayout/DbPageLayout';
 import LensTable from '../components/LensTable/LensTable';
 import { parseLensColumns } from '../utils/utils';
 
@@ -18,7 +18,9 @@ class KonicaAR extends React.Component {
 
   render() {
     return (
-      <Layout location={this.props.location}>
+      <DbPageLayout
+          location={this.props.location}
+          seoData={this.seoData}>
         <SEO
             title={this.seoData.title}
             description={this.seoData.descr}
@@ -31,7 +33,7 @@ class KonicaAR extends React.Component {
             lensColumns={parseLensColumns('konica_ar')}
             mount={'ar'}
             seo={this.seoData} />
-      </Layout>
+      </DbPageLayout>
     );
   }
 }
@@ -73,9 +75,15 @@ export const pageQuery = graphql`
       edges {
         node {
           konicaArDb {
+            name
             title
             descr
             keywords
+            variants {
+              id
+              name
+              descr
+            }
           }
         }
       }
