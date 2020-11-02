@@ -1,6 +1,8 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
+import loadable from '@loadable/component';
+
 import { TableRow, TableCell } from '@material-ui/core';
 import { PhotoLibrary as PhotoLibraryIcon,
         RateReview as RateReviewIcon,
@@ -9,9 +11,13 @@ import { PhotoLibrary as PhotoLibraryIcon,
         Notes as NotesIcon } from '@material-ui/icons';
 
 import ApIcon from '../ApIcon/ApIcon';
-import LensDetailPanel from '../LensDetailPanel/LensDetailPanel';
 
 import styles from './LensRow.module.scss';
+
+const LensDetailPanel = loadable(() => import('../LensDetailPanel/LensDetailPanel'), {
+  // ssr: false,
+  // fallback: <></>
+})
 
 class LensRow extends React.PureComponent {
 
@@ -35,22 +41,24 @@ class LensRow extends React.PureComponent {
       yearIntroduced:     PropTypes.string,
       style:              PropTypes.string,
       notes:              PropTypes.string,
+      lensCatShort:       PropTypes.string,
+      lensCatLong:        PropTypes.string,
       sources:            PropTypes.array
     }).isRequired,
-    lensStyle:        PropTypes.string,
-    className:        PropTypes.string,
-    lensColumns:      PropTypes.array,
-    focalSpan:        PropTypes.number,
-    maxApSpan:        PropTypes.number,
-    showFocalLength:  PropTypes.bool,
-    showMaxAperture:  PropTypes.bool
+    lensStyle:         PropTypes.string,
+    className:         PropTypes.string,
+    lensColumns:       PropTypes.array,
+    focalSpan:         PropTypes.number,
+    maxApSpan:         PropTypes.number,
+    showFocalLength:   PropTypes.bool,
+    showMaxAperture:   PropTypes.bool,
+    renderDetailPanel: PropTypes.bool,
+    onRowExpand:       PropTypes.func
   }
 
   constructor(props) {
     super(props);
-    this.state = {
-      isExpanded: false
-    };
+    this.state = { isExpanded: false };
   }
 
   renderCell(lData, lColumn, i, lRowSpan) {
@@ -76,7 +84,7 @@ class LensRow extends React.PureComponent {
     );
   }
 
-  renderResources(lData, lColumn, i, lRowSpan) {
+  renderResources(lData, lColumn, i) {
     const sources = lData.sources || [];
     const reviews = lData.reviews || [];
     const repair = lData.repair || [];
@@ -96,17 +104,16 @@ class LensRow extends React.PureComponent {
             styles[lColumn.slug],
             styles.small,
           )}
-          align={'center'}
           rowSpan={1}
+          align={'center'}
           key={'TableCell-' + lData.id + lColumn.slug}>
         <div className={styles.iconRow}>
           { sources.length > 0 && <ApIcon iconType={InfoIcon} iconTitle={infoTip} iconSize={'1.2rem'} /> }
           { reviews.length > 0 && <ApIcon iconType={RateReviewIcon} iconTitle={reviewTip} iconSize={'1.2rem'} /> }
           { repair.length > 0 && <ApIcon iconType={BuildIcon} iconTitle={repairTip} iconSize={'1.2rem'} /> }
           { lensImgs.length > 0 && <ApIcon iconType={PhotoLibraryIcon} iconTitle={imageTip} iconSize={'1.2rem'} /> }
-          { notes && <ApIcon iconType={NotesIcon} iconTitle={notesTip} iconSize={'1.2rem'} /> }          
+          { notes && <ApIcon iconType={NotesIcon} iconTitle={notesTip} iconSize={'1.2rem'} /> }
         </div>
-
       </TableCell>
     );
   }
@@ -131,6 +138,12 @@ class LensRow extends React.PureComponent {
     return toRender;
   }
 
+  expandRow = () => {
+    const lData = this.props.lensData;
+    this.props.onRowExpand(lData.lensCatShort, lData.lensCatLong, !this.state.isExpanded);
+    this.setState({ isExpanded: !this.state.isExpanded });
+  }
+
   render() {
     let { lensData, lensStyle, lensColumns, mount } = this.props;
     return (
@@ -140,15 +153,18 @@ class LensRow extends React.PureComponent {
               styles.row,
               lensStyle ? styles[mount + lensStyle] : ''
             )}
-            onClick={() => this.setState({ isExpanded: !this.state.isExpanded })}
+            onClick={this.expandRow}
             key={'TableRow-' + lensData.id}>
           { this.renderLensColumns(lensData, lensColumns) }
         </TableRow>
-        <LensDetailPanel
-            lensData={lensData}
-            lensColumns={lensColumns} 
-            isExpanded={this.state.isExpanded}>
-        </LensDetailPanel>
+
+        {this.state.isExpanded && 
+          <LensDetailPanel
+              lensData={lensData}
+              lensColumns={lensColumns} 
+              isExpanded={this.state.isExpanded}>
+          </LensDetailPanel>
+        }
       </>
     )
   }

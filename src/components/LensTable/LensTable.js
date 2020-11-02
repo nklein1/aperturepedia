@@ -8,33 +8,10 @@ import { Table,
         TableCell,
         Paper } from '@material-ui/core';
 
-import LensRow from '../LensRow/LensRow';
-import { parseClassFromStyle } from '../../utils/utils';
+import LensRowGroup from '../LensRowGroup/LensRowGroup';
 import styles from './LensTable.module.scss';
 
 class LensTable extends React.PureComponent {
-
-  countByFocalLength(lensList) {
-    let lensCount = lensList.reduce((c, node) => {
-      // "2" values are handling for hidden, expandable "detail panel" rows
-      if (node && node.lensCatShort) {
-        // Parse for 'Focal Length' Column
-        if (c[node.lensCatShort]) {
-          c[node.lensCatShort].count = c[node.lensCatShort].count + 2;
-        } else {
-          c[node.lensCatShort] = { key: node.lensCatShort, count: 2 };
-        }
-        // Parse for 'Max Aperture' Column
-        if (c[node.lensCatLong]) {
-          c[node.lensCatLong].count = c[node.lensCatLong].count + 2;
-        } else {
-          c[node.lensCatLong] = { key: node.lensCatLong, count: 2 };
-        }
-      }
-      return c;
-    }, {});
-    return lensCount;
-  }
 
   renderHeaderColumns(columns) {
     let toRender = [];
@@ -52,48 +29,48 @@ class LensTable extends React.PureComponent {
     return toRender;
   }
 
-  renderTableBody(allLensData, lensColumns, mount) {
-    let lastFocalLength = '';
-    let lastLensCat = '';
-    let showFocalLength = true;
-    let showMaxAperture = true;
-    const lensList = allLensData.edges.map(e => e.node);
-    const lCount = this.countByFocalLength(lensList);
-
-    return lensList.map((node, count) => {
-      if (lastFocalLength === node.lensCatShort) {
-        // Don't include a 'Focal Length' cell in this row, focal length is same as last row
-        showFocalLength = false;
-        if (lastLensCat === node.lensCatLong) {
-          // Don't include a 'Max Aperture' cell in this row, focal length & max aperture is same as last row
-          showMaxAperture = false;
+  countByFocalLength(lensList) {
+    let lensCount = lensList.reduce((c, node) => {
+      // "2" values are handling for hidden, expandable "detail panel" rows
+      if (node && node.lensCatShort) {
+        // Parse for 'Focal Length'
+        if (c[node.lensCatShort]) {
+          c[node.lensCatShort].count = c[node.lensCatShort].count + 1;
         } else {
-          // Include a 'Max Aperture' cell in this row, focal length is same as last row but Max Aperture is different
-          lastLensCat = node.lensCatLong;
-          showMaxAperture = true;
+          c[node.lensCatShort] = { key: node.lensCatShort, count: 1 };
         }
-      } else {
-        // Include 'Focal Length' & 'Max Aperture' cells in this row, Focal Length is different from previous row
-        lastFocalLength = node.lensCatShort;
-        lastLensCat = node.lensCatLong;
-        showFocalLength = true;
-        showMaxAperture = true;
       }
-      return (
-        <LensRow
-            key={'LensRow-' + node.id}
-            lensData={node}
-            lensStyle={parseClassFromStyle(node.style)}
-            className={styles.small}
-            lensColumns={lensColumns}
-            focalSpan={lCount[node.lensCatShort] ? lCount[node.lensCatShort].count : 1}
-            maxApSpan={lCount[node.lensCatLong] ? lCount[node.lensCatLong].count : 1}
-            showFocalLength={showFocalLength}
-            showMaxAperture={showMaxAperture}
-            mount={mount}
-            count={count}
-        />
-      );
+      return c;
+    }, {});
+    return lensCount;
+  }
+
+  renderTableBody() {
+    let lastFocalLength = '';
+    const lensList = this.props.lensData.edges.map(e => e.node);
+    const lCount = this.countByFocalLength(lensList);
+    let focalGroup = [];
+    let groupSize = 0;
+    return lensList.map((node, count) => {
+      let lensRowGroup = [];
+      if (lastFocalLength !== node.lensCatShort) {
+        groupSize = lCount[node.lensCatShort].count;
+        focalGroup = lensList.slice(count, count + groupSize);
+        lastFocalLength = node.lensCatShort;
+
+        lensRowGroup.push(
+          <LensRowGroup
+              lensGroup={focalGroup}
+              groupSize={groupSize}
+              mount={this.props.mount}
+              lensColumns={this.props.lensColumns}
+              focalSpan={lCount[node.lensCatShort] ? lCount[node.lensCatShort].count : 1}
+              maxApSpan={lCount[node.lensCatLong] ? lCount[node.lensCatLong].count : 1}
+              key={'LensRow-' + node.id}
+          />
+        );
+      }
+      return lensRowGroup;
     });
   }
 
@@ -116,7 +93,7 @@ class LensTable extends React.PureComponent {
               </TableRow>
             </TableHead>
             <TableBody>
-              {this.renderTableBody(this.props.lensData, this.props.lensColumns, this.props.mount)}
+              {this.renderTableBody()}
             </TableBody>
           </Table>
         </TableContainer>

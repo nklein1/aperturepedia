@@ -1,0 +1,7 @@
+@import '../../scss/variables.module.scss';
+
+.small {
+  padding: 6px 10px;
+}
+
+@media screen and (max-width: $mdBreakpoint) {}

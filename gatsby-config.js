@@ -12,6 +12,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-loadable-components-ssr`,
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
