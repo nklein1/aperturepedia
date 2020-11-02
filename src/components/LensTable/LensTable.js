@@ -7,11 +7,33 @@ import { Table,
         TableRow,
         TableCell,
         Paper } from '@material-ui/core';
+import loadable from '@loadable/component';
+
 
 import LensRowGroup from '../LensRowGroup/LensRowGroup';
 import styles from './LensTable.module.scss';
 
+// const LensDetailPanel = loadable(() => import('../LensDetailPanel/LensDetailPanel'), {
+//   // ssr: false,
+//   // fallback: <></>
+// })
+
+
 class LensTable extends React.PureComponent {
+
+  constructor(props) {
+    super(props);
+    // this.state = { detailPanelPreloaded: false };
+  }
+
+  // preloadDetailPanel = () => {
+  //   if (!this.props.isPreloaded) {
+  //     console.log('preloadDetailPanel @ LensTable!');
+  //     LensDetailPanel.preload();
+  //     // this.handlePanelPreload();
+  //     // this.setState({ detailPanelPreloaded: true });
+  //   }
+  // }
 
   renderHeaderColumns(columns) {
     let toRender = [];

@@ -11,15 +11,18 @@ import { PhotoLibrary as PhotoLibraryIcon,
         Notes as NotesIcon } from '@material-ui/icons';
 
 import ApIcon from '../ApIcon/ApIcon';
+import DetailPanelContext from '../../utils/DetailPanelContext';
 
 import styles from './LensRow.module.scss';
 
 const LensDetailPanel = loadable(() => import('../LensDetailPanel/LensDetailPanel'), {
   // ssr: false,
   // fallback: <></>
-})
+});
 
 class LensRow extends React.PureComponent {
+
+  static contextType = DetailPanelContext;
 
   static propTypes = {
     lensData: PropTypes.shape({
@@ -58,7 +61,16 @@ class LensRow extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    this.state = { isExpanded: false };
+    this.state = {  isExpanded: false };
+  }
+
+  preloadDetailPanel = (ev) => {
+    ev.stopPropagation();
+    if (!this.context.isPreloaded) {
+      // console.log('this.context.isPreloaded @ LensRow.preloadDetailPanel()', this.context.isPreloaded);
+      LensDetailPanel.preload();
+      this.context.setAsPreloaded();
+    }
   }
 
   renderCell(lData, lColumn, i, lRowSpan) {
@@ -154,6 +166,7 @@ class LensRow extends React.PureComponent {
               lensStyle ? styles[mount + lensStyle] : ''
             )}
             onClick={this.expandRow}
+            onMouseOver={this.preloadDetailPanel}
             key={'TableRow-' + lensData.id}>
           { this.renderLensColumns(lensData, lensColumns) }
         </TableRow>

@@ -8,11 +8,14 @@ import InfoIcon from '@material-ui/icons/Info';
 import Header from '../Header/Header';
 import Modal from '../Modal/Modal';
 import ModalContent from '../ModalContent/ModalContent';
+import { DetailPanelProvider } from '../../utils/DetailPanelContext';
 import styles from  './DbPageLayout.module.scss';
 
 const DbPageLayout = ({children, location, modalContent, seoData}, props) => {
 
   const [showModal, setModalOpen] = React.useState(false);
+
+  const detailPanel = { isPreloaded: false };
 
   const openDialog = () => {
     setModalOpen(true);
@@ -21,6 +24,13 @@ const DbPageLayout = ({children, location, modalContent, seoData}, props) => {
   const closeDialog = () => {
     setModalOpen(false);
   }
+
+  // const preloadDetailPanel = () => {
+  //   if (!detailPanel.isPreloaded) {
+  //     // LensDetailPanel.preload();
+  //     detailPanel.isPreloaded = true;
+  //   }
+  // }
 
   return (
     <div className={styles.container}>
@@ -38,7 +48,7 @@ const DbPageLayout = ({children, location, modalContent, seoData}, props) => {
                 className={styles.desktop}>
               Legend
             </Button>
-          </div>   
+          </div>
           <IconButton color="primary"
               aria-label="Table Legend"
               onClick={openDialog}
@@ -47,7 +57,9 @@ const DbPageLayout = ({children, location, modalContent, seoData}, props) => {
           </IconButton>
         </div>
 
-        {children}
+        <DetailPanelProvider value={detailPanel}>
+          {children}
+        </DetailPanelProvider>
 
         <Modal 
             open={showModal}

@@ -55,7 +55,7 @@ class LensRowGroup extends React.PureComponent {
       });
     }
   }
-  
+
   renderRowGroup(lensGroup, lensColumns, mount) {
     let lastFocalLength = '';
     let lastLensCat = '';
