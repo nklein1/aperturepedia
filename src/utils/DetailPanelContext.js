@@ -4,25 +4,39 @@ const DetailPanelContext = React.createContext()
 
 class DetailPanelProvider extends Component {
   // Context state
-  state = { isPreloaded: false };
+  state = {
+    isPanelPreloaded: false,
+    isTooltipPreloaded: false
+  };
 
   // Method to update state
-  setAsPreloaded = (detailPanel) => {
-    if (!this.state.isPreloaded) {
-      this.setState((prevState) => ({ isPreloaded: true }));
+  setPanelAsPreloaded = (detailPanel) => {
+    if (!this.state.isPanelPreloaded) {
+      this.setState((prevState) => ({ isPanelPreloaded: true }));
+    }
+  }
+
+  // Method to update state
+  setTooltipAsPreloaded = (tooltip) => {
+    if (!this.state.isTooltipPreloaded) {
+      this.setState((prevState) => ({ isTooltipPreloaded: true }));
     }
   }
 
   render() {
     const { children } = this.props
-    const { isPreloaded } = this.state
-    const { setAsPreloaded } = this
+    const { isPanelPreloaded, isTooltipPreloaded } = this.state
+    // const { isPreloaded } = this.state
+    // const { setAsPreloaded } = this
+    const { setPanelAsPreloaded, setTooltipAsPreloaded } = this
 
     return (
       <DetailPanelContext.Provider
         value={{
-          isPreloaded,
-          setAsPreloaded,
+          isPanelPreloaded,
+          isTooltipPreloaded,
+          setPanelAsPreloaded,
+          setTooltipAsPreloaded,
         }}
       >
         {children}

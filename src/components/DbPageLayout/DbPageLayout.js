@@ -15,7 +15,10 @@ const DbPageLayout = ({children, location, modalContent, seoData}, props) => {
 
   const [showModal, setModalOpen] = React.useState(false);
 
-  const detailPanel = { isPreloaded: false };
+  const detailPanel = {
+    isPanelPreloaded: false,
+    isTooltipPreloaded: false
+  };
 
   const openDialog = () => {
     setModalOpen(true);

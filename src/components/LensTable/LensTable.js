@@ -7,8 +7,7 @@ import { Table,
         TableRow,
         TableCell,
         Paper } from '@material-ui/core';
-import loadable from '@loadable/component';
-
+// import loadable from '@loadable/component';
 
 import LensRowGroup from '../LensRowGroup/LensRowGroup';
 import styles from './LensTable.module.scss';
