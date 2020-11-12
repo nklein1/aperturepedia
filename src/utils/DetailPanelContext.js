@@ -26,8 +26,6 @@ class DetailPanelProvider extends Component {
   render() {
     const { children } = this.props
     const { isPanelPreloaded, isTooltipPreloaded } = this.state
-    // const { isPreloaded } = this.state
-    // const { setAsPreloaded } = this
     const { setPanelAsPreloaded, setTooltipAsPreloaded } = this
 
     return (

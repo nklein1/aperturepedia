@@ -28,13 +28,6 @@ const DbPageLayout = ({children, location, modalContent, seoData}, props) => {
     setModalOpen(false);
   }
 
-  // const preloadDetailPanel = () => {
-  //   if (!detailPanel.isPreloaded) {
-  //     // LensDetailPanel.preload();
-  //     detailPanel.isPreloaded = true;
-  //   }
-  // }
-
   return (
     <div className={styles.container}>
       <Header location={location} />

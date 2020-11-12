@@ -12,6 +12,7 @@ import { PhotoLibrary as PhotoLibraryIcon,
 
 import ApIcon from '../ApIcon/ApIcon';
 import DetailPanelContext from '../../utils/DetailPanelContext';
+
 import styles from './LensRow.module.scss';
 
 const LensDetailPanel = loadable(() => import('../LensDetailPanel/LensDetailPanel'), {
@@ -72,9 +73,8 @@ class LensRow extends React.PureComponent {
   }
 
   preloadTooltips = (ev) => {
-    ev.stopPropagation();
+    // ev.stopPropagation();
     if (!this.context.isTooltipPreloaded) {
-      LensDetailPanel.preload();
       this.context.setTooltipAsPreloaded();
     }
   }
@@ -91,6 +91,7 @@ class LensRow extends React.PureComponent {
           )}
           align={'center'}
           rowSpan={(lColumn.slug === 'focalLength' || lColumn.slug === 'maxAperture') && lRowSpan > 1 ? lRowSpan : 1}
+
           title={this.state.isExpanded ? 'Click to collapse lens details' : 'Click to expand lens details'}
           key={'TableCell-' + lData.id + lColumn.slug}>
           <span className={styles.lensType}>
@@ -122,6 +123,7 @@ class LensRow extends React.PureComponent {
             styles.small,
           )}
           rowSpan={1}
+
           onMouseOver={this.preloadTooltips}
           align={'center'}
           key={'TableCell-' + lData.id + lColumn.slug}>

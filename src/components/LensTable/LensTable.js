@@ -27,7 +27,6 @@ class LensTable extends React.PureComponent {
 
   // preloadDetailPanel = () => {
   //   if (!this.props.isPreloaded) {
-  //     console.log('preloadDetailPanel @ LensTable!');
   //     LensDetailPanel.preload();
   //     // this.handlePanelPreload();
   //     // this.setState({ detailPanelPreloaded: true });
@@ -78,7 +77,6 @@ class LensTable extends React.PureComponent {
         groupSize = lCount[node.lensCatShort].count;
         focalGroup = lensList.slice(count, count + groupSize);
         lastFocalLength = node.lensCatShort;
-
         lensRowGroup.push(
           <LensRowGroup
               lensGroup={focalGroup}
