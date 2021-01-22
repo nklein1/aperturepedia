@@ -69,15 +69,16 @@ class LensRow extends React.PureComponent {
     if (!this.context.isPanelPreloaded) {
       LensDetailPanel.preload();
       this.context.setPanelAsPreloaded();
-    }
-  }
-
-  preloadTooltips = (ev) => {
-    // ev.stopPropagation();
-    if (!this.context.isTooltipPreloaded) {
       this.context.setTooltipAsPreloaded();
     }
   }
+
+  // preloadTooltips = (ev) => {
+  //   // ev.stopPropagation();
+  //   if (!this.context.isTooltipPreloaded) {
+  //     this.context.setTooltipAsPreloaded();
+  //   }
+  // }
 
   renderCell(lData, lColumn, i, lRowSpan) {
     return (
@@ -123,8 +124,6 @@ class LensRow extends React.PureComponent {
             styles.small,
           )}
           rowSpan={1}
-
-          onMouseOver={this.preloadTooltips}
           align={'center'}
           key={'TableCell-' + lData.id + lColumn.slug}>
         <div className={styles.iconRow}>

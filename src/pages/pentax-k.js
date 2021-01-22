@@ -77,6 +77,7 @@ export const pageQuery = graphql`
             title
             descr
             keywords
+            legendSource
             variants {
               id
               name
