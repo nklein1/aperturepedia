@@ -13,7 +13,7 @@ import ApIcon from '../ApIcon/ApIcon';
 
 import { getFullLensName } from '../../utils/utils';
 
-import styles from './LensDetailPanel.module.scss';
+import * as styles from './LensDetailPanel.module.scss';
 
 const LensDetailPanel = memo(({lensData, lensColumns, isExpanded}) => {
 

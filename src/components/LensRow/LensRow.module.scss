@@ -15,6 +15,9 @@
   }
 }
 
+// Generic Styling
+.row { @include renderRow($white); }
+
 // Konica AR-specific Styling
 .ara.row { @include renderRow($ara); }
 .arb.row { @include renderRow($arb); }
@@ -70,6 +73,7 @@
 .srlei.row { @include renderRow($srlei, $white); }
 .srmcce.row { @include renderRow($srmcce); }
 .srmdce.row { @include renderRow($srmdce); }
+
 
 
 // General Styling

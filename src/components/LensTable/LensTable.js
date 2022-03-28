@@ -10,7 +10,7 @@ import { Table,
 // import loadable from '@loadable/component';
 
 import LensRowGroup from '../LensRowGroup/LensRowGroup';
-import styles from './LensTable.module.scss';
+import * as styles from './LensTable.module.scss';
 
 // const LensDetailPanel = loadable(() => import('../LensDetailPanel/LensDetailPanel'), {
 //   // ssr: false,

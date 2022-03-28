@@ -8,7 +8,7 @@ import { Table,
         Paper } from '@material-ui/core';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
-import styles from './ModalContent.module.scss';
+import * as styles from './ModalContent.module.scss';
 
 const ModalContent = memo(({seoData}) => {
 
@@ -36,14 +36,7 @@ const ModalContent = memo(({seoData}) => {
       <div className={styles.section}>
         <div className={styles.sectionContent}>
           <em className={styles.helpTxt}>
-            The following colors are used to represent the following {seoData.name} lens versions.
-            &nbsp;
-            {seoData.legendSource &&
-              <em>(
-              <OutboundLink href={seoData.legendSource} target={'_blank'} rel={'noopener noreferrer'}>
-                Source
-              </OutboundLink>
-              )</em>
+            The following colors are used to represent the following {seoData.name} lens versions:
             }
           </em>
           <TableContainer component={Paper} className={styles.container}>

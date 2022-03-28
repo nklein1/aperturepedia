@@ -2,7 +2,7 @@ import React from 'react';
 
 import LensRow from '../LensRow/LensRow';
 import { parseClassFromStyle } from '../../utils/utils';
-import styles from './LensRowGroup.module.scss';
+import * as styles from './LensRowGroup.module.scss';
 
 class LensRowGroup extends React.PureComponent {
 

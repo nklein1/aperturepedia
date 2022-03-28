@@ -10,7 +10,7 @@ import Header from '../Header/Header';
 import Modal from '../Modal/Modal';
 import ModalContent from '../ModalContent/ModalContent';
 import { DetailPanelProvider } from '../../utils/DetailPanelContext';
-import styles from  './DbPageLayout.module.scss';
+import * as styles from  './DbPageLayout.module.scss';
 
 const DbPageLayout = ({children, location, modalContent, seoData}, props) => {
 

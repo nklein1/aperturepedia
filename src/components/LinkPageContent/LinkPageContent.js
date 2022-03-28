@@ -2,7 +2,7 @@ import React from 'react';
 import { Typography } from '@material-ui/core';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
-import styles from  './LinkPageContent.module.scss';
+import * as styles from  './LinkPageContent.module.scss';
 
 class LinkPageContent extends React.Component {
 

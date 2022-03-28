@@ -6,7 +6,7 @@ import { ClickAwayListener,
         MenuList,
         Paper } from '@material-ui/core';
 
-import styles from './NavItem.module.scss';
+import * as styles from './NavItem.module.scss';
 
 export default function NavItem(props) {
   const [open, setOpen] = React.useState(false);

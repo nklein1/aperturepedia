@@ -13,7 +13,7 @@ import { PhotoLibrary as PhotoLibraryIcon,
 import ApIcon from '../ApIcon/ApIcon';
 import DetailPanelContext from '../../utils/DetailPanelContext';
 
-import styles from './LensRow.module.scss';
+import * as styles from './LensRow.module.scss';
 
 const LensDetailPanel = loadable(() => import('../LensDetailPanel/LensDetailPanel'), {
   // ssr: false,

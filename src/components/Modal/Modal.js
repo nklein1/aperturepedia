@@ -5,7 +5,7 @@ import { Dialog,
         IconButton } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
-import styles from './Modal.module.scss';
+import * as styles from './Modal.module.scss';
 
 const Modal = (props) => {
 

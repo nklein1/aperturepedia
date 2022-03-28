@@ -6,7 +6,7 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/seo';
 
-import styles from './index.module.scss';
+import * as styles from './index.module.scss';
 
 const description = 'Aperturepedia is a comprehensive guide to vintage SLR lenses made by Minolta, Nikon, Canon, Pentax, Olympus & Konica, with databases of lens specs plus links to other sites with lens reviews and other helpful info.';
 const breadcrumbs = [

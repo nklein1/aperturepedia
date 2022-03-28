@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { SvgIcon, Tooltip } from '@material-ui/core';
 
 import DetailPanelContext from '../../utils/DetailPanelContext';
-import styles from './ApIcon.module.scss';
+import * as styles from './ApIcon.module.scss';
 
 export default function ApIcon({ iconType, iconTitle, iconSize, iconColor, showTooltip }) {
 

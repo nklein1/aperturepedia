@@ -17,7 +17,7 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import MobileNavItem from '../MobileNavItem/MobileNavItem';
 import NavItem from '../NavItem/NavItem';
 
-import styles from './Header.module.scss';
+import * as styles from './Header.module.scss';
 
 const Header = memo(({location}) => {
 

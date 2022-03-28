@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { getRandomString } from '../../utils/utils';
-import styles from './SourceList.module.scss';
+import * as styles from './SourceList.module.scss';
 
 const SourceList = ({ sources }) => {
   return (

@@ -7,7 +7,7 @@ import { List,
         SvgIcon } from '@material-ui/core';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
 
-import styles from './MobileNavItem.module.scss';
+import * as styles from './MobileNavItem.module.scss';
 
 const MobileNavItem = ({ item }, props) => {
 
