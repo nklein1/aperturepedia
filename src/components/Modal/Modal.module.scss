@@ -3,12 +3,13 @@
 .wrapper {
   .header {    
     border-bottom: 1px solid $lightGreyBorder;
-    margin: 0 0 16px 0;
+    margin: 0 0 0.75rem 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     h2 {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       width: 100%;
     }
 

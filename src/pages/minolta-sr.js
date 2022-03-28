@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import DbPageLayout from '../components/DbPageLayout/DbPageLayout';
 
 import LensTable from '../components/LensTable/LensTable';
@@ -45,7 +45,7 @@ class MinoltaSR extends React.Component {
           location={this.props.location}
           modalContent={this.modalContent}
           seoData={this.seoData}>
-        <SEO
+        <Seo
             title={this.seoData.title}
             description={this.seoData.descr}
             keywords={this.seoData.keywords}

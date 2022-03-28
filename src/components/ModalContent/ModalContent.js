@@ -5,8 +5,7 @@ import { Table,
         TableBody,
         TableRow,
         TableCell,
-        Paper } from '@material-ui/core';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+        Paper } from '@mui/material';
 
 import * as styles from './ModalContent.module.scss';
 
@@ -16,7 +15,7 @@ const ModalContent = memo(({seoData}) => {
     console.log('seoData', seoData);
     let toRender = [];
     if (legendItems && legendItems.length > 0) {
-      legendItems.map(item => {
+      legendItems.forEach(item => {
         toRender.push(
           <TableRow className={styles.legendItem} key={'item-' + item.id}>
             <TableCell className={classNames(
@@ -36,8 +35,7 @@ const ModalContent = memo(({seoData}) => {
       <div className={styles.section}>
         <div className={styles.sectionContent}>
           <em className={styles.helpTxt}>
-            The following colors are used to represent the following {seoData.name} lens versions:
-            }
+            The colors below are used to represent the following {seoData.name} lens versions:
           </em>
           <TableContainer component={Paper} className={styles.container}>
             <Table>

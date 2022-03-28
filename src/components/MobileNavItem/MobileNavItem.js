@@ -4,8 +4,8 @@ import { List,
         ListItem,
         ListItemText,
         Collapse,
-        SvgIcon } from '@material-ui/core';
-import { ExpandLess, ExpandMore } from '@material-ui/icons';
+        SvgIcon } from '@mui/material';
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
 import * as styles from './MobileNavItem.module.scss';
 

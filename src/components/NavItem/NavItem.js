@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { ClickAwayListener,
         MenuItem,
         MenuList,
-        Paper } from '@material-ui/core';
+        Paper } from '@mui/material';
 
 import * as styles from './NavItem.module.scss';
 

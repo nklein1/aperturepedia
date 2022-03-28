@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { SvgIcon, Tooltip } from '@material-ui/core';
+import { SvgIcon, Tooltip } from '@mui/material';
 
 import DetailPanelContext from '../../utils/DetailPanelContext';
 import * as styles from './ApIcon.module.scss';
@@ -9,7 +9,6 @@ export default function ApIcon({ iconType, iconTitle, iconSize, iconColor, showT
   const tooltipCx = useContext(DetailPanelContext)
 
   const renderIcon = () => {
-    let toRender = [];
     if (tooltipCx.isTooltipPreloaded === true) {
       return (
         <Tooltip

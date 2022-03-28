@@ -2,13 +2,12 @@ import React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 import loadable from '@loadable/component';
-
-import { TableRow, TableCell } from '@material-ui/core';
+import { TableRow, TableCell } from '@mui/material';
 import { PhotoLibrary as PhotoLibraryIcon,
         RateReview as RateReviewIcon,
         Build as BuildIcon,
         Info as InfoIcon,
-        Notes as NotesIcon } from '@material-ui/icons';
+        Notes as NotesIcon } from '@mui/icons-material';
 
 import ApIcon from '../ApIcon/ApIcon';
 import DetailPanelContext from '../../utils/DetailPanelContext';

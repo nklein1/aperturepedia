@@ -10,8 +10,8 @@ import  { AppBar,
         SvgIcon,
         Button,
         Drawer,
-        List } from '@material-ui/core';
-import { Menu } from '@material-ui/icons';
+        List } from '@mui/material';
+import { Menu } from '@mui/icons-material';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import MobileNavItem from '../MobileNavItem/MobileNavItem';

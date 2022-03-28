@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { Button,
         IconButton,
-        Typography } from '@material-ui/core';
-import InfoIcon from '@material-ui/icons/Info';
+        Typography } from '@mui/material';
+import InfoIcon from '@mui/icons-material/Info';
 
 import Header from '../Header/Header';
 import Modal from '../Modal/Modal';

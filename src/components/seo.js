@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import thumbImg from '../images/thumbnail.png';
 import favicon from '../images/favicon.png';
 
-function SEO({ description, lang, meta, title, keywords, breadcrumbs, location }) {
+function Seo({ description, lang, meta, title, keywords, breadcrumbs, location }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -131,13 +131,13 @@ function SEO({ description, lang, meta, title, keywords, breadcrumbs, location }
   )
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
 }
 
-SEO.propTypes = {
+Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   canonical: PropTypes.string,
@@ -148,4 +148,4 @@ SEO.propTypes = {
   location: PropTypes.object
 }
 
-export default SEO
+export default Seo

@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout/Layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import LinkPageContent from '../components/LinkPageContent/LinkPageContent';
 import mdImg from '../images/konica_ar_hero.jpg';
 import smImg from '../images/konica_ar_hero_sm.jpg';
@@ -16,7 +16,7 @@ const KonicaARLinks = ({data, location}) => {
 
   return (
     <Layout location={location}>
-      <SEO
+      <Seo
           title={seoData.title}
           breadcrumbs={breadcrumbs}
           description={seoData.descr}

@@ -1,12 +1,12 @@
 import React, {memo} from 'react';
 import classNames from 'classnames';
-import { TableRow, TableCell } from '@material-ui/core';
+import { TableRow, TableCell } from '@mui/material';
 import { PhotoLibrary as PhotoLibraryIcon,
         RateReview as RateReviewIcon,
         Build as BuildIcon,
         Info as InfoIcon,
         Star as StarIcon,
-        Notes as NotesIcon } from '@material-ui/icons';
+        Notes as NotesIcon } from '@mui/icons-material';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import ApIcon from '../ApIcon/ApIcon';

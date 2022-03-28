@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Typography } from '@material-ui/core';
+// import { Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import Layout from '../components/Layout/Layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 
 import * as styles from './index.module.scss';
 
@@ -46,7 +47,7 @@ const links = [
 
 const IndexPage = (props) => (
   <Layout location={props.location}>
-    <SEO
+    <Seo
         title={'Home'}
         description={description}
         breadcrumbs={breadcrumbs}

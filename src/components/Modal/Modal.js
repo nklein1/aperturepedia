@@ -2,8 +2,8 @@ import React from 'react';
 import * as PropTypes from 'prop-types';
 import { Dialog,
         DialogTitle,
-        IconButton } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
+        IconButton } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 
 import * as styles from './Modal.module.scss';
 

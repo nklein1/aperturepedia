@@ -55,6 +55,7 @@
   min-width: max-content;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 3;
 
   // &:hover {
   //   border-bottom: 2px solid $black;
