@@ -1,4 +1,5 @@
 import React, {memo} from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { TableRow, TableCell } from '@mui/material';
 import { PhotoLibrary as PhotoLibraryIcon,
@@ -7,7 +8,7 @@ import { PhotoLibrary as PhotoLibraryIcon,
         Info as InfoIcon,
         Star as StarIcon,
         Notes as NotesIcon } from '@mui/icons-material';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 
 import ApIcon from '../ApIcon/ApIcon';
 
@@ -104,5 +105,12 @@ const LensDetailPanel = memo(({lensData, lensColumns, isExpanded}) => {
     </TableRow>
   )
 })
+
+LensDetailPanel.displayName = 'LensDetailPanel';
+LensDetailPanel.propTypes = {
+  lensData: PropTypes.string,
+  lensColumns: PropTypes.array,
+  isExpanded: PropTypes.bool
+};
 
 export default LensDetailPanel;

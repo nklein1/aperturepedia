@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography } from '@mui/material';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 
 import * as styles from  './LinkPageContent.module.scss';
 

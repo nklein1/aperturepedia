@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+// import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import thumbImg from '../images/thumbnail.png';
 import favicon from '../images/favicon.png';
@@ -26,6 +26,16 @@ function Seo({ description, lang, meta, title, keywords, breadcrumbs, location }
   const metaDescription = description || site.siteMetadata.description;
   const metaKeywords = keywords || site.siteMetadata.keywords;
   const canonical = location ? `${site.siteMetadata.siteUrl}${location.pathname}` : null;
+
+
+  // const seo = { // TODO: REfactor aboce consts to this
+  //   title: title,
+  //   description: description || site.siteMetadata.description,
+  //   keywords: keywords || site.siteMetadata.keywords
+  //   image: `${siteUrl}${image}`,
+  //   url: `${siteUrl}${pathname || ``}`,
+  //   twitterUsername,
+  // }
 
   const baseSchema = [
     {
@@ -59,75 +69,29 @@ function Seo({ description, lang, meta, title, keywords, breadcrumbs, location }
   ] : baseSchema;
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      link={[
-        { rel: 'icon', type: 'image/png', sizes: "16x16", href: `${favicon}` },
-        { rel: 'icon', type: 'image/png', sizes: "32x32", href: `${favicon}` }
-      ]}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          name: `keywords`,
-          content: metaKeywords,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          property: `og:url`,
-          content: canonical,
-        },
-        {
-          property: `og:image`,
-          content: `${site.siteMetadata.siteUrl}${thumbImg}`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          name: `twitter:url`,
-          content: canonical,
-        },
-        {
-          name: `twitter:image`,
-          content: `${site.siteMetadata.siteUrl}${thumbImg}`,
-        }
-      ].concat(meta)}
-    >
+    <>
+      <title>{title}</title>
+      <meta name="description" content={metaDescription} />
+      <meta name="keywords" content={keywords} />
+      <meta name="og:title" content={title} />
+      <meta name="og:description" content={metaDescription} />
+      <meta name="og:type" content={`website`} />
+      <meta name="og:url" content={canonical} />
+      <meta name="og:image" content={site.siteMetadata.siteUrl + thumbImg} />
+      <meta name="image" content={site.siteMetadata.siteUrl + thumbImg} />
+      <meta name="twitter:card" content={`summary`} />
+      <meta name="twitter:creator" content={site.siteMetadata.author} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={metaDescription} />
+      <meta name="twitter:url" content={canonical} />
+      <meta name="twitter:image" content={site.siteMetadata.siteUrl + thumbImg} />
+
+      <link rel="icon" href="image/png" />
+      
       <script type={'application/ld+json'}>
         {JSON.stringify(schemaJSONLD)}
       </script>
-    </Helmet>
+    </>
   )
 }
 

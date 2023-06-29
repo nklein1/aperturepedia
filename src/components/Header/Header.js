@@ -1,4 +1,5 @@
 import React, {memo} from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
 import  { AppBar,
@@ -12,7 +13,7 @@ import  { AppBar,
         Drawer,
         List } from '@mui/material';
 import { Menu } from '@mui/icons-material';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 
 import MobileNavItem from '../MobileNavItem/MobileNavItem';
 import NavItem from '../NavItem/NavItem';
@@ -140,5 +141,10 @@ const Header = memo(({location}) => {
     </AppBar>
   )
 })
+
+Header.displayName = 'Header';
+Header.propTypes = {
+  location: PropTypes.object
+};
 
 export default Header;

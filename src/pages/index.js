@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 // import { Typography } from '@mui/material';
 import { Typography } from '@mui/material';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 
 import Layout from '../components/Layout/Layout';
 import Seo from '../components/seo';
