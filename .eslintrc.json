@@ -15,5 +15,20 @@
         "react"
     ],
     "rules": {
+        "react/no-unescaped-entities": 0,
+        "react/self-closing-comp": "off",
+        "autofix/no-unused-vars": [
+          1,
+          {
+            "argsIgnorePattern": "^_",
+            "ignoreRestSiblings": true,
+            "destructuredArrayIgnorePattern": "^_"
+          }
+        ],
+        "indent": [
+            1,
+            2
+        ],
+        "prefer-const": 1
     }
 }
