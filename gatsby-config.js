@@ -12,7 +12,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-loadable-components-ssr`,
+    // `gatsby-plugin-loadable-components-ssr`, // TODO: Migrate to react.lazy
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
